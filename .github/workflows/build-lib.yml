@@ -1,0 +1,45 @@
+name: Build Rust static library for iOS
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: aarch64-apple-ios
+          override: true
+
+      - name: Build static library for aarch64-apple-ios
+        run: |
+          cargo build --release --target aarch64-apple-ios
+          # 产物路径: target/aarch64-apple-ios/release/libeasytier_ios.a
+
+      - name: Strip debug symbols
+        run: |
+          strip -S target/aarch64-apple-ios/release/libeasytier_ios.a -o libeasytier_ios.a
+
+      - name: Upload static library as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: libeasytier_ios.a
+          path: libeasytier_ios.a
+
+      - name: Release (when tag is pushed)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: libeasytier_ios.a
+          tag_name: ${{ github.ref_name }}
+          body: |
+            ## libeasytier_ios.a for iOS (arm64)
+            将静态库放入 Xcode 项目并链接。
