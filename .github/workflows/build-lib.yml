@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install protobuf (for prost-build)
+        run: brew install protobuf
+
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -20,10 +23,9 @@ jobs:
           override: true
 
       - name: Build static lib (in Core directory)
-        working-directory: Core   # 关键：切换到 Core 目录
+        working-directory: Core
         run: |
           cargo build --release --target aarch64-apple-ios
-          # 产物位于 Core/target/aarch64-apple-ios/release/libeasytier_ios.a
 
       - name: Copy static library to root
         run: |
