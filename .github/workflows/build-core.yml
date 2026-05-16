@@ -1,0 +1,38 @@
+name: Build easytier-core for iOS
+
+on:
+  push:
+    paths:
+      - 'Core/src/**'
+      - 'Core/Cargo.toml'
+      - 'Core/Cargo.lock'
+  workflow_dispatch:   # 手动触发
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          target: aarch64-apple-ios
+          override: true
+
+      - name: Build for iOS (arm64)
+        working-directory: Core
+        run: |
+          cargo build --release --target aarch64-apple-ios
+          # 产物位置: target/aarch64-apple-ios/release/easytier-core
+
+      - name: Strip debug symbols (减小体积)
+        run: |
+          strip -S Core/target/aarch64-apple-ios/release/easytier-core -o Core/easytier-core
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: easytier-core
+          path: Core/easytier-core
