@@ -13,6 +13,7 @@
 		0526D84B2F17E55300968CE2 /* libEasyTierShared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0526D8422F17D98E00968CE2 /* libEasyTierShared.a */; };
 		055836312F04D26700139811 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055836302F04D26700139811 /* NetworkExtension.framework */; };
 		055836392F04D26700139811 /* EasyTierNetworkExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 0558362E2F04D26600139811 /* EasyTierNetworkExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		059A7D6A2F9C966E001778FC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059A7D692F9C966E001778FC /* SystemConfiguration.framework */; };
 		05B61F5C2F05056D00646DDC /* libeasytier_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B61F5B2F05056D00646DDC /* libeasytier_ios.a */; };
 		05B6235C2F08098100646DDC /* TOMLKit in Frameworks */ = {isa = PBXBuildFile; productRef = 05B6235B2F08098100646DDC /* TOMLKit */; };
 		05CF11DA2F1A589D00E6EDF1 /* libEasyTierShared.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0526D8422F17D98E00968CE2 /* libEasyTierShared.a */; };
@@ -84,6 +85,7 @@
 		055836302F04D26700139811 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		058E57A42F20AFD800BE84F9 /* lib.rs */ = {isa = PBXFileReference; lastKnownFileType = text; path = lib.rs; sourceTree = "<group>"; };
 		058EB1C12F20AFD800BE84F9 /* Cargo.toml */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cargo.toml; sourceTree = "<group>"; };
+		059A7D692F9C966E001778FC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.4.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		05B61F5B2F05056D00646DDC /* libeasytier_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libeasytier_ios.a; sourceTree = "<group>"; };
 		7A59B8192F1641100069728D /* EasyTierWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EasyTierWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A59B81A2F1641100069728D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -170,6 +172,7 @@
 				05B61F5C2F05056D00646DDC /* libeasytier_ios.a in Frameworks */,
 				0526D84B2F17E55300968CE2 /* libEasyTierShared.a in Frameworks */,
 				055836312F04D26700139811 /* NetworkExtension.framework in Frameworks */,
+				059A7D6A2F9C966E001778FC /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +217,7 @@
 		0558362F2F04D26700139811 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				059A7D692F9C966E001778FC /* SystemConfiguration.framework */,
 				05B61F5B2F05056D00646DDC /* libeasytier_ios.a */,
 				055836302F04D26700139811 /* NetworkExtension.framework */,
 				7A59B81A2F1641100069728D /* WidgetKit.framework */,

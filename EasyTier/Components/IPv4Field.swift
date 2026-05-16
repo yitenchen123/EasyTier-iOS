@@ -81,6 +81,9 @@ struct IPv4Field: View {
                 syncOctetsFromExternal()
             }
         }
+        .onDisappear {
+            focusedField = nil
+        }
     }
     
 #if os(iOS)
@@ -97,9 +100,14 @@ struct IPv4Field: View {
     }
 #endif
     
+    @MainActor
+    private func setFocusedField(_ field: Int?) {
+        focusedField = field
+    }
+
     private func processOctetInput(oldValue: String, newValue: String, at index: Int) {
         if oldValue == newValue { return }
-        
+
         if length != nil && newValue.contains("/") {
             if newValue.count > 4 {
                 parseAndDistribute(fullString: newValue)
@@ -108,11 +116,11 @@ struct IPv4Field: View {
             if !octets[index].isEmpty {
                 octets[index] = newValue.replacingOccurrences(of: "/", with: "")
                 updateIPBinding()
-                focusedField = 4
+                setFocusedField(4)
                 return
             }
         }
-        
+
         if newValue.contains(".") {
             if newValue.split(separator: ".").count > 1 {
                 parseAndDistribute(fullString: newValue)
@@ -121,46 +129,46 @@ struct IPv4Field: View {
             if !octets[index].isEmpty && index < 3 {
                 octets[index] = newValue.replacingOccurrences(of: ".", with: "")
                 updateIPBinding()
-                focusedField = index + 1
+                setFocusedField(index + 1)
                 return
             }
         }
-        
+
         let filtered = newValue.filter { "0123456789".contains($0) }
-        
+
         if filtered.isEmpty && !octets[index].isEmpty {
             octets[index] = ""
             updateIPBinding()
-            if index > 0 { focusedField = index - 1 }
+            if index > 0 { setFocusedField(index - 1) }
             return
         }
-        
+
         if let num = Int(filtered) {
             octets[index] = String(max(min(num, 255), 0))
-            
+
             if filtered.count >= 3 {
-                focusedField = index + 1
+                setFocusedField(index + 1)
             }
             updateIPBinding()
         }
     }
-    
+
     private func processLengthInput(_ newValue: String, binding: Binding<String>) {
         if newValue.isEmpty && !binding.wrappedValue.isEmpty {
             binding.wrappedValue = ""
-            focusedField = 3
+            setFocusedField(3)
             return
         }
-        
+
         let filtered = newValue.filter { "0123456789".contains($0) }
-        
+
         if let num = Int(filtered) {
             binding.wrappedValue = String(max(min(num, 32), 0))
         } else if filtered.isEmpty {
             binding.wrappedValue = ""
         }
     }
-    
+
     private func updateIPBinding() {
         self.ipAddress = octets.map {
             if let num = Int($0) {
@@ -168,7 +176,7 @@ struct IPv4Field: View {
             } else { "" }
         }.joined(separator: ".")
     }
-    
+
     private func syncOctetsFromExternal() {
         let parts = ipAddress.split(separator: ".")
         for (i, part) in parts.enumerated() {
@@ -178,15 +186,15 @@ struct IPv4Field: View {
             octets = ["", "", "", ""]
         }
     }
-    
+
     private func parseAndDistribute(fullString: String) {
         let components = fullString.split(separator: "/")
-        
+
         if components.count > 0 {
             let ipPart = String(components[0])
             let validIpChars = ipPart.filter { "0123456789.".contains($0) }
             self.ipAddress = validIpChars
-            
+
             let parts = validIpChars.split(separator: ".").map {
                 if let num = Int($0) {
                     String(max(min(num, 255), 0))
@@ -196,18 +204,18 @@ struct IPv4Field: View {
                 if i < 4 { octets[i] = String(part.prefix(3)) }
             }
         }
-        
+
         if let lengthBinding = length, components.count > 1 {
             let lengthPart = String(components[1]).prefix(2)
             if let num = Int(lengthPart) {
                 lengthBinding.wrappedValue = String(max(min(num, 32), 0))
             }
         }
-        
+
         if components.count > 1 && length != nil {
-            focusedField = 4
+            setFocusedField(4)
         } else {
-            focusedField = 3
+            setFocusedField(3)
         }
     }
 }

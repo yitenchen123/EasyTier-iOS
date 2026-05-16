@@ -67,7 +67,8 @@ pub extern "C" fn set_tun_fd(
     let impl_func = || -> Result<(), String> {
         let mut inst = INSTANCE.lock().map_err(|e| e.to_string())?;
         let inst = inst.as_mut().ok_or("no running instance".to_string())?;
-        inst.set_tun_fd(fd);
+        let sender = inst.get_tun_fd_sender().ok_or("tun fd sender is null".to_string())?;
+        sender.try_send(Some(fd)).map_err(|e| e.to_string())?;
         Ok(())
     };
 

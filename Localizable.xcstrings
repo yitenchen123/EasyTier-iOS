@@ -349,6 +349,22 @@
         }
       }
     },
+    "common_text.add_initial_node" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Initial Node"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "添加初始节点"
+          }
+        }
+      }
+    },
     "common_text.add_listener_url" : {
       "localizations" : {
         "en" : {
@@ -393,22 +409,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "添加网络"
-          }
-        }
-      }
-    },
-    "common_text.add_peer" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add Peer"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "添加对等节点"
           }
         }
       }
@@ -736,22 +736,6 @@
         }
       }
     },
-    "custom" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Custom"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "自定义"
-          }
-        }
-      }
-    },
     "default_conn_id" : {
       "localizations" : {
         "en" : {
@@ -764,22 +748,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "默认连接 ID"
-          }
-        }
-      }
-    },
-    "default_server" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default Server"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "默认服务器"
           }
         }
       }
@@ -997,13 +965,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Disable P2P mode; route all traffic through a manually specified relay server."
+            "value" : "Disable ordinary automatic P2P, nodes with need-p2p enabled can still establish P2P with this node."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "禁用 P2P 模式，所有流量通过手动指定的服务器中转。"
+            "value" : "禁用普通自动 P2P，开启 `need-p2p` 的节点仍可与当前节点建立 P2P。"
           }
         }
       }
@@ -1100,6 +1068,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "禁用 UDP 打洞功能。"
+          }
+        }
+      }
+    },
+    "disable_upnp" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disable UPnP"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "禁用 UPnP"
+          }
+        }
+      }
+    },
+    "disable_upnp_help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disable runtime UPnP/NAT-PMP port mapping for eligible listeners; automatic port mapping is enabled by default."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "禁用符合条件监听器的运行时 UPnP/NAT-PMP 端口映射；自动端口映射默认开启。"
           }
         }
       }
@@ -1429,6 +1429,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "事件日志"
+          }
+        }
+      }
+    },
+    "example.instance_recv_bps_limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No limit"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "不限速"
           }
         }
       }
@@ -1884,6 +1900,38 @@
         }
       }
     },
+    "initial_nodes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initial Nodes"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "初始节点"
+          }
+        }
+      }
+    },
+    "initial_nodes_help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyTier does not distinguish between server and client roles.\n* Filling in Initial Nodes = plugging in the cable and joining an existing network.\n* Leaving it empty = the node starts alone until others connect to it, or you connect it later yourself.\n* Direct or indirect connectivity, including through relay nodes, can form one network.\nInitial nodes can be your own nodes or ones shared by others."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EasyTier 不分服务端/客户端。\n* 填“初始节点” = 插上网线，直接加入已有网络。\n* 留空 = 节点独立启动，等别人来连，或你后续手动连。\n* 无论直接还是间接连通（通过其他节点搭桥），都能组网互通。\n初始节点可以用自己的，也可以用别人分享的。"
+          }
+        }
+      }
+    },
     "inst_id" : {
       "localizations" : {
         "en" : {
@@ -1896,6 +1944,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "实例 ID"
+          }
+        }
+      }
+    },
+    "instance_recv_bps_limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instance Receive Limit"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "实例接收限速"
+          }
+        }
+      }
+    },
+    "instance_recv_bps_limit_help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limit the total receive bandwidth for the whole instance. Unit: bytes per second.\nLeave blank for no limit."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "限制当前实例整体入站流量的总接收速率，单位为字节每秒。\n留空表示不限速。"
           }
         }
       }
@@ -2044,6 +2124,38 @@
         }
       }
     },
+    "ipv6_public_addr_auto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto Public IPv6"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动获取公网 IPv6"
+          }
+        }
+      }
+    },
+    "ipv6_public_addr_auto_help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto-obtain a public IPv6 address from a peer that shares its IPv6 subnet."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自动从共享了 IPv6 子网的对等节点获取一个公网 IPv6 地址。"
+          }
+        }
+      }
+    },
     "ipv6_routes_excluded" : {
       "localizations" : {
         "en" : {
@@ -2120,6 +2232,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "忽略中转跳数，选择总延迟最低的路径。"
+          }
+        }
+      }
+    },
+    "lazy_p2p" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lazy P2P"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "延迟 P2P"
+          }
+        }
+      }
+    },
+    "lazy_p2p_help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Only try to establish P2P when traffic actually targets a peer. Peers with `need-p2p` enabled are still connected proactively."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "仅在实际流量需要某个对等节点时才尝试建立 P2P。开启 `need-p2p` 的节点仍会被主动连接。"
           }
         }
       }
@@ -2591,6 +2735,32 @@
         }
       }
     },
+    "need_p2p" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Need P2P"
+          }
+        }
+      }
+    },
+    "need_p2p_help" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ask other peers to proactively establish P2P connections to this node even when they enable lazy P2P."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "即使其他节点启用了延迟 P2P，也要求它们主动与当前节点建立 P2P 连接。"
+          }
+        }
+      }
+    },
     "network" : {
       "localizations" : {
         "en" : {
@@ -2667,22 +2837,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "创建网络"
-          }
-        }
-      }
-    },
-    "networking_method" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Networking Method"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "网络方式"
           }
         }
       }
@@ -3790,22 +3944,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "SOCKS5 服务器"
-          }
-        }
-      }
-    },
-    "standalone" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standalone"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "独立"
           }
         }
       }

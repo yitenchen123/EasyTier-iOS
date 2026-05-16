@@ -8,24 +8,7 @@ struct BoolFlag: Identifiable {
     let help: LocalizedStringKey?
 }
 
-nonisolated let defaultServerURL: String = "tcp://public.easytier.top:11010"
-
 nonisolated struct NetworkProfile: Identifiable, Equatable {
-    enum NetworkingMethod: Int, Codable, CaseIterable, Identifiable {
-        var id: Self { self }
-        case defaultServer = 0
-        case custom = 1
-        case standalone = 2
-        
-        var description: LocalizedStringKey {
-            switch self {
-            case .defaultServer: return "default_server"
-            case .custom: return "custom"
-            case .standalone: return "standalone"
-            }
-        }
-    }
-
     struct PortForwardSetting: Codable, Hashable, Identifiable {
         var id = UUID()
         var bindAddr: String = ""
@@ -80,7 +63,6 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
     var hostname: String = ""
     var networkSecret: String = ""
 
-    var networkingMethod: NetworkingMethod = NetworkingMethod.defaultServer
     var peerURLs: [TextItem] = []
 
     var proxyCIDRs: [ProxyCIDR] = []
@@ -94,20 +76,24 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
 
     var useSmoltcp: Bool = false
     var disableIPv6: Bool = false
+    var ipv6PublicAddrAuto: Bool = false
     var enableKCPProxy: Bool = false
     var disableKCPInput: Bool = false
     var enableQUICProxy: Bool = false
     var disableQUICInput: Bool = false
     var disableP2P: Bool = false
     var p2pOnly: Bool = false
+    var lazyP2P: Bool = false
     var bindDevice: Bool = true
     var noTUN: Bool = false
     var enableExitNode: Bool = false
     var relayAllPeerRPC: Bool = false
+    var needP2P: Bool = false
     var multiThread: Bool = true
     var proxyForwardBySystem: Bool = false
     var disableEncryption: Bool = false
     var disableUDPHolePunching: Bool = false
+    var disableUPNP: Bool = false
     var disableSymHolePunching: Bool = false
     var enableDataCompression: Bool = false
 
@@ -133,6 +119,8 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
     var enablePrivateMode: Bool = false
     var enableOverrideDNS: Bool = false
     var overrideDNS: [TextItem] = []
+    
+    var instanceRecvBpsLimit: UInt64? = nil
     
     var baseConfig: AlwaysEqual<NetworkConfig?> = .init(nil)
 
@@ -161,14 +149,9 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
         }
 
         if let peer = config.peer, !peer.isEmpty {
-            if peer.count == 1 && peer[0].uri == defaultServerURL {  // future: public server list
-                profile.networkingMethod = .defaultServer
-            } else {
-                profile.networkingMethod = .custom
-                profile.peerURLs = peer.map { .init($0.uri) }
-            }
+            profile.peerURLs = peer.map { .init($0.uri) }
         } else {
-            profile.networkingMethod = .standalone
+            profile.peerURLs = []
         }
 
         if let listeners = config.listeners {
@@ -247,6 +230,10 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
         if let mappedListeners = config.mappedListeners {
             profile.mappedListeners = mappedListeners.map { .init($0) }
         }
+        
+        if let ipv6PublicAddrAuto = config.ipv6PublicAddrAuto {
+            profile.ipv6PublicAddrAuto = ipv6PublicAddrAuto
+        }
 
         if let flags = config.flags {
             if let mtu = flags.mtu {
@@ -294,11 +281,20 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
             if let disableQUICInput = flags.disableQUICInput {
                 profile.disableQUICInput = disableQUICInput
             }
+            if let disableUPNP = flags.disableUPNP {
+                profile.disableUPNP = disableUPNP
+            }
             if let disableSymHolePunching = flags.disableSymHolePunching {
                 profile.disableSymHolePunching = disableSymHolePunching
             }
             if let p2pOnly = flags.p2pOnly {
                 profile.p2pOnly = p2pOnly
+            }
+            if let lazyP2P = flags.lazyP2P {
+                profile.lazyP2P = lazyP2P
+            }
+            if let needP2P = flags.needP2P {
+                profile.needP2P = needP2P
             }
             if let enableIPv6 = flags.enableIPv6 {
                 profile.disableIPv6 = !enableIPv6
@@ -325,6 +321,9 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
             if let dataCompressAlgo = flags.dataCompressAlgo {
                 profile.enableDataCompression = dataCompressAlgo == 2
             }
+            if let instanceRecvBpsLimit = flags.instanceRecvBpsLimit {
+                profile.instanceRecvBpsLimit = instanceRecvBpsLimit
+            }
         }
         self = profile
     }
@@ -350,6 +349,11 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
             keyPath: \.disableIPv6,
             label: "disable_ipv6",
             help: "disable_ipv6_help"
+        ),
+        .init(
+            keyPath: \.ipv6PublicAddrAuto,
+            label: "ipv6_public_addr_auto",
+            help: "ipv6_public_addr_auto_help"
         ),
         .init(
             keyPath: \.enableKCPProxy,
@@ -382,6 +386,11 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
             help: "p2p_only_help"
         ),
         .init(
+            keyPath: \.lazyP2P,
+            label: "lazy_p2p",
+            help: "lazy_p2p_help"
+        ),
+        .init(
             keyPath: \.bindDevice,
             label: "bind_device",
             help: "bind_device_help"
@@ -400,6 +409,11 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
             keyPath: \.relayAllPeerRPC,
             label: "relay_all_peer_rpc",
             help: "relay_all_peer_rpc_help"
+        ),
+        .init(
+            keyPath: \.needP2P,
+            label: "need_p2p",
+            help: "need_p2p_help"
         ),
         .init(
             keyPath: \.multiThread,
@@ -422,6 +436,11 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
             help: "disable_udp_hole_punching_help"
         ),
         .init(
+            keyPath: \.disableUPNP,
+            label: "disable_upnp",
+            help: "disable_upnp_help"
+        ),
+        .init(
             keyPath: \.disableSymHolePunching,
             label: "disable_sym_hole_punching",
             help: "disable_sym_hole_punching_help"
@@ -435,7 +454,7 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
             keyPath: \.enableDataCompression,
             label: "enable_data_compression",
             help: "enable_data_compression_help"
-        ),  
+        ),
     ]
 }
 

@@ -40,6 +40,11 @@ nonisolated struct NetworkConfig: Codable {
         var tldDNSZone: String?
         var p2pOnly: Bool?
         var disableTCPHolePunching: Bool?
+        var lazyP2P: Bool?
+        var needP2P: Bool?
+        var instanceRecvBpsLimit: UInt64?
+        var disableUPNP: Bool?
+        var disableRelayData: Bool?
 
         enum CodingKeys: String, CodingKey {
             case defaultProtocol = "default_protocol"
@@ -77,6 +82,11 @@ nonisolated struct NetworkConfig: Codable {
             case tldDNSZone = "tld_dns_zone"
             case p2pOnly = "p2p_only"
             case disableTCPHolePunching = "disable_tcp_hole_punching"
+            case lazyP2P = "lazy_p2p"
+            case needP2P = "need_p2p"
+            case instanceRecvBpsLimit = "instance_recv_bps_limit"
+            case disableUPNP = "disable_upnp"
+            case disableRelayData = "disable_relay_data"
         }
     }
 
@@ -172,6 +182,8 @@ nonisolated struct NetworkConfig: Codable {
     var udpWhitelist: [String]?
     var stunServers: [String]?
     var stunServersV6: [String]?
+    
+    var ipv6PublicAddrAuto: Bool?
 
     enum CodingKeys: String, CodingKey {
         case netns
@@ -197,6 +209,7 @@ nonisolated struct NetworkConfig: Codable {
         case udpWhitelist = "udp_whitelist"
         case stunServers = "stun_servers"
         case stunServersV6 = "stun_servers_v6"
+        case ipv6PublicAddrAuto = "ipv6_public_addr_auto"
     }
     
     init(id: UUID, name: String) {
@@ -230,14 +243,7 @@ nonisolated struct NetworkConfig: Codable {
             self.ipv4 = profile.virtualIPv4.cidrString
         }
         
-        switch profile.networkingMethod {
-        case .defaultServer:
-            self.peer = [PeerConfig(uri: defaultServerURL)]
-        case .custom:
-            self.peer = emptyAsNil(profile.peerURLs.compactMap { $0.text.isEmpty ? nil : PeerConfig(uri: $0.text) })
-        case .standalone:
-            self.peer = nil
-        }
+        self.peer = emptyAsNil(profile.peerURLs.compactMap { $0.text.isEmpty ? nil : PeerConfig(uri: $0.text) })
         
         self.listeners = emptyAsNil(profile.listenerURLs.compactMap { $0.text.isEmpty ? nil : $0.text })
 
@@ -281,6 +287,8 @@ nonisolated struct NetworkConfig: Codable {
         
         self.mappedListeners = emptyAsNil(profile.mappedListeners.compactMap { $0.text.isEmpty ? nil : $0.text })
         
+        self.ipv6PublicAddrAuto = profile.ipv6PublicAddrAuto
+        
         var tempFlags = self.flags ?? Flags()
         
         tempFlags.mtu = profile.mtu
@@ -291,6 +299,8 @@ nonisolated struct NetworkConfig: Codable {
         tempFlags.disableP2P = takeIfChanged(profile.disableP2P, def.disableP2P)
         tempFlags.relayAllPeerRPC = takeIfChanged(profile.relayAllPeerRPC, def.relayAllPeerRPC)
         tempFlags.disableUDPHolePunching = takeIfChanged(profile.disableUDPHolePunching, def.disableUDPHolePunching)
+        tempFlags.disableUPNP = takeIfChanged(profile.disableUPNP, def.disableUPNP)
+        tempFlags.disableSymHolePunching = takeIfChanged(profile.disableSymHolePunching, def.disableSymHolePunching)
         tempFlags.multiThread = takeIfChanged(profile.multiThread, def.multiThread)
         tempFlags.bindDevice = takeIfChanged(profile.bindDevice, def.bindDevice)
         tempFlags.enableKCPProxy = takeIfChanged(profile.enableKCPProxy, def.enableKCPProxy)
@@ -299,10 +309,12 @@ nonisolated struct NetworkConfig: Codable {
         tempFlags.acceptDNS = takeIfChanged(profile.enableMagicDNS, def.enableMagicDNS)
         tempFlags.enableQUICProxy = takeIfChanged(profile.enableQUICProxy, def.enableQUICProxy)
         tempFlags.disableQUICInput = takeIfChanged(profile.disableQUICInput, def.disableQUICInput)
-        tempFlags.disableSymHolePunching = takeIfChanged(profile.disableSymHolePunching, def.disableSymHolePunching)
         tempFlags.tldDNSZone = takeIfChanged(profile.magicDNSTLD, def.magicDNSTLD)
         tempFlags.p2pOnly = takeIfChanged(profile.p2pOnly, def.p2pOnly)
+        tempFlags.lazyP2P = takeIfChanged(profile.lazyP2P, def.lazyP2P)
+        tempFlags.needP2P = takeIfChanged(profile.needP2P, def.needP2P)
         tempFlags.privateMode = takeIfChanged(profile.enablePrivateMode, def.enablePrivateMode)
+        tempFlags.instanceRecvBpsLimit = profile.instanceRecvBpsLimit
         
         if profile.disableIPv6 != def.disableIPv6 {
             tempFlags.enableIPv6 = !profile.disableIPv6

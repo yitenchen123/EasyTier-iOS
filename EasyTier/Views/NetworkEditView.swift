@@ -109,37 +109,20 @@ struct NetworkEditView: View {
                 }
             }
 
-            Section("peer") {
-                Picker(
-                    "networking_method",
-                    selection: $profile.networkingMethod
-                ) {
-                    ForEach(NetworkProfile.NetworkingMethod.allCases) {
-                        method in
-                        Text(method.description).tag(method)
-                    }
-                }
-                .pickerStyle(.segmented)
-
-                switch profile.networkingMethod {
-                case .defaultServer:
-                    LabeledContent("server") {
-                        Text(defaultServerURL)
-                            .multilineTextAlignment(.trailing)
-                    }
-                case .custom:
-                    ListEditor(newItemTitle: "common_text.add_peer", items: $profile.peerURLs, addItemFactory: { "" }, rowContent: {
-                        TextField(
-                            "example.peer_url",
-                            text: $0.text,
-                            prompt: Text("example.peer_url")
-                        )
-                            .labelsHidden()
-                            .font(.body.monospaced())
-                    })
-                case .standalone:
-                    EmptyView()
-                }
+            Section {
+                ListEditor(newItemTitle: "common_text.add_initial_node", items: $profile.peerURLs, addItemFactory: { "" }, rowContent: {
+                    TextField(
+                        "example.peer_url",
+                        text: $0.text,
+                        prompt: Text("example.peer_url")
+                    )
+                        .labelsHidden()
+                        .font(.body.monospaced())
+                })
+            } header: {
+                Text("initial_nodes")
+            } footer: {
+                Text("initial_nodes_help")
             }
         }
     }
@@ -166,10 +149,30 @@ struct NetworkEditView: View {
                     .multilineTextAlignment(.trailing)
                     .numberKeyboardType()
                 }
+                LabeledContent("instance_recv_bps_limit") {
+                    TextField(
+                        "example.instance_recv_bps_limit",
+                        text: Binding(
+                            get: { $profile.instanceRecvBpsLimit.wrappedValue.map(String.init) ?? "" },
+                            set: { newValue in
+                                if newValue.isEmpty {
+                                    $profile.instanceRecvBpsLimit.wrappedValue = nil
+                                } else {
+                                    $profile.instanceRecvBpsLimit.wrappedValue = UInt64(newValue)
+                                }
+                            }
+                        ),
+                        prompt: Text("example.instance_recv_bps_limit")
+                    )
+                    .labelsHidden()
+                    .multilineTextAlignment(.trailing)
+                    .numberKeyboardType()
+                }
             } header: {
                 Text("general")
             } footer: {
                 Text("mtu_help")
+                Text("instance_recv_bps_limit_help")
             }
             
             Section("vpn_portal_config") {
