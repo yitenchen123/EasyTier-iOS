@@ -160,14 +160,14 @@ struct ToggleVPNConnectionIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         let managers = try await NETunnelProviderManager.loadAllFromPreferences()
         guard let manager = managers.first else {
-            return .result()
+            throw TunnelManagerError.unavailable
         }
 
         let isConnected = [.connecting, .connected, .reasserting].contains(manager.connection.status)
         if isConnected {
             manager.connection.stopVPNTunnel()
         } else {
-            connectWithManager(manager)
+            try await connectWithManager(manager)
         }
 
         WidgetCenter.shared.reloadTimelines(ofKind: "\(APP_BUNDLE_ID).widget")

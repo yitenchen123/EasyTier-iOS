@@ -1,5 +1,26 @@
 import Foundation
+import CryptoKit
 import SwiftUI
+
+enum SecureModeKeyError: LocalizedError {
+    case invalidPrivateKey
+    case invalidPublicKey
+    case publicKeyWithoutPrivateKey
+    case publicKeyMismatch
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidPrivateKey:
+            String(localized: "secure_mode_error.invalid_private_key")
+        case .invalidPublicKey:
+            String(localized: "secure_mode_error.invalid_public_key")
+        case .publicKeyWithoutPrivateKey:
+            String(localized: "secure_mode_error.public_key_without_private_key")
+        case .publicKeyMismatch:
+            String(localized: "secure_mode_error.public_key_mismatch")
+        }
+    }
+}
 
 struct BoolFlag: Identifiable {
     let id = UUID()
@@ -38,6 +59,7 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
         var enableMapping: Bool = false
         var mappedCIDR: String = ""
         var length: String = ""
+        var allow: [String]? = nil
         
         var cidrString: String {
             if cidr.isEmpty || length.isEmpty {
@@ -62,6 +84,10 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
     var virtualIPv4: CIDR = CIDR(ip: "10.126.126.1", length: "24")
     var hostname: String = ""
     var networkSecret: String = ""
+
+    var enableSecureMode: Bool = false
+    var secureModeLocalPrivateKey: String = ""
+    var secureModeLocalPublicKey: String = ""
 
     var peerURLs: [TextItem] = []
 
@@ -105,6 +131,8 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
     
     var portForwards: [PortForwardSetting] = []
 
+    var acl: ACLConfig? = nil
+
     var exitNodes: [TextItem] = []
 
     var enableSocks5: Bool = false
@@ -129,15 +157,22 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
     }
     
     init(from config: NetworkConfig) {
-        let id = UUID(uuidString: config.instanceId) ?? UUID()
+        let id = config.instanceId.flatMap(UUID.init(uuidString:)) ?? UUID()
         var profile = NetworkProfile(id: id)
         profile.baseConfig = .init(config)
         
         if let hostname = config.hostname, !hostname.isEmpty {
             profile.hostname = hostname
         }
-        profile.networkName = config.networkIdentity?.networkName ?? ""
+        profile.networkName = config.networkIdentity?.networkName ?? config.instanceName ?? profile.networkName
         profile.networkSecret = config.networkIdentity?.networkSecret ?? ""
+
+        if let secureMode = config.secureMode {
+            profile.enableSecureMode = secureMode.enabled
+            profile.secureModeLocalPrivateKey = secureMode.localPrivateKey ?? ""
+            profile.secureModeLocalPublicKey = secureMode.localPublicKey ?? ""
+            try? profile.prepareSecureModeKeys()
+        }
 
         if let dhcp = config.dhcp {
             profile.dhcp = dhcp
@@ -167,7 +202,8 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
                     cidr: parsed.ip,
                     enableMapping: false,
                     mappedCIDR: "",
-                    length: parsed.length
+                    length: parsed.length,
+                    allow: item.allow
                 )
                 if let mappedCIDR = item.mappedCIDR, !mappedCIDR.isEmpty {
                     let mapped = NetworkConfig.splitCIDR(mappedCIDR, defaultLength: parsed.length)
@@ -195,6 +231,8 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
                 )
             }
         }
+
+        profile.acl = config.acl
 
         if let vpnPortalConfig = config.vpnPortalConfig {
             profile.enableVPNPortal = true
@@ -332,6 +370,46 @@ nonisolated struct NetworkProfile: Identifiable, Equatable {
         var config = self.baseConfig.value ?? .init(id: id, name: networkName)
         config.apply(from: self)
         return config
+    }
+
+    mutating func prepareSecureModeKeys() throws {
+        guard enableSecureMode else { return }
+
+        let privateKey: Curve25519.KeyAgreement.PrivateKey
+        if secureModeLocalPrivateKey.isEmpty {
+            guard secureModeLocalPublicKey.isEmpty else {
+                throw SecureModeKeyError.publicKeyWithoutPrivateKey
+            }
+            privateKey = Curve25519.KeyAgreement.PrivateKey()
+            secureModeLocalPrivateKey = privateKey.rawRepresentation.base64EncodedString()
+        } else {
+            guard let rawPrivateKey = Data(base64Encoded: secureModeLocalPrivateKey) else {
+                throw SecureModeKeyError.invalidPrivateKey
+            }
+            do {
+                privateKey = try Curve25519.KeyAgreement.PrivateKey(rawRepresentation: rawPrivateKey)
+            } catch {
+                throw SecureModeKeyError.invalidPrivateKey
+            }
+        }
+
+        let derivedPublicKey = privateKey.publicKey.rawRepresentation
+        if secureModeLocalPublicKey.isEmpty {
+            secureModeLocalPublicKey = derivedPublicKey.base64EncodedString()
+            return
+        }
+
+        guard let rawPublicKey = Data(base64Encoded: secureModeLocalPublicKey) else {
+            throw SecureModeKeyError.invalidPublicKey
+        }
+        do {
+            _ = try Curve25519.KeyAgreement.PublicKey(rawRepresentation: rawPublicKey)
+        } catch {
+            throw SecureModeKeyError.invalidPublicKey
+        }
+        guard rawPublicKey == derivedPublicKey else {
+            throw SecureModeKeyError.publicKeyMismatch
+        }
     }
     
     @MainActor static let boolFlags: [BoolFlag] = [

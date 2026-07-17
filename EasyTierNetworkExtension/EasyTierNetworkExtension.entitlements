@@ -8,7 +8,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.site.yinmo.easytier</string>
+		<string>group.cn.easytier</string>
 	</array>
 </dict>
 </plist>

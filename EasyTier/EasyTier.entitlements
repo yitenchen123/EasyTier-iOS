@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
-		<string>iCloud.site.yinmo.easytier</string>
+		<string>iCloud.cn.easytier</string>
 	</array>
 	<key>com.apple.developer.icloud-services</key>
 	<array>
@@ -16,11 +16,11 @@
 	</array>
 	<key>com.apple.developer.ubiquity-container-identifiers</key>
 	<array>
-		<string>iCloud.site.yinmo.easytier</string>
+		<string>iCloud.cn.easytier</string>
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.site.yinmo.easytier</string>
+		<string>group.cn.easytier</string>
 	</array>
 </dict>
 </plist>

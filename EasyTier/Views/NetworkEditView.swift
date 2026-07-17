@@ -9,7 +9,7 @@ struct NetworkEditView: View {
 
     enum EditPane: Identifiable, Hashable {
         var id: Self { self }
-        case advanced, dns, route, portForwards
+        case advanced, dns, route, portForwards, acl
     }
     
     var body: some View {
@@ -24,6 +24,7 @@ struct NetworkEditView: View {
             NavigationLink("dns_settings", value: EditPane.dns)
             NavigationLink("route_settings", value: EditPane.route)
             NavigationLink("port_forwards", value: EditPane.portForwards)
+            NavigationLink("acl.title", value: EditPane.acl)
         }
         .scrollDismissesKeyboard(.immediately)
 #else
@@ -33,6 +34,7 @@ struct NetworkEditView: View {
             NavigationLink("dns_settings") { dnsSettings }
             NavigationLink("route_settings") { routeSettings }
             NavigationLink("port_forwards") { portForwardsSettings }
+            NavigationLink("acl.title") { ACLSettingsView(acl: $profile.acl) }
         }
         .formStyle(.grouped)
 #endif
@@ -49,6 +51,8 @@ struct NetworkEditView: View {
                 routeSettings
             case .portForwards:
                 portForwardsSettings
+            case .acl:
+                ACLSettingsView(acl: $profile.acl)
             case nil:
                 ZStack {
 #if os(iOS)
@@ -173,6 +177,51 @@ struct NetworkEditView: View {
             } footer: {
                 Text("mtu_help")
                 Text("instance_recv_bps_limit_help")
+            }
+
+            Section {
+                Toggle(
+                    "common_text.enable",
+                    isOn: Binding(
+                        get: { profile.enableSecureMode },
+                        set: { enabled in
+                            profile.enableSecureMode = enabled
+                            if enabled {
+                                try? profile.prepareSecureModeKeys()
+                            }
+                        }
+                    )
+                )
+                if profile.enableSecureMode {
+                    LabeledContent("local_private_key") {
+                        SecureField(
+                            "common_text.empty",
+                            text: $profile.secureModeLocalPrivateKey,
+                            prompt: Text("common_text.empty")
+                        )
+                        .labelsHidden()
+                        .multilineTextAlignment(.trailing)
+                        .font(.body.monospaced())
+                        .adaptiveNoTextInputAutocapitalization()
+                        .autocorrectionDisabled()
+                    }
+                    LabeledContent("local_public_key") {
+                        TextField(
+                            "common_text.empty",
+                            text: $profile.secureModeLocalPublicKey,
+                            prompt: Text("common_text.empty")
+                        )
+                        .labelsHidden()
+                        .multilineTextAlignment(.trailing)
+                        .font(.body.monospaced())
+                        .adaptiveNoTextInputAutocapitalization()
+                        .autocorrectionDisabled()
+                    }
+                }
+            } header: {
+                Text("secure_mode")
+            } footer: {
+                Text("secure_mode_help")
             }
             
             Section("vpn_portal_config") {

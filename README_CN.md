@@ -14,7 +14,11 @@ iOS/macOS 版 EasyTier 原生客户端，适用于去中心化虚拟专用网络
 
 ### 安装
 
-您可以加入我们的 [TestFlight](https://testflight.apple.com/join/YWnDyJfM) 进行测试。
+通过 App Store 获取（除中国大陆地区外）：
+
+<a href="https://apps.apple.com/app/easytier/id6788989728">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="在 App Store 下载" height="40">
+</a>
 
 ### 许可证
 

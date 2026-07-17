@@ -25,6 +25,7 @@ protocol NetworkExtensionManagerProtocol: ObservableObject {
     func fetchRunningInfo(_ callback: @escaping ((NetworkStatus) -> Void))
     func fetchLastNetworkSettings(_ callback: @escaping ((TunnelNetworkSettingsSnapshot?) -> Void))
     func updateName(name: String, server: String) async
+    func clearCoreLog() async throws
     func exportExtensionLogs() async throws -> URL
     @MainActor
     func setAlwaysOnEnabled(_ enabled: Bool) async throws
@@ -42,6 +43,7 @@ class NetworkExtensionManager: NetworkExtensionManagerProtocol {
     enum NEManagerError: LocalizedError {
         case providerUnavailable
         case invalidResponse
+        case clearFailed(String)
         case exportFailed(String)
 
         var errorDescription: String? {
@@ -50,6 +52,8 @@ class NetworkExtensionManager: NetworkExtensionManagerProtocol {
                 return "provider unavailable"
             case .invalidResponse:
                 return "invalid response"
+            case .clearFailed(let message):
+                return message
             case .exportFailed(let message):
                 return message
             }
@@ -166,7 +170,8 @@ class NetworkExtensionManager: NetworkExtensionManagerProtocol {
         }
     }
     
-    static func generateOptions(_ profile: NetworkProfile) throws -> EasyTierOptions {
+    static func generateOptions(_ profile: inout NetworkProfile) throws -> EasyTierOptions {
+        try profile.prepareSecureModeKeys()
         var options = EasyTierOptions()
         var config = profile.toConfig()
         if config.hostname == nil && UserDefaults.standard.bool(forKey: "useRealDeviceNameAsDefault") {
@@ -242,15 +247,7 @@ class NetworkExtensionManager: NetworkExtensionManagerProtocol {
         }
 
         do {
-            let _: Void = try await withCheckedThrowingContinuation { continuation in
-                connectWithManager(manager, logger: Self.logger) { error in
-                    if let error {
-                        continuation.resume(throwing: error)
-                    } else {
-                        continuation.resume()
-                    }
-                }
-            }
+            try await connectWithManager(manager, logger: Self.logger)
         } catch {
             Self.logger.error("connect() start vpn tunnel failed: \(String(describing: error))")
             throw error
@@ -364,6 +361,39 @@ class NetworkExtensionManager: NetworkExtensionManagerProtocol {
         }
     }
 
+    func clearCoreLog() async throws {
+        guard let manager,
+              let session = manager.connection as? NETunnelProviderSession,
+              session.status == .connected else {
+            throw NEManagerError.providerUnavailable
+        }
+        guard let message = ProviderCommand.clearLog.rawValue.data(using: .utf8) else {
+            throw NEManagerError.invalidResponse
+        }
+        return try await withCheckedThrowingContinuation { continuation in
+            do {
+                try session.sendProviderMessage(message) { data in
+                    guard let data else {
+                        continuation.resume(throwing: NEManagerError.invalidResponse)
+                        return
+                    }
+                    do {
+                        let response = try JSONDecoder().decode(ProviderMessageResponse.self, from: data)
+                        if response.ok {
+                            continuation.resume()
+                        } else {
+                            continuation.resume(throwing: NEManagerError.clearFailed(response.error ?? "clear failed"))
+                        }
+                    } catch {
+                        continuation.resume(throwing: error)
+                    }
+                }
+            } catch {
+                continuation.resume(throwing: error)
+            }
+        }
+    }
+
     @MainActor
     func setAlwaysOnEnabled(_ enabled: Bool) async throws {
         if status == .invalid || manager == nil {
@@ -417,6 +447,8 @@ class MockNEManager: NetworkExtensionManagerProtocol {
     }
 
     func updateName(name: String, server: String) async { }
+
+    func clearCoreLog() async throws { }
 
     func fetchRunningInfo(_ callback: @escaping ((NetworkStatus) -> Void)) {
         callback(MockNEManager.dummyRunningInfo)

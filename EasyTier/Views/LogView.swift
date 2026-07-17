@@ -1,4 +1,5 @@
 import SwiftUI
+import NetworkExtension
 import EasyTierShared
 
 private func logFileURL() -> URL? {
@@ -7,8 +8,9 @@ private func logFileURL() -> URL? {
         .appendingPathComponent(LOG_FILENAME)
 }
 
-struct LogView: View {
+struct LogView<Manager: NetworkExtensionManagerProtocol>: View {
     @Environment(\.scenePhase) private var scenePhase
+    @ObservedObject var manager: Manager
     @StateObject private var tailer = LogTailer()
     @Namespace private var bottomID
     @State private var wasWatchingBeforeBackground = false
@@ -50,7 +52,9 @@ struct LogView: View {
             .toolbar {
                 ToolbarItem(placement: ToolbarLeading) {
                     Button(action: {
-                        tailer.logContent = []
+                        Task {
+                            await clearLog()
+                        }
                     }) {
                         Image(systemName: "trash")
                     }.tint(.red)
@@ -133,10 +137,33 @@ struct LogView: View {
         }
 #endif
     }
+
+    private func clearLog() async {
+        let providerClear: (() async throws -> Void)?
+        if shouldUseProviderClear {
+            providerClear = { try await manager.clearCoreLog() }
+        } else {
+            providerClear = nil
+        }
+        await tailer.clear(appGroupID: APP_GROUP_ID, filename: LOG_FILENAME, providerClear: providerClear)
+    }
+
+    private var shouldUseProviderClear: Bool {
+        switch manager.status {
+        case .connecting, .connected, .reasserting:
+            return true
+        case .disconnecting:
+            return true
+        case .disconnected, .invalid:
+            return false
+        @unknown default:
+            return true
+        }
+    }
 }
 
 #if DEBUG
 #Preview("Log") {
-    LogView()
+    LogView(manager: MockNEManager())
 }
 #endif

@@ -6,8 +6,29 @@ struct ListEditor<Element, RowContent>: View where Element: Identifiable, RowCon
     @Binding var items: [Element]
     
     var addItemFactory: () -> Element
+    var addItemAction: (() -> Void)?
+    var deleteItemsAction: ((IndexSet) -> Void)?
+    var showsAddButton: Bool
     
     @ViewBuilder var rowContent: (Binding<Element>) -> RowContent
+
+    init(
+        newItemTitle: LocalizedStringKey,
+        items: Binding<[Element]>,
+        addItemFactory: @escaping () -> Element,
+        addItemAction: (() -> Void)? = nil,
+        deleteItemsAction: ((IndexSet) -> Void)? = nil,
+        showsAddButton: Bool = true,
+        @ViewBuilder rowContent: @escaping (Binding<Element>) -> RowContent
+    ) {
+        self.newItemTitle = newItemTitle
+        _items = items
+        self.addItemFactory = addItemFactory
+        self.addItemAction = addItemAction
+        self.deleteItemsAction = deleteItemsAction
+        self.showsAddButton = showsAddButton
+        self.rowContent = rowContent
+    }
 
     var body: some View {
 #if os(iOS)
@@ -18,10 +39,12 @@ struct ListEditor<Element, RowContent>: View where Element: Identifiable, RowCon
             .onDelete(perform: deleteItem)
             .onMove(perform: moveItem)
             
-            Button(action: addItem) {
-                HStack {
-                    Image(systemName: "plus.circle.fill")
-                    Text(newItemTitle)
+            if showsAddButton {
+                Button(action: addItem) {
+                    HStack {
+                        Image(systemName: "plus.circle.fill")
+                        Text(newItemTitle)
+                    }
                 }
             }
         }
@@ -42,18 +65,24 @@ struct ListEditor<Element, RowContent>: View where Element: Identifiable, RowCon
                     }
             }
         }
-        Button(action: addItem) {
-            HStack {
-                Image(systemName: "plus.circle.fill")
-                Text(newItemTitle)
+        if showsAddButton {
+            Button(action: addItem) {
+                HStack {
+                    Image(systemName: "plus.circle.fill")
+                    Text(newItemTitle)
+                }
             }
+            .buttonStyle(.borderless)
+            .tint(.accentColor)
         }
-        .buttonStyle(.borderless)
-        .tint(.accentColor)
 #endif
     }
     
     private func addItem() {
+        if let addItemAction {
+            addItemAction()
+            return
+        }
         withAnimation {
             let newItem = addItemFactory()
             items.append(newItem)
@@ -62,7 +91,11 @@ struct ListEditor<Element, RowContent>: View where Element: Identifiable, RowCon
     
     private func deleteItem(at offsets: IndexSet) {
         withAnimation {
-            items.remove(atOffsets: offsets)
+            if let deleteItemsAction {
+                deleteItemsAction(offsets)
+            } else {
+                items.remove(atOffsets: offsets)
+            }
         }
     }
     

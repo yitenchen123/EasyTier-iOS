@@ -1,10 +1,5 @@
 # EasyTier iOS/macOS Client
 
-> [!IMPORTANT]
-> This project is **NOT ACTIVELY MAINTAINED** due to personal reasons. Looking for other maintainers!
->
-> 因个人原因，本项目**不再积极维护**。需要其他维护者！
-
 [简体中文](README_CN.md) | [English](README.md)
 
 iOS/macOS native client application for EasyTier, a decentralized virtual private network solution.
@@ -19,7 +14,11 @@ This is an iOS/macOS client for EasyTier VPN. It provides a user-friendly interf
 
 ### Installation
 
-You can join our [TestFlight](https://testflight.apple.com/join/YWnDyJfM) for testing.
+Available on the App Store (except for China mainland region):
+
+<a href="https://apps.apple.com/app/easytier/id6788989728">
+  <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="40">
+</a>
 
 ### License
 

@@ -91,12 +91,26 @@ func tunnelFileDescriptor() -> Int32? {
             }
         }
         if addr.sc_id == ctlInfo.ctl_id {
-            let dupFd = dup(fd)
-            logger.info("tunnelFileDescriptor() found fd: \(fd, privacy: .public), dup to: \(dupFd, privacy: .public)")
-            return dupFd
+            return fd
         }
     }
     return nil
+}
+
+func setNonBlocking(fd: Int32) -> Bool {
+    let flags = fcntl(fd, F_GETFL, 0)
+    if flags == -1 {
+        logger.warning("setNonBlocking(): error getting flags: \(errno)")
+        return false
+    }
+    
+    let result = fcntl(fd, F_SETFL, flags | O_NONBLOCK)
+    if result == -1 {
+        logger.warning("setNonBlocking(): error setting non-block flag: \(errno)")
+        return false
+    }
+    
+    return true
 }
 
 func initRustLogger(level: LogLevel) {

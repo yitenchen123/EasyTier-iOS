@@ -9,6 +9,7 @@ struct LogLine: Identifiable, Equatable {
     let text: String
 }
 
+@MainActor
 class LogTailer: ObservableObject {
     @Published var logContent: [LogLine] = []
     @Published var errorMessage: TextItem?
@@ -43,6 +44,8 @@ class LogTailer: ObservableObject {
                 if let str = String(data: data, encoding: .utf8) {
                     updateLog(str, replaceAll: true)
                 }
+            } else {
+                handle.seekToEndOfFile()
             }
             
             // Setup DispatchSource to watch for writes
@@ -93,8 +96,12 @@ class LogTailer: ObservableObject {
                 logPreservedLines - newLines.count
             ) + newLines
 
-        DispatchQueue.main.async {
+        if Thread.isMainThread {
             self.logContent = lines
+        } else {
+            DispatchQueue.main.async {
+                self.logContent = lines
+            }
         }
     }
     
@@ -103,6 +110,47 @@ class LogTailer: ObservableObject {
         source = nil
         fileHandle = nil
         isWatching = false
+    }
+
+    func clear(
+        appGroupID: String,
+        filename: String,
+        providerClear: (() async throws -> Void)? = nil
+    ) async {
+        let wasWatching = isWatching
+        stop()
+
+        do {
+            if let providerClear {
+                try await providerClear()
+            } else {
+                try clearLogFile(appGroupID: appGroupID, filename: filename)
+            }
+
+            logContent = []
+        } catch {
+            errorMessage = .init("Could not clear log: \(error.localizedDescription)")
+        }
+
+        if wasWatching {
+            startWatching(appGroupID: appGroupID, filename: filename, fromStart: true)
+        }
+    }
+
+    private func clearLogFile(appGroupID: String, filename: String) throws {
+        guard let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: appGroupID) else {
+            throw CocoaError(.fileNoSuchFile)
+        }
+
+        let fileURL = containerURL.appendingPathComponent(filename)
+
+        if !FileManager.default.fileExists(atPath: fileURL.path) {
+            FileManager.default.createFile(atPath: fileURL.path, contents: nil)
+        }
+
+        let handle = try FileHandle(forWritingTo: fileURL)
+        try handle.truncate(atOffset: 0)
+        try handle.close()
     }
     
     deinit {

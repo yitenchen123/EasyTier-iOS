@@ -64,11 +64,11 @@ struct ToggleVPNIntent: SetValueIntent {
     func perform() async throws -> some IntentResult {
         let managers = try await NETunnelProviderManager.loadAllFromPreferences()
         guard let manager = managers.first else {
-            return .result()
+            throw TunnelManagerError.unavailable
         }
 
         if value {
-            connectWithManager(manager)
+            try await connectWithManager(manager)
         } else {
             manager.connection.stopVPNTunnel()
         }

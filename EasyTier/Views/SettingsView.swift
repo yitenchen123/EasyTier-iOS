@@ -6,6 +6,7 @@ let sharedDefaults = UserDefaults(suiteName: APP_GROUP_ID)
 
 struct SettingsView<Manager: NetworkExtensionManagerProtocol>: View {
     @ObservedObject var manager: Manager
+    @ObservedObject var selectedSession: SelectedProfileSession
     @AppStorage("logLevel") var logLevel: LogLevel = .info
     @AppStorage("statusRefreshInterval") var statusRefreshInterval: Double = 1.0
     @AppStorage("logPreservedLines") var logPreservedLines: Int = 1000
@@ -14,6 +15,7 @@ struct SettingsView<Manager: NetworkExtensionManagerProtocol>: View {
     @AppStorage("plainTextIPInput") var plainTextIPInput: Bool = false
 #endif
     @AppStorage("profilesUseICloud") var profilesUseICloud: Bool = false
+    @AppStorage("selectedProfileName", store: sharedDefaults) var lastSelected: String?
     @AppStorage("includeAllNetworks", store: sharedDefaults) var includeAllNetworks: Bool = false
     @AppStorage("excludeLocalNetworks", store: sharedDefaults) var excludeLocalNetworks: Bool = false
     @AppStorage("excludeCellularServices", store: sharedDefaults) var excludeCellularServices: Bool = true
@@ -28,15 +30,28 @@ struct SettingsView<Manager: NetworkExtensionManagerProtocol>: View {
     @State private var settingsErrorMessage: TextItem?
     @State private var isExporting = false
     @State private var isAlwaysOnUpdating = false
+    @State private var isProfileStorageUpdating = false
+    @State private var pendingProfileStorageTransition: PendingProfileStorageTransition?
+    @State private var profileMigrationConflict: ProfileStore.ProfileMigrationConflict?
     @State private var showResetAlert: Bool = false
     
-    init(manager: Manager) {
+    init(manager: Manager, selectedSession: SelectedProfileSession) {
         _manager = ObservedObject(wrappedValue: manager)
+        _selectedSession = ObservedObject(wrappedValue: selectedSession)
     }
 
     enum SettingsPane: Identifiable, Hashable {
         var id: Self { self }
         case license
+    }
+
+    private struct PendingProfileStorageTransition {
+        let enabled: Bool
+        let previousSession: ProfileSession?
+        let profileNameToRestore: String?
+        let plan: ProfileStore.ProfileMigrationPlan
+        var conflictIndex: Int
+        var overwriteDestinations: Set<URL>
     }
 
     var appVersion: String {
@@ -75,7 +90,11 @@ struct SettingsView<Manager: NetworkExtensionManagerProtocol>: View {
                 title: Text("reset_to_default"),
                 message: Text("reset_to_default_confirm"),
                 primaryButton: .destructive(Text("reset")) {
+                    let currentProfileStorage = profilesUseICloud
                     UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                    // Storage changes require the migration transaction above;
+                    // resetting unrelated settings must not switch backends.
+                    UserDefaults.standard.set(currentProfileStorage, forKey: "profilesUseICloud")
                     UserDefaults.standard.synchronize()
                     if let sharedDefaults {
                         sharedDefaults.removePersistentDomain(forName: APP_GROUP_ID)
@@ -83,6 +102,20 @@ struct SettingsView<Manager: NetworkExtensionManagerProtocol>: View {
                     }
                 },
                 secondaryButton: .cancel(),
+            )
+        }
+        .alert(item: $profileMigrationConflict) { conflict in
+            Alert(
+                title: Text("profile_storage_conflict_title"),
+                message: Text(
+                    "\(conflict.fileName)\n\n\(String(localized: "profile_storage_conflict_message"))"
+                ),
+                primaryButton: .destructive(Text("profile_storage_conflict_overwrite")) {
+                    resolveProfileMigrationConflict(overwrite: true)
+                },
+                secondaryButton: .default(Text("profile_storage_conflict_keep")) {
+                    resolveProfileMigrationConflict(overwrite: false)
+                }
             )
         }
 #if os(iOS)
@@ -136,7 +169,8 @@ struct SettingsView<Manager: NetworkExtensionManagerProtocol>: View {
 #if os(iOS)
                 Toggle("plain_text_ip_input", isOn: $plainTextIPInput)
 #endif
-                Toggle("save_to_icloud", isOn: $profilesUseICloud)
+                Toggle("save_to_icloud", isOn: profilesUseICloudBinding)
+                    .disabled(isProfileStorageUpdating)
                 Toggle("always_on", isOn: $manager.isAlwaysOnEnabled)
                     .disabled(manager.isLoading || isAlwaysOnUpdating)
                     .onChange(of: manager.isAlwaysOnEnabled) { newValue in
@@ -360,6 +394,134 @@ struct SettingsView<Manager: NetworkExtensionManagerProtocol>: View {
         }
     }
 
+    private var profilesUseICloudBinding: Binding<Bool> {
+        Binding(
+            get: { profilesUseICloud },
+            set: { updateProfileStorage($0) }
+        )
+    }
+
+    private func updateProfileStorage(_ enabled: Bool) {
+        guard enabled != profilesUseICloud, !isProfileStorageUpdating else { return }
+        isProfileStorageUpdating = true
+
+        Task { @MainActor in
+            let previousSession = selectedSession.session
+            let profileNameToRestore = previousSession?.name ?? lastSelected
+
+            do {
+                if let session = previousSession {
+                    // Remove the session first so a delayed Dashboard
+                    // autosave cannot race the migration. Saving the captured
+                    // session drains any work already queued for it.
+                    selectedSession.session = nil
+                    lastSelected = profileNameToRestore
+                    try await session.save()
+                }
+
+                let plan = try ProfileStore.prepareProfileMigration(useICloud: enabled)
+                let transition = PendingProfileStorageTransition(
+                    enabled: enabled,
+                    previousSession: previousSession,
+                    profileNameToRestore: profileNameToRestore,
+                    plan: plan,
+                    conflictIndex: 0,
+                    overwriteDestinations: []
+                )
+                pendingProfileStorageTransition = transition
+
+                if let firstConflict = plan.conflicts.first {
+                    profileMigrationConflict = firstConflict
+                } else {
+                    await finishProfileStorageTransition(transition)
+                }
+            } catch {
+                if let previousSession {
+                    selectedSession.session = previousSession
+                }
+                settingsErrorMessage = .init(error.localizedDescription)
+                clearProfileStorageTransition()
+            }
+        }
+    }
+
+    private func resolveProfileMigrationConflict(overwrite: Bool) {
+        guard var transition = pendingProfileStorageTransition,
+              transition.conflictIndex < transition.plan.conflicts.count else { return }
+        let conflict = transition.plan.conflicts[transition.conflictIndex]
+        if overwrite {
+            transition.overwriteDestinations.insert(conflict.destinationURL)
+        }
+        transition.conflictIndex += 1
+        pendingProfileStorageTransition = transition
+        profileMigrationConflict = nil
+
+        if transition.conflictIndex < transition.plan.conflicts.count {
+            let nextConflict = transition.plan.conflicts[transition.conflictIndex]
+            Task { @MainActor in
+                await Task.yield()
+                guard pendingProfileStorageTransition != nil else { return }
+                profileMigrationConflict = nextConflict
+            }
+        } else {
+            Task { @MainActor in
+                await finishProfileStorageTransition(transition)
+            }
+        }
+    }
+
+    @MainActor
+    private func finishProfileStorageTransition(
+        _ transition: PendingProfileStorageTransition
+    ) async {
+        var transitionError: Error?
+        do {
+            try ProfileStore.executeProfileMigration(
+                transition.plan,
+                overwriting: transition.overwriteDestinations
+            )
+
+            if let previousSession = transition.previousSession {
+                await previousSession.close()
+            }
+
+            // Commit the preference only after all per-file choices have been
+            // applied successfully.
+            profilesUseICloud = transition.enabled
+        } catch {
+            transitionError = error
+            if let previousSession = transition.previousSession {
+                selectedSession.session = previousSession
+            }
+        }
+
+        // The preference is unchanged on failure, so this restores the
+        // previous backend. On success it opens the selected profile from the
+        // newly selected backend.
+        if transitionError == nil,
+           selectedSession.session == nil,
+           let profileNameToRestore = transition.profileNameToRestore {
+            do {
+                selectedSession.session = try await ProfileStore.openSession(named: profileNameToRestore)
+            } catch {
+                if transitionError == nil {
+                    transitionError = error
+                }
+            }
+        }
+
+        if let transitionError {
+            settingsErrorMessage = .init(transitionError.localizedDescription)
+        }
+        clearProfileStorageTransition()
+    }
+
+    private func clearProfileStorageTransition() {
+        pendingProfileStorageTransition = nil
+        profileMigrationConflict = nil
+        isProfileStorageUpdating = false
+    }
+
     private func updateAlwaysOn(_ enabled: Bool) {
         guard !isAlwaysOnUpdating else { return }
         isAlwaysOnUpdating = true
@@ -382,7 +544,7 @@ struct SettingsView<Manager: NetworkExtensionManagerProtocol>: View {
 #if DEBUG
 #Preview("Settings Portrait") {
     let manager = MockNEManager()
-    SettingsView(manager: manager)
+    SettingsView(manager: manager, selectedSession: SelectedProfileSession())
         .environmentObject(manager)
 }
 #endif

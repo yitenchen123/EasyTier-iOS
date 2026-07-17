@@ -1,4 +1,5 @@
 import AppIntents
+import EasyTierShared
 import NetworkExtension
 import SwiftUI
 
@@ -64,6 +65,30 @@ enum IntentError: Swift.Error, CustomLocalizedStringResourceConvertible {
 }
 
 @available(iOS 18.0, *)
+@MainActor
+private func prepareProfileForConnection(_ requestedProfile: NetworkProfileEntity?) async throws {
+    let defaults = UserDefaults(suiteName: APP_GROUP_ID)
+    let profileName = requestedProfile?.id ?? defaults?.string(forKey: "selectedProfileName")
+    guard let profileName, !profileName.isEmpty else {
+        throw IntentError.noProfileFound
+    }
+
+    let session = try await ProfileStore.openSession(named: profileName)
+    do {
+        var profile = session.document.profile
+        let options = try NetworkExtensionManager.generateOptions(&profile)
+        session.document.profile = profile
+        try await session.save()
+        NetworkExtensionManager.saveOptions(options)
+        defaults?.set(profileName, forKey: "selectedProfileName")
+        await session.close()
+    } catch {
+        await session.close()
+        throw error
+    }
+}
+
+@available(iOS 18.0, *)
 struct ConnectIntent: AppIntent {
     static let title: LocalizedStringResource = "connect_easytier"
     static let description: IntentDescription = IntentDescription("connect_to_easytier_network")
@@ -76,6 +101,7 @@ struct ConnectIntent: AppIntent {
     func perform() async throws -> some IntentResult {
         let manager = NetworkExtensionManager()
         try await manager.load()
+        try await prepareProfileForConnection(network)
         try await manager.connect()
         return .result()
     }
@@ -122,6 +148,7 @@ struct ToggleConnectIntent: AppIntent {
             await manager.disconnect()
             return .result()
         } else {
+            try await prepareProfileForConnection(network)
             try await manager.connect()
             return .result()
         }

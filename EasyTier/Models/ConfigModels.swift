@@ -45,6 +45,7 @@ nonisolated struct NetworkConfig: Codable {
         var instanceRecvBpsLimit: UInt64?
         var disableUPNP: Bool?
         var disableRelayData: Bool?
+        var enableUDPBroadcastRelay: Bool?
 
         enum CodingKeys: String, CodingKey {
             case defaultProtocol = "default_protocol"
@@ -87,6 +88,7 @@ nonisolated struct NetworkConfig: Codable {
             case instanceRecvBpsLimit = "instance_recv_bps_limit"
             case disableUPNP = "disable_upnp"
             case disableRelayData = "disable_relay_data"
+            case enableUDPBroadcastRelay = "enable_udp_broadcast_relay"
         }
     }
 
@@ -102,6 +104,12 @@ nonisolated struct NetworkConfig: Codable {
 
     struct PeerConfig: Codable {
         var uri: String
+        var peerPublicKey: String?
+
+        enum CodingKeys: String, CodingKey {
+            case uri
+            case peerPublicKey = "peer_public_key"
+        }
     }
 
     struct ProxyNetworkConfig: Codable {
@@ -149,12 +157,31 @@ nonisolated struct NetworkConfig: Codable {
         }
     }
 
+    struct SecureModeConfig: Codable {
+        var enabled: Bool
+        var localPrivateKey: String?
+        var localPublicKey: String?
+
+        enum CodingKeys: String, CodingKey {
+            case enabled
+            case localPrivateKey = "local_private_key"
+            case localPublicKey = "local_public_key"
+        }
+    }
+
+    struct ConfigSourceConfig: Codable {
+        var source: String
+    }
+
     var netns: String?
     var hostname: String?
-    var instanceName: String
-    var instanceId: String
+    var instanceName: String?
+    var instanceId: String?
     var ipv4: String?
     var ipv6: String?
+    var ipv6PublicAddrProvider: Bool?
+    var ipv6PublicAddrAuto: Bool?
+    var ipv6PublicAddrPrefix: String?
     var dhcp: Bool?
     var networkIdentity: NetworkIdentity?
     var listeners: [String]?
@@ -175,6 +202,10 @@ nonisolated struct NetworkConfig: Codable {
     var socks5Proxy: String?
     
     var portForward: [PortForwardConfig]?
+
+    var secureMode: SecureModeConfig?
+
+    var acl: ACLConfig?
     
     var flags: Flags?
     
@@ -182,8 +213,9 @@ nonisolated struct NetworkConfig: Codable {
     var udpWhitelist: [String]?
     var stunServers: [String]?
     var stunServersV6: [String]?
-    
-    var ipv6PublicAddrAuto: Bool?
+
+    var credentialFile: String?
+    var source: ConfigSourceConfig?
 
     enum CodingKeys: String, CodingKey {
         case netns
@@ -192,6 +224,9 @@ nonisolated struct NetworkConfig: Codable {
         case instanceId = "instance_id"
         case ipv4
         case ipv6
+        case ipv6PublicAddrProvider = "ipv6_public_addr_provider"
+        case ipv6PublicAddrAuto = "ipv6_public_addr_auto"
+        case ipv6PublicAddrPrefix = "ipv6_public_addr_prefix"
         case dhcp
         case networkIdentity = "network_identity"
         case listeners
@@ -204,12 +239,15 @@ nonisolated struct NetworkConfig: Codable {
         case overrideDNS = "override_dns"
         case socks5Proxy = "socks5_proxy"
         case portForward = "port_forward"
+        case secureMode = "secure_mode"
+        case acl
         case flags
         case tcpWhitelist = "tcp_whitelist"
         case udpWhitelist = "udp_whitelist"
         case stunServers = "stun_servers"
         case stunServersV6 = "stun_servers_v6"
-        case ipv6PublicAddrAuto = "ipv6_public_addr_auto"
+        case credentialFile = "credential_file"
+        case source
     }
     
     init(id: UUID, name: String) {
@@ -241,9 +279,21 @@ nonisolated struct NetworkConfig: Codable {
         
         if !profile.dhcp {
             self.ipv4 = profile.virtualIPv4.cidrString
+        } else {
+            self.ipv4 = nil
         }
         
-        self.peer = emptyAsNil(profile.peerURLs.compactMap { $0.text.isEmpty ? nil : PeerConfig(uri: $0.text) })
+        var existingPeers = self.peer ?? []
+        self.peer = emptyAsNil(profile.peerURLs.compactMap { item in
+            guard !item.text.isEmpty else { return nil }
+            let peerPublicKey: String?
+            if let index = existingPeers.firstIndex(where: { $0.uri == item.text }) {
+                peerPublicKey = existingPeers.remove(at: index).peerPublicKey
+            } else {
+                peerPublicKey = nil
+            }
+            return PeerConfig(uri: item.text, peerPublicKey: peerPublicKey)
+        })
         
         self.listeners = emptyAsNil(profile.listenerURLs.compactMap { $0.text.isEmpty ? nil : $0.text })
 
@@ -253,6 +303,7 @@ nonisolated struct NetworkConfig: Codable {
             return ProxyNetworkConfig(
                 cidr: cidrString,
                 mappedCIDR: cidr.enableMapping ? cidr.mappedCIDRString : nil,
+                allow: cidr.allow,
             )
         })
 
@@ -263,31 +314,52 @@ nonisolated struct NetworkConfig: Codable {
                 proto: $0.proto,
             )
         })
+
+        if profile.enableSecureMode || self.secureMode != nil ||
+            !profile.secureModeLocalPrivateKey.isEmpty || !profile.secureModeLocalPublicKey.isEmpty {
+            self.secureMode = SecureModeConfig(
+                enabled: profile.enableSecureMode,
+                localPrivateKey: profile.secureModeLocalPrivateKey.isEmpty ? nil : profile.secureModeLocalPrivateKey,
+                localPublicKey: profile.secureModeLocalPublicKey.isEmpty ? nil : profile.secureModeLocalPublicKey
+            )
+        } else {
+            self.secureMode = nil
+        }
+
+        self.acl = profile.acl
         
         if profile.enableVPNPortal {
             self.vpnPortalConfig = VPNPortalConfig(
                 clientCIDR: profile.vpnPortalClientCIDR.cidrString,
                 wireguardListen: "0.0.0.0:\(profile.vpnPortalListenPort)",
             )
+        } else {
+            self.vpnPortalConfig = nil
         }
         
         if profile.enableManualRoutes {
-            self.routes = emptyAsNil(profile.routes.map { $0.cidrString })
+            self.routes = profile.routes.map { $0.cidrString }
+        } else {
+            self.routes = nil
         }
         
         if profile.enableOverrideDNS {
             self.overrideDNS = emptyAsNil(profile.overrideDNS.compactMap { $0.text.isEmpty ? nil : $0.text })
+        } else {
+            self.overrideDNS = nil
         }
         
         self.exitNodes = emptyAsNil(profile.exitNodes.compactMap { $0.text.isEmpty ? nil : $0.text })
         
         if profile.enableSocks5 {
             self.socks5Proxy = "socks5://0.0.0.0:\(profile.socks5Port)"
+        } else {
+            self.socks5Proxy = nil
         }
         
         self.mappedListeners = emptyAsNil(profile.mappedListeners.compactMap { $0.text.isEmpty ? nil : $0.text })
         
-        self.ipv6PublicAddrAuto = profile.ipv6PublicAddrAuto
+        self.ipv6PublicAddrAuto = takeIfChanged(profile.ipv6PublicAddrAuto, def.ipv6PublicAddrAuto)
         
         var tempFlags = self.flags ?? Flags()
         
@@ -318,19 +390,27 @@ nonisolated struct NetworkConfig: Codable {
         
         if profile.disableIPv6 != def.disableIPv6 {
             tempFlags.enableIPv6 = !profile.disableIPv6
+        } else {
+            tempFlags.enableIPv6 = nil
         }
         
         if profile.disableEncryption != def.disableEncryption {
             tempFlags.enableEncryption = !profile.disableEncryption
+        } else {
+            tempFlags.enableEncryption = nil
         }
         
         if profile.enableRelayNetworkWhitelist {
             tempFlags.relayNetworkWhitelist = profile.relayNetworkWhitelist
                 .compactMap { $0.text.isEmpty ? nil : $0.text }.joined(separator: " ")
+        } else {
+            tempFlags.relayNetworkWhitelist = nil
         }
         
         if profile.enableDataCompression {
             tempFlags.dataCompressAlgo = 2
+        } else {
+            tempFlags.dataCompressAlgo = nil
         }
         
         if tempFlags == Flags() {

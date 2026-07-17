@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NEMachServiceName</key>
-	<string>site.yinmo.easytier.tunnel</string>
+	<string>cn.easytier.tunnel</string>
 	<key>NSExtension</key>
 	<dict>
 		<key>NSExtensionPointIdentifier</key>

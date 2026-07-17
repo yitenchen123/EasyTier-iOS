@@ -1,7 +1,10 @@
-use std::{ffi::CString, fs::File, sync::{Arc, Mutex}};
+use std::{ffi::CString, fs::File, io::{self, Seek, SeekFrom, Write}, sync::{Arc, Mutex}};
 
 use easytier::{
-    common::{config::{ConfigFileControl, TomlConfigLoader}, global_ctx::GlobalCtxEvent},
+    common::{
+        config::{process_secure_mode_cfg, ConfigFileControl, ConfigLoader, TomlConfigLoader},
+        global_ctx::GlobalCtxEvent,
+    },
     launcher::NetworkInstance,
 };
 use once_cell::sync::Lazy;
@@ -9,6 +12,48 @@ use tracing_oslog::OsLogger;
 use tracing_subscriber::layer::SubscriberExt as _;
 
 static INSTANCE: Lazy<Arc<Mutex<Option<NetworkInstance>>>> = Lazy::new(|| Arc::new(Mutex::new(None)));
+type SharedLogFile = Arc<Mutex<File>>;
+static LOGGER_FILE: Lazy<Arc<Mutex<Option<SharedLogFile>>>> = Lazy::new(|| Arc::new(Mutex::new(None)));
+
+fn prepare_network_config(cfg_str: &str) -> Result<TomlConfigLoader, String> {
+    let cfg = TomlConfigLoader::new_from_str(cfg_str).map_err(|e| e.to_string())?;
+    if let Some(secure_mode) = cfg.get_secure_mode() {
+        let secure_mode = process_secure_mode_cfg(secure_mode).map_err(|e| e.to_string())?;
+        cfg.set_secure_mode(Some(secure_mode));
+    }
+    Ok(cfg)
+}
+
+#[derive(Clone)]
+struct SharedLogWriter {
+    file: SharedLogFile,
+}
+
+struct SharedLogWriteGuard {
+    file: SharedLogFile,
+}
+
+impl<'a> tracing_subscriber::fmt::MakeWriter<'a> for SharedLogWriter {
+    type Writer = SharedLogWriteGuard;
+
+    fn make_writer(&'a self) -> Self::Writer {
+        SharedLogWriteGuard {
+            file: self.file.clone(),
+        }
+    }
+}
+
+impl Write for SharedLogWriteGuard {
+    fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
+        let mut file = self.file.lock().map_err(|e| io::Error::new(io::ErrorKind::Other, e.to_string()))?;
+        file.write(buf)
+    }
+
+    fn flush(&mut self) -> io::Result<()> {
+        let mut file = self.file.lock().map_err(|e| io::Error::new(io::ErrorKind::Other, e.to_string()))?;
+        file.flush()
+    }
+}
 
 /// # Safety
 /// Initialize logger
@@ -36,12 +81,48 @@ pub extern "C" fn init_logger(
     };
 
     let impl_func = || {
-        let file = File::create(path).map_err(|e| e.to_string())?;
+        if LOGGER_FILE.lock().map_err(|e| e.to_string())?.is_some() {
+            return Ok::<(), String>(());
+        }
+
+        let file = Arc::new(Mutex::new(File::create(path).map_err(|e| e.to_string())?));
         let collector = tracing_subscriber::registry()
             .with(tracing_subscriber::EnvFilter::new(level))
-            .with(tracing_subscriber::fmt::layer().with_writer(file).with_ansi(false))
+            .with(tracing_subscriber::fmt::layer().with_writer(SharedLogWriter { file: file.clone() }).with_ansi(false))
             .with(OsLogger::new(&subsystem, "rust"));
-        tracing::subscriber::set_global_default(collector).map_err(|e| e.to_string())
+        tracing::subscriber::set_global_default(collector).map_err(|e| e.to_string())?;
+        *LOGGER_FILE.lock().map_err(|e| e.to_string())? = Some(file);
+        Ok(())
+    };
+
+    match impl_func() {
+        Ok(_) => 0,
+        Err(e) => {
+            if !err_msg.is_null() {
+                if let Ok(cstr) = CString::new(e) {
+                    unsafe { *err_msg = cstr.into_raw(); }
+                };
+            }
+            -1
+        }
+    }
+}
+
+#[no_mangle]
+/// # Safety
+/// Clear the currently initialized file logger and reset its file offset.
+pub extern "C" fn clear_logger(err_msg: *mut *const std::ffi::c_char) -> std::ffi::c_int {
+    let impl_func = || -> Result<(), String> {
+        let file = LOGGER_FILE
+            .lock()
+            .map_err(|e| e.to_string())?
+            .clone()
+            .ok_or("logger is not initialized".to_string())?;
+        let mut file = file.lock().map_err(|e| e.to_string())?;
+        file.set_len(0).map_err(|e| e.to_string())?;
+        file.seek(SeekFrom::Start(0)).map_err(|e| e.to_string())?;
+        file.flush().map_err(|e| e.to_string())?;
+        Ok(())
     };
 
     match impl_func() {
@@ -115,7 +196,7 @@ pub extern "C" fn run_network_instance(
                 .to_string_lossy()
                 .into_owned()
         };
-        let cfg = TomlConfigLoader::new_from_str(&cfg_str).map_err(|e| e.to_string())?;
+        let cfg = prepare_network_config(&cfg_str)?;
         let mut inst = INSTANCE.lock().map_err(|e| e.to_string())?;
         let mut new_inst = NetworkInstance::new(cfg, ConfigFileControl::STATIC_CONFIG);
         new_inst.start().map_err(|e| e.to_string())?;
@@ -321,6 +402,44 @@ pub extern "C" fn get_latest_error_msg(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn test_prepare_network_config_generates_secure_mode_keys() {
+        let cfg = prepare_network_config(
+            r#"
+                [network_identity]
+                network_name = "secure-test"
+                network_secret = ""
+
+                [secure_mode]
+                enabled = true
+            "#,
+        )
+        .unwrap();
+
+        let secure_mode = cfg.get_secure_mode().unwrap();
+        assert!(secure_mode.local_private_key.is_some());
+        assert!(secure_mode.local_public_key.is_some());
+        assert!(secure_mode.private_key().is_ok());
+        assert!(secure_mode.public_key().is_ok());
+    }
+
+    #[test]
+    fn test_prepare_network_config_rejects_invalid_secure_mode_key() {
+        let result = prepare_network_config(
+            r#"
+                [network_identity]
+                network_name = "secure-test"
+                network_secret = ""
+
+                [secure_mode]
+                enabled = true
+                local_private_key = "invalid"
+            "#,
+        );
+
+        assert!(result.is_err());
+    }
 
     #[test]
     fn test_run_network_instance() {

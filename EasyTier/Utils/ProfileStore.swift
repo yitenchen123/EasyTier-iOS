@@ -30,6 +30,54 @@ private func coordinatedWrite(_ data: Data, to url: URL) throws {
     }
 }
 
+private func coordinatedCreate(_ data: Data, at url: URL) throws {
+    var coordinationError: NSError?
+    var writeError: Error?
+
+    NSFileCoordinator(filePresenter: nil).coordinate(writingItemAt: url, options: [], error: &coordinationError) { coordinatedURL in
+        do {
+            guard !FileManager.default.fileExists(atPath: coordinatedURL.path) else {
+                throw ProfileStoreError.profileAlreadyExists(coordinatedURL)
+            }
+
+            let temporaryURL = coordinatedURL.deletingLastPathComponent().appendingPathComponent(
+                ".\(coordinatedURL.lastPathComponent).\(UUID().uuidString).tmp"
+            )
+            defer {
+                if FileManager.default.fileExists(atPath: temporaryURL.path) {
+                    try? FileManager.default.removeItem(at: temporaryURL)
+                }
+            }
+
+            // Data.WritingOptions.atomic cannot be combined with
+            // withoutOverwriting. Write a complete file beside the target,
+            // then atomically move it into place. FileManager.moveItem fails
+            // rather than replacing an existing destination.
+            try data.write(to: temporaryURL, options: .atomic)
+            guard !FileManager.default.fileExists(atPath: coordinatedURL.path) else {
+                throw ProfileStoreError.profileAlreadyExists(coordinatedURL)
+            }
+            do {
+                try FileManager.default.moveItem(at: temporaryURL, to: coordinatedURL)
+            } catch {
+                if FileManager.default.fileExists(atPath: coordinatedURL.path) {
+                    throw ProfileStoreError.profileAlreadyExists(coordinatedURL)
+                }
+                throw error
+            }
+        } catch {
+            writeError = error
+        }
+    }
+
+    if let writeError {
+        throw writeError
+    }
+    if let coordinationError {
+        throw coordinationError
+    }
+}
+
 private func coordinatedRead(from url: URL) throws -> Data {
     var coordinationError: NSError?
     var readError: Error?
@@ -73,19 +121,17 @@ private func coordinatedDelete(at url: URL) throws {
 private func coordinatedMove(from sourceURL: URL, to targetURL: URL) throws {
     var coordinationError: NSError?
     var moveError: Error?
-    let destinationExists = FileManager.default.fileExists(atPath: targetURL.path)
-    let destinationOptions: NSFileCoordinator.WritingOptions = destinationExists ? .forReplacing : []
 
     NSFileCoordinator(filePresenter: nil).coordinate(
         writingItemAt: sourceURL,
         options: .forMoving,
         writingItemAt: targetURL,
-        options: destinationOptions,
+        options: [],
         error: &coordinationError
     ) { coordinatedSourceURL, coordinatedTargetURL in
         do {
-            if FileManager.default.fileExists(atPath: coordinatedTargetURL.path) {
-                try FileManager.default.removeItem(at: coordinatedTargetURL)
+            guard !FileManager.default.fileExists(atPath: coordinatedTargetURL.path) else {
+                throw ProfileStoreError.profileAlreadyExists(coordinatedTargetURL)
             }
             try FileManager.default.moveItem(at: coordinatedSourceURL, to: coordinatedTargetURL)
         } catch {
@@ -134,6 +180,10 @@ extension Notification.Name {
 enum ProfileStoreError: LocalizedError {
     case conflict(URL)
     case conflictResolutionFailed
+    case encodingProducedNoString
+    case iCloudUnavailable
+    case migrationDestinationConflict(URL)
+    case profileAlreadyExists(URL)
 
     var errorDescription: String? {
         switch self {
@@ -141,6 +191,14 @@ enum ProfileStoreError: LocalizedError {
             return "iCloud conflict detected: \(url.lastPathComponent)"
         case .conflictResolutionFailed:
             return "Failed to resolve iCloud conflict."
+        case .encodingProducedNoString:
+            return "Failed to encode the profile as TOML."
+        case .iCloudUnavailable:
+            return "iCloud Drive is unavailable. Check that you are signed in to iCloud and iCloud Drive is enabled."
+        case .migrationDestinationConflict(let url):
+            return "A profile named \(url.deletingPathExtension().lastPathComponent) appeared at the destination. Please try again."
+        case .profileAlreadyExists(let url):
+            return "A profile named \(url.deletingPathExtension().lastPathComponent) already exists."
         }
     }
 }
@@ -197,9 +255,13 @@ struct ProfileDocument: FileDocument {
     }
 
     private static func encode(_ profile: NetworkProfile) throws -> Data {
+        var profile = profile
+        try profile.prepareSecureModeKeys()
         let config = profile.toConfig()
-        let encoded = try TOMLEncoder().encode(config).string ?? ""
-        return encoded.data(using: .utf8) ?? Data()
+        guard let encoded = try TOMLEncoder().encode(config).string else {
+            throw ProfileStoreError.encodingProducedNoString
+        }
+        return Data(encoded.utf8)
     }
 }
 
@@ -326,6 +388,7 @@ final class ProfileSession: ObservableObject, Equatable {
                 profileStoreLogger.error("document in conflict: \(self.fileURL.path)")
                 throw ProfileStoreError.conflict(self.fileURL)
             }
+            try self.document.profile.prepareSecureModeKeys()
             try self.document.save(to: self.fileURL)
             self.notifyConflictIfNeeded()
         }
@@ -387,6 +450,25 @@ final class SelectedProfileSession: ObservableObject {
 }
 
 enum ProfileStore {
+    struct ProfileMigrationConflict: Identifiable {
+        let destinationURL: URL
+
+        var id: URL { destinationURL }
+        var fileName: String { destinationURL.deletingPathExtension().lastPathComponent }
+    }
+
+    struct ProfileMigrationPlan {
+        fileprivate let items: [ProfileMigrationItem]
+        let conflicts: [ProfileMigrationConflict]
+    }
+
+    fileprivate struct ProfileMigrationItem {
+        let destinationURL: URL
+        let data: Data
+        let destinationExisted: Bool
+        let destinationMatchedSource: Bool
+    }
+
     static func loadIndexOrEmpty() -> [String] {
         do {
             return try loadIndex()
@@ -410,12 +492,24 @@ enum ProfileStore {
         return profiles.sorted { $0.localizedStandardCompare($1) == .orderedAscending }
     }
 
+    /// A throwing lookup for mutation paths that must distinguish an empty
+    /// profile directory from a directory that could not be read.
+    static func profileExists(named configName: String) throws -> Bool {
+        try loadIndex().contains {
+            $0.caseInsensitiveCompare(configName) == .orderedSame
+        }
+    }
+
     static func save(_ profile: NetworkProfile, named configName: String) throws {
         let fileURL = try fileURL(forConfigName: configName)
+        var profile = profile
+        try profile.prepareSecureModeKeys()
         let config = profile.toConfig()
-        let encoded = try TOMLEncoder().encode(config).string ?? ""
-        let data = encoded.data(using: .utf8) ?? Data()
-        try coordinatedWrite(data, to: fileURL)
+        guard let encoded = try TOMLEncoder().encode(config).string else {
+            throw ProfileStoreError.encodingProducedNoString
+        }
+        let data = Data(encoded.utf8)
+        try coordinatedCreate(data, at: fileURL)
     }
 
     static func renameProfileFile(from configName: String, to newConfigName: String) throws {
@@ -434,16 +528,30 @@ enum ProfileStore {
         }
     }
 
-    private static func profilesDirectoryURL() throws -> URL {
-        if shouldUseICloud(),
-           let ubiquityURL = FileManager.default.url(forUbiquityContainerIdentifier: ICLOUD_CONTAINER_ID) {
-            let documentsURL = ubiquityURL.appendingPathComponent("Documents", isDirectory: true)
-            profileStoreLogger.debug("saving to iCloud: \(documentsURL)")
-            return documentsURL
-        }
+    private static func localProfilesDirectoryURL() throws -> URL {
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             throw CocoaError(.fileNoSuchFile)
         }
+        return documentsURL
+    }
+
+    private static func iCloudProfilesDirectoryURL() throws -> URL {
+        guard let ubiquityURL = FileManager.default.url(
+            forUbiquityContainerIdentifier: ICLOUD_CONTAINER_ID
+        ) else {
+            throw ProfileStoreError.iCloudUnavailable
+        }
+        return ubiquityURL.appendingPathComponent("Documents", isDirectory: true)
+    }
+
+    private static func profilesDirectoryURL() throws -> URL {
+        if shouldUseICloud() {
+            let documentsURL = try iCloudProfilesDirectoryURL()
+            profileStoreLogger.debug("saving to iCloud: \(documentsURL)")
+            return documentsURL
+        }
+
+        let documentsURL = try localProfilesDirectoryURL()
         profileStoreLogger.debug("saving to local: \(documentsURL)")
         return documentsURL
     }
@@ -474,6 +582,103 @@ enum ProfileStore {
 
     private static func shouldUseICloud() -> Bool {
         return UserDefaults.standard.bool(forKey: "profilesUseICloud")
+    }
+
+    static func prepareProfileMigration(useICloud: Bool) throws -> ProfileMigrationPlan {
+        let sourceDirectoryURL: URL
+        let destinationDirectoryURL: URL
+        if useICloud {
+            sourceDirectoryURL = try localProfilesDirectoryURL()
+            destinationDirectoryURL = try iCloudProfilesDirectoryURL()
+        } else {
+            sourceDirectoryURL = try iCloudProfilesDirectoryURL()
+            destinationDirectoryURL = try localProfilesDirectoryURL()
+        }
+
+        try ensureDirectory(for: destinationDirectoryURL)
+
+        guard FileManager.default.fileExists(atPath: sourceDirectoryURL.path) else {
+            return ProfileMigrationPlan(items: [], conflicts: [])
+        }
+
+        let sourceURLs = try coordinatedDirectoryContents(at: sourceDirectoryURL)
+            .filter { $0.pathExtension.lowercased() == "toml" }
+            .sorted { $0.lastPathComponent.localizedStandardCompare($1.lastPathComponent) == .orderedAscending }
+
+        let items = try sourceURLs.map { sourceURL in
+            let data = try coordinatedRead(from: sourceURL)
+            let destinationURL = destinationDirectoryURL.appendingPathComponent(sourceURL.lastPathComponent)
+            let destinationExisted = FileManager.default.fileExists(atPath: destinationURL.path)
+            let destinationMatchedSource: Bool
+            if destinationExisted {
+                destinationMatchedSource = try coordinatedRead(from: destinationURL) == data
+            } else {
+                destinationMatchedSource = false
+            }
+            return ProfileMigrationItem(
+                destinationURL: destinationURL,
+                data: data,
+                destinationExisted: destinationExisted,
+                destinationMatchedSource: destinationMatchedSource
+            )
+        }
+
+        let conflicts = items.compactMap { item in
+            item.destinationExisted && !item.destinationMatchedSource
+                ? ProfileMigrationConflict(destinationURL: item.destinationURL)
+                : nil
+        }
+        return ProfileMigrationPlan(items: items, conflicts: conflicts)
+    }
+
+    static func executeProfileMigration(
+        _ plan: ProfileMigrationPlan,
+        overwriting destinationURLs: Set<URL>
+    ) throws {
+        for item in plan.items {
+            if item.destinationMatchedSource {
+                if FileManager.default.fileExists(atPath: item.destinationURL.path) {
+                    let currentDestinationData = try coordinatedRead(from: item.destinationURL)
+                    guard currentDestinationData == item.data else {
+                        throw ProfileStoreError.migrationDestinationConflict(item.destinationURL)
+                    }
+                    continue
+                }
+
+                do {
+                    try coordinatedCreate(item.data, at: item.destinationURL)
+                } catch ProfileStoreError.profileAlreadyExists(_) {
+                    let currentDestinationData = try coordinatedRead(from: item.destinationURL)
+                    guard currentDestinationData == item.data else {
+                        throw ProfileStoreError.migrationDestinationConflict(item.destinationURL)
+                    }
+                }
+                continue
+            }
+
+            if item.destinationExisted {
+                if destinationURLs.contains(item.destinationURL) {
+                    try coordinatedWrite(item.data, to: item.destinationURL)
+                } else if !FileManager.default.fileExists(atPath: item.destinationURL.path) {
+                    do {
+                        try coordinatedCreate(item.data, at: item.destinationURL)
+                    } catch ProfileStoreError.profileAlreadyExists(_) {
+                        throw ProfileStoreError.migrationDestinationConflict(item.destinationURL)
+                    }
+                }
+            } else {
+                do {
+                    try coordinatedCreate(item.data, at: item.destinationURL)
+                } catch ProfileStoreError.profileAlreadyExists(_) {
+                    let currentDestinationData = try coordinatedRead(from: item.destinationURL)
+                    guard currentDestinationData == item.data else {
+                        // A new conflict appeared after the user made all
+                        // choices. Abort so the next attempt can present it.
+                        throw ProfileStoreError.migrationDestinationConflict(item.destinationURL)
+                    }
+                }
+            }
+        }
     }
 
     static func openSession(named configName: String) async throws -> ProfileSession {
