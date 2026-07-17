@@ -64,18 +64,22 @@ jobs:
 
       - name: Clone Terracotta + EasyTier and rebuild libterracotta.a
         if: steps.needrebuild.outputs.need == 'true' || github.event.inputs.rebuild_lib == 'true'
+        env:
+          # 用 /tmp 避免和仓库里已有的 EasyTier/ Terracotta/ 目录冲突
+          TERRACOTTA_DIR: /tmp/Terracotta
+          EASYTIER_DIR: /tmp/EasyTier
         run: |
-          # ../Terracotta 和 ../EasyTier 会 clone 到仓库根目录（CraftLink 的上级）
-          git clone --depth=1 https://github.com/burningtnt/Terracotta.git ../Terracotta
-          git clone --depth=1 -b main https://github.com/burningtnt/EasyTier.git ../EasyTier
-          echo "TERRACOTTA_SHA=$(cd ../Terracotta && git rev-parse HEAD)" >> $GITHUB_ENV
-          python3 scripts/patch_terracotta_for_ios.py ../Terracotta ../EasyTier
-          cat >> ../Terracotta/Cargo.toml <<'CARGOEOF'
+          rm -rf $TERRACOTTA_DIR $EASYTIER_DIR
+          git clone --depth=1 https://github.com/burningtnt/Terracotta.git $TERRACOTTA_DIR
+          git clone --depth=1 -b main https://github.com/burningtnt/EasyTier.git $EASYTIER_DIR
+          echo "TERRACOTTA_SHA=$(cd $TERRACOTTA_DIR && git rev-parse HEAD)" >> $GITHUB_ENV
+          python3 scripts/patch_terracotta_for_ios.py $TERRACOTTA_DIR $EASYTIER_DIR
+          cat >> $TERRACOTTA_DIR/Cargo.toml <<'CARGOEOF'
 
           [patch."https://github.com/burningtnt/EasyTier.git"]
-          easytier = { path = "../EasyTier/easytier" }
+          easytier = { path = "/tmp/EasyTier/easytier" }
           CARGOEOF
-          cd ../Terracotta
+          cd $TERRACOTTA_DIR
           TERRACOTTA_VERSION=terracotta-${TERRACOTTA_SHA} cargo +nightly build --lib --release --target aarch64-apple-ios
           cp target/aarch64-apple-ios/release/libterracotta.a $GITHUB_WORKSPACE/CraftLink/RustLib/libterracotta.a
           echo "✅ libterracotta.a 重新编译完成"
