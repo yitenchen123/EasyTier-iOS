@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- ============================================================
+         TerracottaHelper entitlements
+         ============================================================
+         This app does NOT use NEPacketTunnelProvider / NetworkExtension.
+         EasyTier runs with no_tun=true + port_forward, so no VPN
+         entitlement is required. This means the app can be sideloaded
+         via TrollStore, AltStore, etc. WITHOUT a paid Apple Developer
+         account.
+
+         If you DO have a developer account and want system-wide TUN
+         (so ALL apps see 10.144.144.1 without port_forward), you would
+         add com.apple.developer.networking.networkextension here and
+         implement a NEPacketTunnelProvider — but that is a much more
+         complex architecture and is NOT required for the current design.
+         ============================================================ -->
+    <key>com.apple.security.app-sandbox</key>
+    <false/>
+</dict>
+</plist>

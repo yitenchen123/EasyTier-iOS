@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- ============================================================
+         App identity
+         ============================================================ -->
+    <key>CFBundleDevelopmentRegion</key>
+    <string>zh_CN</string>
+    <key>CFBundleDisplayName</key>
+    <string>陶瓦联机</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>TerracottaHelper</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+
+    <!-- ============================================================
+         Orientation: allow all so the user can use the app in any
+         orientation while Amethyst-iOS runs MC.
+         ============================================================ -->
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+        <string>UIInterfaceOrientationPortrait</string>
+        <string>UIInterfaceOrientationPortraitUpsideDown</string>
+        <string>UIInterfaceOrientationLandscapeLeft</string>
+        <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+
+    <!-- ============================================================
+         Launch screen
+         ============================================================ -->
+    <key>UILaunchScreen</key>
+    <dict/>
+
+    <!-- ============================================================
+         Background modes — CRITICAL
+         "audio" keeps the app alive in background via a looping
+         silent audio player (SilentAudioPlayer). Without this,
+         iOS would suspend the app when the user switches to
+         Amethyst-iOS, killing EasyTier's network threads.
+         ============================================================ -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>audio</string>
+    </array>
+
+    <!-- ============================================================
+         Local network access — required for:
+           1. MinecraftScanner: UDP multicast 224.0.2.60:4445 to
+              detect MC "Open to LAN" broadcasts from Amethyst-iOS.
+           2. EasyTier P2P: direct peer-to-peer connections on the
+              local network.
+         iOS 14+ shows a permission prompt on first use.
+         ============================================================ -->
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>陶瓦联机需要访问本地网络来发现 Minecraft 局域网世界并与联机节点建立 P2P 连接。</string>
+
+    <key>NSBonjourServices</key>
+    <array>
+        <string>_minecraft._tcp</string>
+    </array>
+
+    <!-- ============================================================
+         App Transport Security
+         EasyTier public nodes use tcp:// / https:// schemes.
+         The Rust HTTP client (reqwest) handles TLS itself, but
+         we relax ATS for any direct Obj-C URL sessions.
+         ============================================================ -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+
+    <!-- ============================================================
+         Minimum iOS version — match Amethyst-iOS (iOS 14+)
+         ============================================================ -->
+    <key>MinimumOSVersion</key>
+    <string>14.0</string>
+</dict>
+</plist>
