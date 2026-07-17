@@ -1,18 +1,15 @@
 name: Build CraftLink IPA (unsigned)
 
-# CraftLink IPA 构建（使用预编译的 libterracotta.a）
+# CraftLink IPA 构建。
 #
-# libterracotta.a 已预编译并提交到 RustLib/ 目录，CI 直接使用，无需编译 Rust。
-# 因此默认 push 只跑 build-ipa job（约 3-5 分钟产出 IPA），不再跑 10 分钟的 Rust 编译。
-#
-# 当 Terracotta/EasyTier 上游更新或 iOS 补丁变更时，需手动触发
-# rebuild-lib.yml workflow 重新编译 libterracotta.a，下载 artifact 后替换
-# RustLib/libterracotta.a 并提交。
+# 注意：GitHub Actions 只识别仓库根目录的 .github/workflows/，
+# CraftLink 项目代码在 CraftLink/ 子目录下，因此本 workflow 使用
+# defaults.run.working-directory: CraftLink 让所有 run 步骤在该子目录执行。
 #
 # 触发方式：
 #   - push 到 main：自动构建 IPA
 #   - 推 v* tag：构建 IPA 并发布到 Release
-#   - workflow_dispatch：手动触发
+#   - workflow_dispatch：手动触发（可勾选 rebuild_lib 强制重编译 Rust）
 
 on:
   push:
@@ -27,6 +24,10 @@ on:
         type: boolean
         default: false
 
+defaults:
+  run:
+    working-directory: CraftLink
+
 jobs:
   build-ipa:
     name: Build CraftLink IPA
@@ -39,8 +40,8 @@ jobs:
           brew install xcodegen
           brew install ldid
 
-      # ===== 可选：重新编译 libterracotta.a（workflow_dispatch 时勾选 rebuild_lib）=====
-      # 临时：当 RustLib/libterracotta.a 不含 terracotta_ios_start_host_with_port 符号时自动重建
+      # ===== 检测 libterracotta.a 是否需要重建 =====
+      # 当 RustLib/libterracotta.a 不含 terracotta_ios_start_host_with_port 符号时自动重建
       - name: Check if libterracotta.a needs rebuild
         id: needrebuild
         run: |
@@ -64,6 +65,7 @@ jobs:
       - name: Clone Terracotta + EasyTier and rebuild libterracotta.a
         if: steps.needrebuild.outputs.need == 'true' || github.event.inputs.rebuild_lib == 'true'
         run: |
+          # ../Terracotta 和 ../EasyTier 会 clone 到仓库根目录（CraftLink 的上级）
           git clone --depth=1 https://github.com/burningtnt/Terracotta.git ../Terracotta
           git clone --depth=1 -b main https://github.com/burningtnt/EasyTier.git ../EasyTier
           echo "TERRACOTTA_SHA=$(cd ../Terracotta && git rev-parse HEAD)" >> $GITHUB_ENV
@@ -75,9 +77,9 @@ jobs:
           CARGOEOF
           cd ../Terracotta
           TERRACOTTA_VERSION=terracotta-${TERRACOTTA_SHA} cargo +nightly build --lib --release --target aarch64-apple-ios
-          cp target/aarch64-apple-ios/release/libterracotta.a $GITHUB_WORKSPACE/RustLib/libterracotta.a
+          cp target/aarch64-apple-ios/release/libterracotta.a $GITHUB_WORKSPACE/CraftLink/RustLib/libterracotta.a
           echo "✅ libterracotta.a 重新编译完成"
-          ls -la $GITHUB_WORKSPACE/RustLib/libterracotta.a
+          ls -la $GITHUB_WORKSPACE/CraftLink/RustLib/libterracotta.a
 
       - name: Verify libterracotta.a
         run: |
@@ -97,7 +99,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: libterracotta-rebuilt
-          path: RustLib/libterracotta.a
+          path: CraftLink/RustLib/libterracotta.a
           retention-days: 14
 
       - name: Generate Xcode project
@@ -111,8 +113,7 @@ jobs:
           # setsockopt(IP_ADD_MEMBERSHIP) 会失败（EPERM），导致永远检测不到
           # MC 端口（host-scanning 卡住）。
           #
-          # 这里强制写回完整的 entitlements（含 multicast），确保 ldid 签名步骤
-          # 能把它嵌入二进制。TrollStore 安装时通过 CoreTrust bypass honor 该权限。
+          # 手动端口模式可绕过多播，但保留此权限以支持自动扫描模式。
           python3 - <<'PYEOF'
           ent_content = '''<?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -175,10 +176,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: CraftLink-unsigned.ipa
-          path: CraftLink.ipa
+          path: CraftLink/CraftLink.ipa
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v1
         with:
-          files: CraftLink.ipa
+          files: CraftLink/CraftLink.ipa
