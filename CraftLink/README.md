@@ -57,32 +57,35 @@ CraftLink 是一个**独立 App**，与 [Amethyst-iOS](https://github.com/AngelA
 
 ### 1. 编译 `libterracotta.a`（一次性）
 
-CraftLink 链接 `RustLib/libterracotta.a`，需要先从 Terracotta 源码编译：
+CraftLink 链接 `RustLib/libterracotta.a`，需要先从 Terracotta 源码编译。
+
+> **注意**：[`burningtnt/Terracotta`](https://github.com/burningtnt/Terracotta) 上游**只支持 Android / 桌面**，没有 iOS target。本仓库的 [`rust/`](rust/) 目录里包含了让 Terracotta 支持 iOS 所需的全部补丁文件，必须先按下面步骤应用到你的 Terracotta fork。
 
 ```bash
 # 1. Clone burningtnt/Terracotta
 git clone https://github.com/burningtnt/Terracotta.git
 cd Terracotta
 
-# 2. 按 Amethyst-Terracotta-iOS/rust/INSTRUCTIONS.md 打补丁
-#    - 启用 iOS target
-#    - 添加 src/lib_ios.rs（来自 Amethyst-Terracotta-iOS 仓库）
-#    - 修改 Cargo.toml 让 easytier/toml/tokio/cidr 在 iOS 上也启用
-#    - 切换到 linkage_impl（无需 VpnService）
+# 2. 按 rust/INSTRUCTIONS.md 打补丁（10 步，精确到行号）
+#    - src/lib.rs: 启用 iOS target (cfg(any(android, ios)))
+#    - 把 rust/src/lib_ios.rs 复制到 Terracotta/src/lib_ios.rs（iOS C ABI 入口）
+#    - src/easytier/mod.rs: iOS 也用 linkage_impl（库链接，不 spawn 子进程）
+#    - Cargo.toml: easytier/toml/tokio/cidr 在 iOS 上也启用；crate-type 加 staticlib
+#    - Android 专用项（jni/JNI_OnLoad/on_vpnservice_change）用 #[cfg(android)] 包起来
 
 # 3. 安装 Rust nightly + iOS target
 rustup toolchain install nightly
 rustup component add rust-src --toolchain nightly
 rustup target add aarch64-apple-ios --toolchain nightly
 
-# 4. 编译
+# 4. 编译（device slice）
 cargo +nightly build --lib --release --target aarch64-apple-ios
 
 # 5. 拷贝到 CraftLink 项目
 cp target/aarch64-apple-ios/release/libterracotta.a /path/to/CraftLink/RustLib/
 ```
 
-完整脚本（含 simulator slices、xcframework 组装）见配套仓库 [`Amethyst-Terracotta-iOS`](https://github.com/yitenchen123/Amethyst-Terracotta-iOS) 的 `scripts/build_ios.sh`，以及 `rust/INSTRUCTIONS.md` 里的补丁步骤。
+完整脚本（含 simulator slices、xcframework 组装、Troubleshooting）见 [`scripts/build_ios.sh`](scripts/build_ios.sh)；补丁步骤见 [`rust/INSTRUCTIONS.md`](rust/INSTRUCTIONS.md)；协议解析见 [`docs/PROTOCOL.md`](docs/PROTOCOL.md)。
 
 ### 2. 用 XcodeGen 生成 Xcode 工程并构建
 
@@ -178,6 +181,13 @@ CraftLink/
 │   ├── CraftLink-Bridging-Header.h # 引入 terracotta.h
 │   └── terracotta/
 │       └── terracotta.h            # libterracotta.a 的 C ABI 头
+├── rust/                           # ← Terracotta iOS 补丁（上游无 iOS 支持）
+│   ├── src/lib_ios.rs              # iOS C ABI 入口（terracotta_ios_*）
+│   └── INSTRUCTIONS.md             # 打补丁步骤（10 步，精确到行号）
+├── scripts/
+│   └── build_ios.sh                # 编译 libterracotta.a / .xcframework
+├── docs/
+│   └── PROTOCOL.md                 # 陶瓦联机协议解析文档
 ├── RustLib/
 │   └── libterracotta.a             # ← 用户构建后放入
 ├── CraftLink.entitlements          # 空（无 NE 权限）
