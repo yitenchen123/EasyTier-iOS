@@ -109,6 +109,21 @@ typedef NS_ENUM(NSInteger, TerracottaDifficulty) {
 - (void)setScanningWithRoom:(nullable NSString *)room
                      player:(nullable NSString *)player;
 
+/// Host (manual port mode): bypass multicast scanning and start hosting
+/// directly with a user-supplied MC LAN port.
+///
+/// iOS 上多播接收受本地网络权限影响可能不可靠。用户在 MC 里点「对局域网开放」
+/// 后会看到端口号，直接传入即可，完全跳过 MinecraftScanner 多播扫描。
+///
+///   room    optional existing room code to reuse; nil to generate.
+///   port    the MC LAN port shown by Minecraft (e.g. 25565).
+///   player  optional player name; nil uses "Terracotta Anonymous Host".
+///
+///   returns YES if hosting was initiated; NO if not in Waiting state.
+- (BOOL)startHostWithRoom:(nullable NSString *)room
+                     port:(uint16_t)port
+                   player:(nullable NSString *)player;
+
 /// Guest: join a room.
 ///   room    required room code (e.g. "U/ABCD-EFGH-IJKL-MNOP").
 ///   player  optional player name; nil uses "Terracotta Anonymous Guest".

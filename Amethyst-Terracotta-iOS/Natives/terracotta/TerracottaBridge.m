@@ -123,6 +123,15 @@
     terracotta_ios_set_scanning(room.UTF8String ?: NULL, player.UTF8String ?: NULL);
 }
 
+- (BOOL)startHostWithRoom:(nullable NSString *)room
+                     port:(uint16_t)port
+                   player:(nullable NSString *)player {
+    if (!self.isStarted) return NO;
+    return terracotta_ios_start_host_with_port(room.UTF8String ?: NULL,
+                                                port,
+                                                player.UTF8String ?: NULL) == 1;
+}
+
 - (BOOL)setGuestingWithRoom:(NSString *)room
                      player:(nullable NSString *)player {
     if (!self.isStarted || room.length == 0) return NO;

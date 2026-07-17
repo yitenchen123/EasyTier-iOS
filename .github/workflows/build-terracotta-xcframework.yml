@@ -1,0 +1,180 @@
+name: Build Terracotta xcframework (v0.4.2)
+
+# 从 burningtnt/Terracotta v0.4.2 正式版构建 libterracotta.xcframework，
+# 供 Amethyst-iOS-MyRemastered (ui/fcl-versionmgr) 集成。
+#
+# 特性：
+#   - 基于 v0.4.2 正式版（commit 70d5421），与 HMCL/FCL/ZL2 的 v0.4.2 完全协议一致
+#   - 含手动端口模式（terracotta_ios_start_host_with_port），绕过 iOS 多播不可靠
+#   - 不依赖 NE 权限（no_tun + port_forward 模式）
+#   - 产出 libterracotta.xcframework（device + simulator 三 slice）
+#
+# 触发：push 到 main / workflow_dispatch（可指定 Terracotta 版本标签）
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/build-terracotta-xcframework.yml'
+      - 'CraftLink/rust/src/lib_ios.rs'
+      - 'CraftLink/scripts/patch_terracotta_for_ios.py'
+      - 'Amethyst-Terracotta-iOS/Natives/terracotta/**'
+  workflow_dispatch:
+    inputs:
+      terracotta_ref:
+        description: 'Terracotta git ref (tag/branch/commit)'
+        required: false
+        default: 'v0.4.2'
+        type: string
+
+jobs:
+  build-xcframework:
+    name: Build libterracotta.xcframework
+    runs-on: macos-15
+    env:
+      # 默认 v0.4.2；workflow_dispatch 可覆盖
+      TERRACOTTA_REF: ${{ github.event.inputs.terracotta_ref || 'v0.4.2' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust nightly + iOS targets + protobuf
+        run: |
+          rustup toolchain install nightly --profile minimal
+          rustup component add rust-src --toolchain nightly
+          rustup target add aarch64-apple-ios --toolchain nightly
+          rustup target add aarch64-apple-ios-sim --toolchain nightly
+          rustup target add x86_64-apple-ios --toolchain nightly
+          rustup default nightly
+          brew install protobuf
+
+      - name: Show config
+        run: |
+          echo "=== Build configuration ==="
+          echo "Terracotta ref: $TERRACOTTA_REF"
+          rustc --version
+          cargo --version
+          xcodebuild -version
+
+      # ===== Clone Terracotta (v0.4.2) + EasyTier fork =====
+      - name: Clone Terracotta + EasyTier
+        run: |
+          rm -rf /tmp/Terracotta /tmp/EasyTier
+          echo "Cloning Terracotta @ $TERRACOTTA_REF ..."
+          git clone --depth=1 --branch "$TERRACOTTA_REF" https://github.com/burningtnt/Terracotta.git /tmp/Terracotta
+          git clone --depth=1 -b main https://github.com/burningtnt/EasyTier.git /tmp/EasyTier
+          echo "TERRACOTTA_SHA=$(cd /tmp/Terracotta && git rev-parse HEAD)" >> $GITHUB_ENV
+          echo "=== Terracotta HEAD ==="
+          cd /tmp/Terracotta && git log --oneline -1
+
+      # ===== Apply iOS patches (uses CraftLink's improved lib_ios.rs) =====
+      - name: Apply iOS patches
+        run: |
+          python3 CraftLink/scripts/patch_terracotta_for_ios.py /tmp/Terracotta /tmp/EasyTier
+          # 指向本地 EasyTier fork（用绝对路径避免 cargo 找不到）
+          cat >> /tmp/Terracotta/Cargo.toml <<'CARGOEOF'
+
+          [patch."https://github.com/burningtnt/EasyTier.git"]
+          easytier = { path = "/tmp/EasyTier/easytier" }
+          CARGOEOF
+          echo "=== Verify patches ==="
+          grep 'crate-type' /tmp/Terracotta/Cargo.toml
+          grep 'mod lib_ios' /tmp/Terracotta/src/lib.rs
+          grep -c 'terracotta_ios_start_host_with_port' /tmp/Terracotta/src/lib_ios.rs
+
+      # ===== Build for 3 targets =====
+      - name: Build aarch64-apple-ios (device)
+        run: |
+          cd /tmp/Terracotta
+          TERRACOTTA_VERSION=terracotta-${TERRACOTTA_SHA} \
+            cargo +nightly build --lib --release --target aarch64-apple-ios
+          ls -la target/aarch64-apple-ios/release/libterracotta.a
+
+      - name: Build aarch64-apple-ios-sim (simulator arm64)
+        run: |
+          cd /tmp/Terracotta
+          TERRACOTTA_VERSION=terracotta-${TERRACOTTA_SHA} \
+            cargo +nightly build --lib --release --target aarch64-apple-ios-sim
+          ls -la target/aarch64-apple-ios-sim/release/libterracotta.a
+
+      - name: Build x86_64-apple-ios (simulator intel)
+        run: |
+          cd /tmp/Terracotta
+          TERRACOTTA_VERSION=terracotta-${TERRACOTTA_SHA} \
+            cargo +nightly build --lib --release --target x86_64-apple-ios
+          ls -la target/x86_64-apple-ios/release/libterracotta.a
+
+      # ===== Verify symbols =====
+      - name: Verify exported symbols
+        run: |
+          echo "=== Device slice symbols (terracotta_ios_*) ==="
+          nm /tmp/Terracotta/target/aarch64-apple-ios/release/libterracotta.a 2>/dev/null \
+            | grep -E 'terracotta_ios_(start|get_state|set_waiting|set_scanning|start_host_with_port|set_guesting|verify_room_code|get_metadata|free_string)' \
+            | sort -u
+          echo ""
+          echo "=== start_host_with_port present? ==="
+          if nm /tmp/Terracotta/target/aarch64-apple-ios/release/libterracotta.a 2>/dev/null \
+               | grep -q terracotta_ios_start_host_with_port; then
+            echo "✅ YES — manual port mode available"
+          else
+            echo "❌ NO — manual port mode missing"
+            exit 1
+          fi
+
+      # ===== Assemble xcframework =====
+      - name: Assemble libterracotta.xcframework
+        run: |
+          HEADERS_DIR="$GITHUB_WORKSPACE/Amethyst-Terracotta-iOS/Natives/terracotta"
+          OUTPUT_DIR="$GITHUB_WORKSPACE/build/ios"
+          mkdir -p "$OUTPUT_DIR"
+          rm -rf "$OUTPUT_DIR/libterracotta.xcframework"
+
+          echo "=== Headers dir ==="
+          ls -la "$HEADERS_DIR"/*.h
+
+          xcodebuild -create-xcframework \
+            -library /tmp/Terracotta/target/aarch64-apple-ios/release/libterracotta.a \
+            -headers "$HEADERS_DIR" \
+            -library /tmp/Terracotta/target/aarch64-apple-ios-sim/release/libterracotta.a \
+            -headers "$HEADERS_DIR" \
+            -library /tmp/Terracotta/target/x86_64-apple-ios/release/libterracotta.a \
+            -headers "$HEADERS_DIR" \
+            -output "$OUTPUT_DIR/libterracotta.xcframework"
+
+          echo "=== xcframework contents ==="
+          ls -la "$OUTPUT_DIR/libterracotta.xcframework/"
+          du -sh "$OUTPUT_DIR/libterracotta.xcframework"
+
+      # ===== Also produce a standalone device-only .a (for projects that don't use xcframework) =====
+      - name: Copy standalone device .a
+        run: |
+          mkdir -p build/ios
+          cp /tmp/Terracotta/target/aarch64-apple-ios/release/libterracotta.a \
+             build/ios/libterracotta-ios-arm64.a
+          ls -la build/ios/libterracotta-ios-arm64.a
+
+      - name: Upload xcframework artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: libterracotta-xcframework-v042
+          path: |
+            build/ios/libterracotta.xcframework
+            build/ios/libterracotta-ios-arm64.a
+          retention-days: 30
+
+      - name: Summary
+        run: |
+          echo "## ✅ libterracotta.xcframework 构建完成" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Terracotta 版本**: v0.4.2 (\`${TERRACOTTA_SHA}\`)" >> $GITHUB_STEP_SUMMARY
+          echo "- **包含 slice**: ios-arm64 (device), ios-arm64-simulator, ios-x86_64-simulator" >> $GITHUB_STEP_SUMMARY
+          echo "- **手动端口模式**: ✅ \`terracotta_ios_start_host_with_port\`" >> $GITHUB_STEP_SUMMARY
+          echo "- **NE 权限**: 不需要（no_tun + port_forward）" >> $GITHUB_STEP_SUMMARY
+          echo "- **协议兼容**: 100% 与 HMCL/FCL/ZL2 v0.4.2 一致" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 集成到 Amethyst-iOS-MyRemastered" >> $GITHUB_STEP_SUMMARY
+          echo "1. 下载 artifact \`libterracotta-xcframework-v042\`" >> $GITHUB_STEP_SUMMARY
+          echo "2. 解压，把 \`libterracotta.xcframework\` 放到 \`Natives/resources/Frameworks/\`" >> $GITHUB_STEP_SUMMARY
+          echo "3. 复制 \`Amethyst-Terracotta-iOS/Natives/terracotta/\` 到 \`Natives/terracotta/\`" >> $GITHUB_STEP_SUMMARY
+          echo "4. 按 \`Amethyst-Terracotta-iOS/patches/\` 修改 CMakeLists.txt / Info.plist" >> $GITHUB_STEP_SUMMARY

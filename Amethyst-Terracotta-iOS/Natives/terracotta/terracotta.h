@@ -65,6 +65,23 @@ void terracotta_ios_set_waiting(void);
 void terracotta_ios_set_scanning(const char *room, const char *player);
 
 /*
+ * Host (manual port mode): bypass multicast scanning and start hosting
+ * directly with a user-supplied MC LAN port.
+ *
+ * iOS 上 TrollStore App 的本地网络/多播权限可能不可靠，导致
+ * terracotta_ios_set_scanning 的 MinecraftScanner 收不到 MC 的 LAN 广播。
+ * 此函数让用户在 MC 里点「对局域网开放」后手动输入端口号，完全跳过
+ * 多播扫描，直接进入 host-starting -> start_host。
+ *
+ *   room    optional room code to reuse; pass NULL to generate one.
+ *   port    the MC LAN port shown by Minecraft (e.g. 25565 or a random port).
+ *   player  optional player name; pass NULL for "Terracotta Anonymous Host".
+ *
+ * Returns 1 if hosting was initiated, 0 if not in Waiting state.
+ */
+int terracotta_ios_start_host_with_port(const char *room, uint16_t port, const char *player);
+
+/*
  * Guest: join an existing room.
  *
  *   room    required room code (e.g. "U/ABCD-EFGH-IJKL-MNOP").
