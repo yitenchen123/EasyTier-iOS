@@ -1,0 +1,4372 @@
+{
+  "sha": "64c5c9c44148d9cc7c7c4430940b8dcbe9331a44",
+  "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/64c5c9c44148d9cc7c7c4430940b8dcbe9331a44",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c5c35460cb256cf313018f5d7014e1680d4cde94",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c5c35460cb256cf313018f5d7014e1680d4cde94"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e94392134682ea8304087436fc5cb0e4597a249",
+      "size": 21,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1e94392134682ea8304087436fc5cb0e4597a249"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bd35555803afeef47780e894752f2a16b0c54617",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/bd35555803afeef47780e894752f2a16b0c54617"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "309d2f903bfc2e43be0a4819cf210ff2dc51ca77",
+      "size": 1837,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/309d2f903bfc2e43be0a4819cf210ff2dc51ca77"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ba13e0cec6cbbfd462e9ebf529dd2093148cd69",
+      "size": 28,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3ba13e0cec6cbbfd462e9ebf529dd2093148cd69"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "948fab86a361c82bbf79b8b0c91b92bfa557d545",
+      "size": 867,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/948fab86a361c82bbf79b8b0c91b92bfa557d545"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/informational.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7e05af0fcafa89c17c3c5356fa14266760df6c2",
+      "size": 792,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b7e05af0fcafa89c17c3c5356fa14266760df6c2"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/question.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b78dfeaf3858abb10c2e9a8c83d8e0cea8f373e1",
+      "size": 548,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b78dfeaf3858abb10c2e9a8c83d8e0cea8f373e1"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "64b5d35ba14c144114104283feca96a1753b1025",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/64b5d35ba14c144114104283feca96a1753b1025"
+    },
+    {
+      "path": ".github/workflows/development.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c2c86b8ba8e7ae5faabd32e81647aa0ee7104a8",
+      "size": 4690,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0c2c86b8ba8e7ae5faabd32e81647aa0ee7104a8"
+    },
+    {
+      "path": ".github/workflows/development.yml.bak",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "120c26c862b1cf0ce8e5a9c0e13584dc10b052bb",
+      "size": 6015,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/120c26c862b1cf0ce8e5a9c0e13584dc10b052bb"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29b44b5dbb3799de2f08c7888b817df24ae2e981",
+      "size": 5550,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/29b44b5dbb3799de2f08c7888b817df24ae2e981"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e9aa142f58da376f8603b6daf76a27eb5011d5c",
+      "size": 258,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4e9aa142f58da376f8603b6daf76a27eb5011d5c"
+    },
+    {
+      "path": ".gitmodules",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8622f62c30b90d9cf5b486ee55a53a33755ff2fc",
+      "size": 569,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/8622f62c30b90d9cf5b486ee55a53a33755ff2fc"
+    },
+    {
+      "path": "Amethyst.xcodeproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1ebde374526ceb2aba7c74d2bd08d1b64ced2a7e",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/1ebde374526ceb2aba7c74d2bd08d1b64ced2a7e"
+    },
+    {
+      "path": "Amethyst.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51c73dfd4208bfaa8db35dc2f827c15c99a3a70b",
+      "size": 7109,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/51c73dfd4208bfaa8db35dc2f827c15c99a3a70b"
+    },
+    {
+      "path": "JavaApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1e7b0a59652534f487da77b2bd5e7dc6e85d0b3b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/1e7b0a59652534f487da77b2bd5e7dc6e85d0b3b"
+    },
+    {
+      "path": "JavaApp/Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95e5cf0c103aa6fdcb3d28ce5c5ae63eea705fc0",
+      "size": 2020,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/95e5cf0c103aa6fdcb3d28ce5c5ae63eea705fc0"
+    },
+    {
+      "path": "JavaApp/libs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c13650adba2e9a2d81f8b325fde69f27c03cce4b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c13650adba2e9a2d81f8b325fde69f27c03cce4b"
+    },
+    {
+      "path": "JavaApp/libs/caciocavallo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f05f153d204cbcad7109f21cd34fe4b668658bce",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/f05f153d204cbcad7109f21cd34fe4b668658bce"
+    },
+    {
+      "path": "JavaApp/libs/caciocavallo/ResConfHack.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05b93e0c9667b6fe00d81bb22d0034315beca4eb",
+      "size": 11746,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/05b93e0c9667b6fe00d81bb22d0034315beca4eb"
+    },
+    {
+      "path": "JavaApp/libs/caciocavallo/cacio-androidnw-1.10-SNAPSHOT.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa2db2a12125d9c031c4dc0984ae0fc217d6c199",
+      "size": 45072,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/fa2db2a12125d9c031c4dc0984ae0fc217d6c199"
+    },
+    {
+      "path": "JavaApp/libs/caciocavallo/cacio-shared-1.10-SNAPSHOT.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5171bec5461d9bb45e9a7c520e7d843cd9eb8fd7",
+      "size": 102755,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5171bec5461d9bb45e9a7c520e7d843cd9eb8fd7"
+    },
+    {
+      "path": "JavaApp/libs/caciocavallo17",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a749d7a6bc1272e7052002de6917f103869904e7",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/a749d7a6bc1272e7052002de6917f103869904e7"
+    },
+    {
+      "path": "JavaApp/libs/caciocavallo17/cacio-shared-1.18-SNAPSHOT.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c28acf9794e4a94bd533ac0625650e4019c0a5f1",
+      "size": 101584,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c28acf9794e4a94bd533ac0625650e4019c0a5f1"
+    },
+    {
+      "path": "JavaApp/libs/caciocavallo17/cacio-tta-1.18-SNAPSHOT.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2fc76616d402245de415fb747fb9597d8febf79",
+      "size": 48586,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c2fc76616d402245de415fb747fb9597d8febf79"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "52b481d83ba6375c602c4ef36093565ee7781d38",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/52b481d83ba6375c602c4ef36093565ee7781d38"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-freetype.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72193a004aaf9865b699e896f005a99e1f1941f8",
+      "size": 450181,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/72193a004aaf9865b699e896f005a99e1f1941f8"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-glfw.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da5c717245793420da474e59df3b6181cc220c12",
+      "size": 131391,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/da5c717245793420da474e59df3b6181cc220c12"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-lwjglx.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b438ed0490c6160ed8258bf924e30c932ff64df0",
+      "size": 229876,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b438ed0490c6160ed8258bf924e30c932ff64df0"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-nanovg.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3fb7caca101e3a4a2c291ba5b28d3f56b87b696f",
+      "size": 130523,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3fb7caca101e3a4a2c291ba5b28d3f56b87b696f"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-openal.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47a573a2df2812866b96d317de85419450cbd4f5",
+      "size": 113875,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/47a573a2df2812866b96d317de85419450cbd4f5"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-opengl.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "484143c508b7679e9c0a0e5c27cc113660a0e849",
+      "size": 932448,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/484143c508b7679e9c0a0e5c27cc113660a0e849"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-shaderc.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b767505934dd5b50f641b1d7fbcb2b8730255cf",
+      "size": 29255,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3b767505934dd5b50f641b1d7fbcb2b8730255cf"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-stb.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4be6430e3a80dae6cfd17ef6889922a2df410d4c",
+      "size": 119684,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4be6430e3a80dae6cfd17ef6889922a2df410d4c"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-tinyfd.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29e358a49e7b35f5dff9de2d669467ec8e5b8c0e",
+      "size": 12831,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/29e358a49e7b35f5dff9de2d669467ec8e5b8c0e"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-vma.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46c76fe582f886263a876eca709df62e64163530",
+      "size": 101732,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/46c76fe582f886263a876eca709df62e64163530"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl-vulkan.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6109fa5f3b2b97477469f2b9d711ec5d95eee5a3",
+      "size": 6006954,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6109fa5f3b2b97477469f2b9d711ec5d95eee5a3"
+    },
+    {
+      "path": "JavaApp/libs/lwjgl/lwjgl.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0e6ab79f945e63eaef1b86e91f1e411dc5289c1",
+      "size": 778049,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a0e6ab79f945e63eaef1b86e91f1e411dc5289c1"
+    },
+    {
+      "path": "JavaApp/libs/others",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "80c7689177d91272eed07c158b08139a636ce79f",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/80c7689177d91272eed07c158b08139a636ce79f"
+    },
+    {
+      "path": "JavaApp/libs/others/arc_dns_injector.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b8ab2fe38ebcfc15e45ec9a92188e48cd19b671",
+      "size": 12324,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5b8ab2fe38ebcfc15e45ec9a92188e48cd19b671"
+    },
+    {
+      "path": "JavaApp/libs/others/gson-2.13.1.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "159b930f92772a90e833578783cd15b9698e6d3b",
+      "size": 286972,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/159b930f92772a90e833578783cd15b9698e6d3b"
+    },
+    {
+      "path": "JavaApp/libs/others/jsr305.jar",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf5f5616789f302704d8219e17ec6dfe53dd7de6",
+      "size": 33017,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/cf5f5616789f302704d8219e17ec6dfe53dd7de6"
+    },
+    {
+      "path": "JavaApp/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "054e028ecb9dd316af6f01e643c1da37b46f5de9",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/054e028ecb9dd316af6f01e643c1da37b46f5de9"
+    },
+    {
+      "path": "JavaApp/src/launcher",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "25e969b8c2af9e167c8a93fa3cb81536cf334a1b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/25e969b8c2af9e167c8a93fa3cb81536cf334a1b"
+    },
+    {
+      "path": "JavaApp/src/launcher/android",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "af93326174089dbde9bd132ccfb08969b1391b8d",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/af93326174089dbde9bd132ccfb08969b1391b8d"
+    },
+    {
+      "path": "JavaApp/src/launcher/android/util",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6e5be5c4c3805293c92413e219c2f9324df83ce5",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/6e5be5c4c3805293c92413e219c2f9324df83ce5"
+    },
+    {
+      "path": "JavaApp/src/launcher/android/util/ArrayMap.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a28c34321558a6ca8c931bc4c32fb59b1ab9a34b",
+      "size": 30765,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a28c34321558a6ca8c931bc4c32fb59b1ab9a34b"
+    },
+    {
+      "path": "JavaApp/src/launcher/android/util/ContainerHelpers.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e5fefb9de8e071624590822e83f2481e381af0f",
+      "size": 1754,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4e5fefb9de8e071624590822e83f2481e381af0f"
+    },
+    {
+      "path": "JavaApp/src/launcher/android/util/EmptyArray.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5735fbc59a235da1abaeeb818922394de21f349",
+      "size": 1301,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a5735fbc59a235da1abaeeb818922394de21f349"
+    },
+    {
+      "path": "JavaApp/src/launcher/android/util/MapCollections.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "acfc1adad0319b2f55f9e4974c69a3deb7b25272",
+      "size": 15462,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/acfc1adad0319b2f55f9e4974c69a3deb7b25272"
+    },
+    {
+      "path": "JavaApp/src/launcher/android/util/Objects.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64693903bcdd39a7466956cb32151c4e04550b95",
+      "size": 3753,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/64693903bcdd39a7466956cb32151c4e04550b95"
+    },
+    {
+      "path": "JavaApp/src/launcher/com",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dac3d204399b5ca1c64d45a70327cbbd5975d345",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/dac3d204399b5ca1c64d45a70327cbbd5975d345"
+    },
+    {
+      "path": "JavaApp/src/launcher/com/mojang",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "451cc5ada500ffc91bd501cbfd3df228255e95f9",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/451cc5ada500ffc91bd501cbfd3df228255e95f9"
+    },
+    {
+      "path": "JavaApp/src/launcher/com/mojang/text2speech",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7174821fb303476fefc577d561b07ebe68be66b5",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/7174821fb303476fefc577d561b07ebe68be66b5"
+    },
+    {
+      "path": "JavaApp/src/launcher/com/mojang/text2speech/Narrator.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d973759b55db283dea78473ee6159d16c72f7ada",
+      "size": 569,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d973759b55db283dea78473ee6159d16c72f7ada"
+    },
+    {
+      "path": "JavaApp/src/launcher/com/mojang/text2speech/NarratorDummy.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77156c9983238a86b7e97566fed8407809cd9cff",
+      "size": 339,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/77156c9983238a86b7e97566fed8407809cd9cff"
+    },
+    {
+      "path": "JavaApp/src/launcher/com/mojang/text2speech/NarratorLinux.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aba335072d0edd763074fa9f5d214d3d6d89dcb3",
+      "size": 85,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/aba335072d0edd763074fa9f5d214d3d6d89dcb3"
+    },
+    {
+      "path": "JavaApp/src/launcher/com/mojang/text2speech/NarratorOSX.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d109a9aa68352413bb1266d3151cca1c6ff796e6",
+      "size": 84,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d109a9aa68352413bb1266d3151cca1c6ff796e6"
+    },
+    {
+      "path": "JavaApp/src/launcher/com/mojang/text2speech/NarratorWindows.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3643cccae8f3f1511e00dc47408d8e0a2e12c9f1",
+      "size": 88,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3643cccae8f3f1511e00dc47408d8e0a2e12c9f1"
+    },
+    {
+      "path": "JavaApp/src/launcher/com/mojang/text2speech/Text2Speech.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "959d7083499a866b30966665ce8be0c96ea93fb0",
+      "size": 119,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/959d7083499a866b30966665ce8be0c96ea93fb0"
+    },
+    {
+      "path": "JavaApp/src/launcher/net",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6d168f3993dded0c7c536098a66ce7da40acec97",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/6d168f3993dded0c7c536098a66ce7da40acec97"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7de7a3ba3c71656878a4c9e964317542e2ab9d50",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/7de7a3ba3c71656878a4c9e964317542e2ab9d50"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "77bb889410f67e80b0920191a4a1ca68911d0015",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/77bb889410f67e80b0920191a4a1ca68911d0015"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/JAssetInfo.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b228d187376a3aa48674d688b8646c202d3c287",
+      "size": 126,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6b228d187376a3aa48674d688b8646c202d3c287"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/JAssets.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d05c4bce792c7f8d71a47756dc18621584c2fbb8",
+      "size": 160,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d05c4bce792c7f8d71a47756dc18621584c2fbb8"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/JMinecraftVersionList.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "231e8bee80af8e151e176e52a32bfc3993a6149c",
+      "size": 2152,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/231e8bee80af8e151e176e52a32bfc3993a6149c"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/JVersion.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b03b0cea9a6fc881f72ead182161f46e7d4865d",
+      "size": 1183,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2b03b0cea9a6fc881f72ead182161f46e7d4865d"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/LWJGLGLFWKeycode.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d9a9be2b29798418008e6d412dea55ae974a3df",
+      "size": 5871,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4d9a9be2b29798418008e6d412dea55ae974a3df"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/PojavClassLoader.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4788b844c6cc5761689ea32c0aad290c31348ceb",
+      "size": 1557,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4788b844c6cc5761689ea32c0aad290c31348ceb"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/PojavLauncher.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37ecb2d21038d0e26c20214fffb45c729341e1d7",
+      "size": 3886,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/37ecb2d21038d0e26c20214fffb45c729341e1d7"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/Tools.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ab2d5ed6fb2dfe12b76e9942d1c5685ea7843d1",
+      "size": 20751,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4ab2d5ed6fb2dfe12b76e9942d1c5685ea7843d1"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/uikit",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "51f2339c944947de7429242c273691614fe0e7ff",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/51f2339c944947de7429242c273691614fe0e7ff"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/uikit/UIKit.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8b06327a3f71bd8066fe70c2a95be09e768f460",
+      "size": 2060,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c8b06327a3f71bd8066fe70c2a95be09e768f460"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/uikit/UIKitCallback.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4cd901e070dba8f79292a7019ebd1139a16a336",
+      "size": 101,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f4cd901e070dba8f79292a7019ebd1139a16a336"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ab98ace0a7d8652cc96a6e05c33e8736e5c5417e",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/ab98ace0a7d8652cc96a6e05c33e8736e5c5417e"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/utils/JSONUtils.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c36a3f5f98bd45693eef45569d74315fb0836694",
+      "size": 798,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c36a3f5f98bd45693eef45569d74315fb0836694"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0ffe1b3b73f78624ea0a2455bc8398fae38dd328",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/0ffe1b3b73f78624ea0a2455bc8398fae38dd328"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/DependentLibrary.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df8a19539da320dbac1fb609c1c2eae90e91c695",
+      "size": 447,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/df8a19539da320dbac1fb609c1c2eae90e91c695"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/ForgeInstallProfile.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f79d37c0e264aa9abf0647fde710aa7409762f7c",
+      "size": 737,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f79d37c0e264aa9abf0647fde710aa7409762f7c"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/MinecraftAccount.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74334994fb0ab7b179693f116f754174a4eaaac6",
+      "size": 1819,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/74334994fb0ab7b179693f116f754174a4eaaac6"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/MinecraftClientInfo.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d5ead3207c10ab2212ababf66655cf04967d301",
+      "size": 132,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9d5ead3207c10ab2212ababf66655cf04967d301"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/MinecraftLibraryArtifact.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c55d43b0022f666730f1d749a1482b8cefb9d13c",
+      "size": 127,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c55d43b0022f666730f1d749a1482b8cefb9d13c"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/launcherprofiles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c694508d4f010f4e766a6193bebb40a7bebc1728",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c694508d4f010f4e766a6193bebb40a7bebc1728"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/launcherprofiles/LauncherProfiles.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4293b6c65b787f1c10cf1ac49a14ba2c69b7a90",
+      "size": 1347,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b4293b6c65b787f1c10cf1ac49a14ba2c69b7a90"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftAuthenticationDatabase.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "401572d1d3ff1123b8ccc405a685a9955e0cbac5",
+      "size": 250,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/401572d1d3ff1123b8ccc405a685a9955e0cbac5"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherProfiles.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5f9b3d6d5a8aa74f790dd200ef60770400d8cda",
+      "size": 569,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a5f9b3d6d5a8aa74f790dd200ef60770400d8cda"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftLauncherSettings.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91604dce9be7f0ec664602c38cb61cd013c34825",
+      "size": 404,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/91604dce9be7f0ec664602c38cb61cd013c34825"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftProfile.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2fe3cf4c9960b9b71d332cfca92687c3723a237",
+      "size": 402,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d2fe3cf4c9960b9b71d332cfca92687c3723a237"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftResolution.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a9d9521052a3f56cc2c87fe9c3c901eb61c705e",
+      "size": 129,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3a9d9521052a3f56cc2c87fe9c3c901eb61c705e"
+    },
+    {
+      "path": "JavaApp/src/launcher/net/kdt/pojavlaunch/value/launcherprofiles/MinecraftSelectedUser.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bf96e8b63408ea9979e965710bc9bec9c637a64",
+      "size": 140,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0bf96e8b63408ea9979e965710bc9bec9c637a64"
+    },
+    {
+      "path": "JavaApp/src/lwjgl",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d9fb9c5ac5f708c9d9419d693173b2f6e1bcedc",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/9d9fb9c5ac5f708c9d9419d693173b2f6e1bcedc"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "71277ede35aa0e06b072867bb90f6122d5f37dd2",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/71277ede35aa0e06b072867bb90f6122d5f37dd2"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7d3f2e17e5858f2483845d5dbd3e9aedd4893712",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/7d3f2e17e5858f2483845d5dbd3e9aedd4893712"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/glfw",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b56df0a7a0af3bb9fbe722a3cca69af6b5a316d0",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b56df0a7a0af3bb9fbe722a3cca69af6b5a316d0"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/glfw/CallbackBridge.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89b6e826f4e3226c37c955b9b425743ff278e679",
+      "size": 1541,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/89b6e826f4e3226c37c955b9b425743ff278e679"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/glfw/Callbacks.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f014546a3fc737fca6a393e967ff4613b8795956",
+      "size": 1914,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f014546a3fc737fca6a393e967ff4613b8795956"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/glfw/GLFW.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "859247e7e6c081918e7410b6babb54411027a15c",
+      "size": 56108,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/859247e7e6c081918e7410b6babb54411027a15c"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/glfw/GLFWNativeCocoa.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad9c0cd91a43a849cf1b4eb892560ef7afdc4789",
+      "size": 2746,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/ad9c0cd91a43a849cf1b4eb892560ef7afdc4789"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/glfw/GLFWNativeEGL.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1fe94f0fc79c9d91de51d0b2119177ba6d40811",
+      "size": 135,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f1fe94f0fc79c9d91de51d0b2119177ba6d40811"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/glfw/GLFWVulkan.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aef9a85276555be81d75e20d38462cbf3bf13119",
+      "size": 18993,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/aef9a85276555be81d75e20d38462cbf3bf13119"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/glfw/GLFWWindowProperties.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7aff4cd26632f54ac644238947ab6736a55ab37f",
+      "size": 616,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7aff4cd26632f54ac644238947ab6736a55ab37f"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/input",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2f0e79f40ffc9dc0c7762dc369c73f65a0e9a601",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/2f0e79f40ffc9dc0c7762dc369c73f65a0e9a601"
+    },
+    {
+      "path": "JavaApp/src/lwjgl/org/lwjgl/input/InfdevMouse.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "51ad9f7c9b053d6c3e4e57c3d6bd500c8e381e51",
+      "size": 582,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/51ad9f7c9b053d6c3e4e57c3d6bd500c8e381e51"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c744641fbf3fa31565f9fe169d1ac760ff246138",
+      "size": 90,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c744641fbf3fa31565f9fe169d1ac760ff246138"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b31d3ec92bdda1b2519f8daf19bfdf1b30540251",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b31d3ec92bdda1b2519f8daf19bfdf1b30540251"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent/com",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41ec5c2f92950fd087c9ba7c4c5386464d2aa3e7",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/41ec5c2f92950fd087c9ba7c4c5386464d2aa3e7"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent/com/sun",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0e6202c0fbed11e606ddd03e642d47353fd0d4d4",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/0e6202c0fbed11e606ddd03e642d47353fd0d4d4"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent/com/sun/jna",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6857c91bdb2c5acedeb137dd8f6fcf568d92e928",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/6857c91bdb2c5acedeb137dd8f6fcf568d92e928"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent/com/sun/jna/Platform.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c027da6bbec24510a79b510d19838414763944ba",
+      "size": 8314,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c027da6bbec24510a79b510d19838414763944ba"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent/net",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3fcd2d6f3c863221d8d95a0a4008e308c28750e2",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/3fcd2d6f3c863221d8d95a0a4008e308c28750e2"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent/net/kdt",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a37d51e4450729d8df35bf246947abe13719a021",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/a37d51e4450729d8df35bf246947abe13719a021"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent/net/kdt/patchjna",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc2a912263100fda7b486fac4c9cb7c5b97cf54d",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/fc2a912263100fda7b486fac4c9cb7c5b97cf54d"
+    },
+    {
+      "path": "JavaApp/src/patchjna_agent/net/kdt/patchjna/PatchJNAAgent.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "380438c3156a3e8a55a378db3c8298ddd870a550",
+      "size": 1454,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/380438c3156a3e8a55a378db3c8298ddd870a550"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c86fee51c046c9e8890c5ce6d64d24b66e7e521e",
+      "size": 35156,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c86fee51c046c9e8890c5ce6d64d24b66e7e521e"
+    },
+    {
+      "path": "Makefile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00a6c562e11b13e284de97b634c8691cecc4f148",
+      "size": 17736,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/00a6c562e11b13e284de97b634c8691cecc4f148"
+    },
+    {
+      "path": "Natives",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "74eef24f44145e6156b7339d7b99550f67630a33",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/74eef24f44145e6156b7339d7b99550f67630a33"
+    },
+    {
+      "path": "Natives/AccountListViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76ed6fb7e4afb10915b27d75b92117bc7d2e7ba9",
+      "size": 253,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/76ed6fb7e4afb10915b27d75b92117bc7d2e7ba9"
+    },
+    {
+      "path": "Natives/AccountListViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1628f46ff5d107a9bd420570c60c8952bfae358e",
+      "size": 13124,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1628f46ff5d107a9bd420570c60c8952bfae358e"
+    },
+    {
+      "path": "Natives/AppDelegate.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e01ce6151fa2b1a14408a6dad11c00198459e7ea",
+      "size": 166,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e01ce6151fa2b1a14408a6dad11c00198459e7ea"
+    },
+    {
+      "path": "Natives/AppDelegate.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40217527669c7a83af5f8cd61592a52dce6142e7",
+      "size": 1320,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/40217527669c7a83af5f8cd61592a52dce6142e7"
+    },
+    {
+      "path": "Natives/Assets.xcassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b4a600962df2b00aa8bdac8b04b5d8dec0654601",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b4a600962df2b00aa8bdac8b04b5d8dec0654601"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Dark.appiconset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "422fa5f5ed97af0471c9e6d345c5edca869f5f17",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/422fa5f5ed97af0471c9e6d345c5edca869f5f17"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark_1024x1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0432d5fe04cc5c714b81960e8edfbada084c403",
+      "size": 979518,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a0432d5fe04cc5c714b81960e8edfbada084c403"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Dark.appiconset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a5d9b2934d36b41976666114645c189beeedf20",
+      "size": 226,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5a5d9b2934d36b41976666114645c189beeedf20"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Development.appiconset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a5730e93db707de4415a6396bf23223eaadd89c2",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/a5730e93db707de4415a6396bf23223eaadd89c2"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Development.appiconset/AppIcon-Development_1024x1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9075d45eb2cf7dd9b4c923fe86dce07d99bb0121",
+      "size": 2446826,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9075d45eb2cf7dd9b4c923fe86dce07d99bb0121"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Development.appiconset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8bf1da71f661277c59287cfd39ce74cc1bb85fa",
+      "size": 233,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c8bf1da71f661277c59287cfd39ce74cc1bb85fa"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Light.appiconset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "409c41adc6dfe7df1077a952cdf99c59cbb6386d",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/409c41adc6dfe7df1077a952cdf99c59cbb6386d"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Light.appiconset/1024x1024-Monochrome-White.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7e5b17ae2d063600bd887402fae52cc72cf6bc4",
+      "size": 76335,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d7e5b17ae2d063600bd887402fae52cc72cf6bc4"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Light.appiconset/1024x1024-Transparent.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54d3a349d8c1ff3ab21c2e57794bf284c705db14",
+      "size": 1291192,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/54d3a349d8c1ff3ab21c2e57794bf284c705db14"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Light.appiconset/1024x1024.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3909f1e0fbea6ce1318f4eae75e421e185a9e9d0",
+      "size": 4203544,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3909f1e0fbea6ce1318f4eae75e421e185a9e9d0"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppIcon-Light.appiconset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4819ac371c028eefd057dbdb474f45bdd2935de9",
+      "size": 744,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4819ac371c028eefd057dbdb474f45bdd2935de9"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppLogo-Vector.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ee8127dc4b74bdfb72bb0be7c5ee0d156181bfae",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/ee8127dc4b74bdfb72bb0be7c5ee0d156181bfae"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppLogo-Vector.imageset/1024x1024-Transparent.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54d3a349d8c1ff3ab21c2e57794bf284c705db14",
+      "size": 1291192,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/54d3a349d8c1ff3ab21c2e57794bf284c705db14"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppLogo-Vector.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a3c5996a100a6f95e134f0b9fb2b1c13ead2854",
+      "size": 171,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5a3c5996a100a6f95e134f0b9fb2b1c13ead2854"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppLogo.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ec809e231c4c36e5daa369b24735441e1689f1f9",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/ec809e231c4c36e5daa369b24735441e1689f1f9"
+    },
+    {
+      "path": "Natives/Assets.xcassets/AppLogo.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e53c48e6e223928bcab8d595546ea8160b02c93",
+      "size": 444,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4e53c48e6e223928bcab8d595546ea8160b02c93"
+    },
+    {
+      "path": "Natives/Assets.xcassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2aa0709eb6dd528f2affff4a5cdf66d579101233",
+      "size": 123,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2aa0709eb6dd528f2affff4a5cdf66d579101233"
+    },
+    {
+      "path": "Natives/Assets.xcassets/DefaultAccount.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "10edee2564a5da58ab405ac413c72bfc4d0762bf",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/10edee2564a5da58ab405ac413c72bfc4d0762bf"
+    },
+    {
+      "path": "Natives/Assets.xcassets/DefaultAccount.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9953adc45f189058f7340de2d1cd0e65b5914aa8",
+      "size": 169,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9953adc45f189058f7340de2d1cd0e65b5914aa8"
+    },
+    {
+      "path": "Natives/Assets.xcassets/DefaultAccount.imageset/default_account_pfp.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d43337de430cb55963618dccc0174a59488e44c1",
+      "size": 379,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d43337de430cb55963618dccc0174a59488e44c1"
+    },
+    {
+      "path": "Natives/Assets.xcassets/DefaultProfile.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4631f868f968d8decbe5bd75d73b6cc6dba92b16",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/4631f868f968d8decbe5bd75d73b6cc6dba92b16"
+    },
+    {
+      "path": "Natives/Assets.xcassets/DefaultProfile.imageset/256x256-Transparent.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1506ac9b18b4869fc8e97e82e6cf69bec179e353",
+      "size": 102408,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1506ac9b18b4869fc8e97e82e6cf69bec179e353"
+    },
+    {
+      "path": "Natives/Assets.xcassets/DefaultProfile.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fdda98c8e6c4e33fbb3d27617a45edd11829848e",
+      "size": 169,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/fdda98c8e6c4e33fbb3d27617a45edd11829848e"
+    },
+    {
+      "path": "Natives/Assets.xcassets/IconAdd.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4999244a2307dadcaf7b22cc5f0d8e8215a8fe74",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/4999244a2307dadcaf7b22cc5f0d8e8215a8fe74"
+    },
+    {
+      "path": "Natives/Assets.xcassets/IconAdd.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ffad00db43abd3eb51e1bc21a5cbac782899a11",
+      "size": 154,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1ffad00db43abd3eb51e1bc21a5cbac782899a11"
+    },
+    {
+      "path": "Natives/Assets.xcassets/IconAdd.imageset/icon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "703c428710e54b7a123e9531edb7c22f856d89e7",
+      "size": 181,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/703c428710e54b7a123e9531edb7c22f856d89e7"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuCustomControls.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2dee56c78ef1abf7d521f4d90352de25151c4aea",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/2dee56c78ef1abf7d521f4d90352de25151c4aea"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuCustomControls.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ffad00db43abd3eb51e1bc21a5cbac782899a11",
+      "size": 154,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1ffad00db43abd3eb51e1bc21a5cbac782899a11"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuCustomControls.imageset/icon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14ec878534b5c57cdce82245b0e0cd4472ac16aa",
+      "size": 2106,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/14ec878534b5c57cdce82245b0e0cd4472ac16aa"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuInstallJar.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "540d22d10cb6c277fe1da80c85a2c69bf6bf10a7",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/540d22d10cb6c277fe1da80c85a2c69bf6bf10a7"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuInstallJar.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ffad00db43abd3eb51e1bc21a5cbac782899a11",
+      "size": 154,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1ffad00db43abd3eb51e1bc21a5cbac782899a11"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuInstallJar.imageset/icon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c8fba25ff56e3107628f63d30c4cd580c5d2359b",
+      "size": 2593,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c8fba25ff56e3107628f63d30c4cd580c5d2359b"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuNews.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c67bda52e4df8a923dfd86022966c5e629dff7cf",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c67bda52e4df8a923dfd86022966c5e629dff7cf"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuNews.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "374df5014d4113e0be1064ced00ce25e9e1cf5ba",
+      "size": 162,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/374df5014d4113e0be1064ced00ce25e9e1cf5ba"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuNews.imageset/ic_menu_news.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6ceb02f5ab1927a89c63c3db7d06e088690c2c7",
+      "size": 1070,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e6ceb02f5ab1927a89c63c3db7d06e088690c2c7"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuProfiles.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c64039414efcf057a24c92b168b3c7a1fa2dd0a3",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c64039414efcf057a24c92b168b3c7a1fa2dd0a3"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuProfiles.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ffad00db43abd3eb51e1bc21a5cbac782899a11",
+      "size": 154,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1ffad00db43abd3eb51e1bc21a5cbac782899a11"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuProfiles.imageset/icon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40b3727076071444b916de02eccbac7f844bcb78",
+      "size": 479,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/40b3727076071444b916de02eccbac7f844bcb78"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuSettings.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e98144623bccb95b01cfca04c4df95ed531bc19",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/2e98144623bccb95b01cfca04c4df95ed531bc19"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuSettings.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1240156fd06c12c40797d8000ef526efa052ef3",
+      "size": 166,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d1240156fd06c12c40797d8000ef526efa052ef3"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MenuSettings.imageset/ic_menu_settings.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a74ea6ad8ae6901811f0aa21a4624c0931af8c04",
+      "size": 1105,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a74ea6ad8ae6901811f0aa21a4624c0931af8c04"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MousePointer.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6854af14e5e7835f686f38c4d33fa23950456b40",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/6854af14e5e7835f686f38c4d33fa23950456b40"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MousePointer.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c985073188c89147ba99a5b76b91f67364273d5",
+      "size": 163,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1c985073188c89147ba99a5b76b91f67364273d5"
+    },
+    {
+      "path": "Natives/Assets.xcassets/MousePointer.imageset/mouse_pointer.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e57a97c71d97c9d9be2ed78937e65440319f598",
+      "size": 7097,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9e57a97c71d97c9d9be2ed78937e65440319f598"
+    },
+    {
+      "path": "Natives/Assets.xcassets/SpinnerArrow.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "537132ef772fe0b4d4eb59d7fc2e8bad148974f0",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/537132ef772fe0b4d4eb59d7fc2e8bad148974f0"
+    },
+    {
+      "path": "Natives/Assets.xcassets/SpinnerArrow.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ffad00db43abd3eb51e1bc21a5cbac782899a11",
+      "size": 154,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1ffad00db43abd3eb51e1bc21a5cbac782899a11"
+    },
+    {
+      "path": "Natives/Assets.xcassets/SpinnerArrow.imageset/icon.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fefacaf31b010a5a4a6a433fb35ad092b080895",
+      "size": 205,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6fefacaf31b010a5a4a6a433fb35ad092b080895"
+    },
+    {
+      "path": "Natives/CMakeLists.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "08004e65b9963e81da0fb7728eebe57a791ca8fb",
+      "size": 6518,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/08004e65b9963e81da0fb7728eebe57a791ca8fb"
+    },
+    {
+      "path": "Natives/CustomControlsViewController+UndoManager.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5a5066f91be72d223380e4d9281804f7bcc313c",
+      "size": 5376,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f5a5066f91be72d223380e4d9281804f7bcc313c"
+    },
+    {
+      "path": "Natives/CustomControlsViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "890943a1d84929cad785b6e7a78e39338c3476b9",
+      "size": 1114,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/890943a1d84929cad785b6e7a78e39338c3476b9"
+    },
+    {
+      "path": "Natives/CustomControlsViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37e09ee3c5f636dadd9e4cd0e0d28b7a1e2930c9",
+      "size": 49509,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/37e09ee3c5f636dadd9e4cd0e0d28b7a1e2930c9"
+    },
+    {
+      "path": "Natives/DownloadProgressViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3fbd9a792c3c34051d74cb29553460f3ae818a1",
+      "size": 255,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b3fbd9a792c3c34051d74cb29553460f3ae818a1"
+    },
+    {
+      "path": "Natives/DownloadProgressViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b96fd5c6a656c6ff789b8774c0175e953edb2b5e",
+      "size": 4768,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b96fd5c6a656c6ff789b8774c0175e953edb2b5e"
+    },
+    {
+      "path": "Natives/FileListViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61a2c8d86a31c264af44ecaa930092d3e8fe1612",
+      "size": 253,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/61a2c8d86a31c264af44ecaa930092d3e8fe1612"
+    },
+    {
+      "path": "Natives/FileListViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26f2c3a749a8013eca7550abc5bcdc63a968f682",
+      "size": 2426,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/26f2c3a749a8013eca7550abc5bcdc63a968f682"
+    },
+    {
+      "path": "Natives/GameSurfaceView.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0225dad1b0aaf55e49a3bc7478c2c22fd74dd8d2",
+      "size": 96,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0225dad1b0aaf55e49a3bc7478c2c22fd74dd8d2"
+    },
+    {
+      "path": "Natives/GameSurfaceView.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1815e36dd81336f634629a52307835880f8d2b67",
+      "size": 541,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1815e36dd81336f634629a52307835880f8d2b67"
+    },
+    {
+      "path": "Natives/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "abd83a593c138f6925eefb085f9d06cda5d57364",
+      "size": 5418,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/abd83a593c138f6925eefb085f9d06cda5d57364"
+    },
+    {
+      "path": "Natives/JavaGUIViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69cae8daf9029b80166834f1162421ec337bd485",
+      "size": 292,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/69cae8daf9029b80166834f1162421ec337bd485"
+    },
+    {
+      "path": "Natives/JavaGUIViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c16bbfc07c57b20d81a6f3fa29d8e2c0ca8a0a99",
+      "size": 21883,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c16bbfc07c57b20d81a6f3fa29d8e2c0ca8a0a99"
+    },
+    {
+      "path": "Natives/JavaLauncher.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25cd584fe2d0b4d395955a943124028cc04d092f",
+      "size": 976,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/25cd584fe2d0b4d395955a943124028cc04d092f"
+    },
+    {
+      "path": "Natives/JavaLauncher.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a24f819d62f7f34ac2009840591f080990be12cb",
+      "size": 19190,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a24f819d62f7f34ac2009840591f080990be12cb"
+    },
+    {
+      "path": "Natives/LauncherMenuViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d958a079c1ab6275f225cf414dfa2196ee3f47b4",
+      "size": 823,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d958a079c1ab6275f225cf414dfa2196ee3f47b4"
+    },
+    {
+      "path": "Natives/LauncherMenuViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31f8f379eca3535b1c5b36a37a028b50d010ff9d",
+      "size": 16637,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/31f8f379eca3535b1c5b36a37a028b50d010ff9d"
+    },
+    {
+      "path": "Natives/LauncherNavigationController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "191b7a020a011573b773c59b7b73797e768df2ef",
+      "size": 486,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/191b7a020a011573b773c59b7b73797e768df2ef"
+    },
+    {
+      "path": "Natives/LauncherNavigationController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "647bb6077cc59a500fc81acbc385d4f7d26e9b08",
+      "size": 24641,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/647bb6077cc59a500fc81acbc385d4f7d26e9b08"
+    },
+    {
+      "path": "Natives/LauncherNewsViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7f67be73172b4140d682c5e08a87ed9a7613c7b",
+      "size": 88,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f7f67be73172b4140d682c5e08a87ed9a7613c7b"
+    },
+    {
+      "path": "Natives/LauncherNewsViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc6ed272bec97d5ed20b15e6056b56eb0a639cfd",
+      "size": 5434,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/cc6ed272bec97d5ed20b15e6056b56eb0a639cfd"
+    },
+    {
+      "path": "Natives/LauncherPrefContCfgViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "427a122ce198c8809f052880fee92edab293f46e",
+      "size": 101,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/427a122ce198c8809f052880fee92edab293f46e"
+    },
+    {
+      "path": "Natives/LauncherPrefContCfgViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb8a5e007ccd405f38f26981c36f1a32ec3c490c",
+      "size": 14607,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/fb8a5e007ccd405f38f26981c36f1a32ec3c490c"
+    },
+    {
+      "path": "Natives/LauncherPrefGameDirViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ef15fc102e51c934f3b67b8d3882004a7f865c4",
+      "size": 101,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9ef15fc102e51c934f3b67b8d3882004a7f865c4"
+    },
+    {
+      "path": "Natives/LauncherPrefGameDirViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4305deab9e7f533037248800bb407360b5047d0",
+      "size": 12978,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c4305deab9e7f533037248800bb407360b5047d0"
+    },
+    {
+      "path": "Natives/LauncherPrefManageJREViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "709196297c3206f7e2e7b11d51c2095152904ded",
+      "size": 103,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/709196297c3206f7e2e7b11d51c2095152904ded"
+    },
+    {
+      "path": "Natives/LauncherPrefManageJREViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e9722085977ab4f3ed3ab3ff92d6adb4edb4401",
+      "size": 29087,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2e9722085977ab4f3ed3ab3ff92d6adb4edb4401"
+    },
+    {
+      "path": "Natives/LauncherPreferences.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8459dd79470b85ab79af5e6f7ee780896e686994",
+      "size": 795,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/8459dd79470b85ab79af5e6f7ee780896e686994"
+    },
+    {
+      "path": "Natives/LauncherPreferences.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5bb312e8cf147a18d59fdc88fbda01a97a28746",
+      "size": 5346,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f5bb312e8cf147a18d59fdc88fbda01a97a28746"
+    },
+    {
+      "path": "Natives/LauncherPreferencesViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "417d58970908e0c178c87419813fe3f60261a139",
+      "size": 142,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/417d58970908e0c178c87419813fe3f60261a139"
+    },
+    {
+      "path": "Natives/LauncherPreferencesViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "776f3d9254b73037cca6bfe1fa21c80a0d90c9fa",
+      "size": 17162,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/776f3d9254b73037cca6bfe1fa21c80a0d90c9fa"
+    },
+    {
+      "path": "Natives/LauncherProfileEditorViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "829368b9d21e95e9f6664e2c9149e7739f90aa35",
+      "size": 194,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/829368b9d21e95e9f6664e2c9149e7739f90aa35"
+    },
+    {
+      "path": "Natives/LauncherProfileEditorViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d91e7f0b8b3faa5a20b3ddf09f0228d28113a39",
+      "size": 13268,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7d91e7f0b8b3faa5a20b3ddf09f0228d28113a39"
+    },
+    {
+      "path": "Natives/LauncherProfilesViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "267ee28940afafd33665f93ca57e5b82a53495d9",
+      "size": 98,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/267ee28940afafd33665f93ca57e5b82a53495d9"
+    },
+    {
+      "path": "Natives/LauncherProfilesViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f15b10db167f805dd886ec97acb9b9aa2561392d",
+      "size": 10632,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f15b10db167f805dd886ec97acb9b9aa2561392d"
+    },
+    {
+      "path": "Natives/LauncherSplitViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19515fcfa88de9d4b241dbff9f461b178ce08f31",
+      "size": 94,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/19515fcfa88de9d4b241dbff9f461b178ce08f31"
+    },
+    {
+      "path": "Natives/LauncherSplitViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d53376b49158f4bf9efa82547c7454e6d07fcb0",
+      "size": 2703,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2d53376b49158f4bf9efa82547c7454e6d07fcb0"
+    },
+    {
+      "path": "Natives/MinecraftOptionUtils.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "83bfa1b80017f685536daf9b8bdad8c80f24f844",
+      "size": 525,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/83bfa1b80017f685536daf9b8bdad8c80f24f844"
+    },
+    {
+      "path": "Natives/MinecraftOptionUtils.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21c2e8caf871fa07a415c1aae108f3282fd15b15",
+      "size": 4493,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/21c2e8caf871fa07a415c1aae108f3282fd15b15"
+    },
+    {
+      "path": "Natives/MinecraftResourceDownloadTask.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b73fbeefac6974a8b120b922ae54a7def7cd182",
+      "size": 682,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7b73fbeefac6974a8b120b922ae54a7def7cd182"
+    },
+    {
+      "path": "Natives/MinecraftResourceDownloadTask.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bf6f400ad32291f481c943a89dfb4fee67d25de",
+      "size": 16729,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7bf6f400ad32291f481c943a89dfb4fee67d25de"
+    },
+    {
+      "path": "Natives/MinecraftResourceUtils.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05a83073124765c012611bb34e6f435c8d6c71b0",
+      "size": 500,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/05a83073124765c012611bb34e6f435c8d6c71b0"
+    },
+    {
+      "path": "Natives/MinecraftResourceUtils.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89abd131428281762c254115c1dd8b537c7bd041",
+      "size": 8931,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/89abd131428281762c254115c1dd8b537c7bd041"
+    },
+    {
+      "path": "Natives/PLLogOutputView.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91e9c4db6b418aa0aeb228f8a0a04de8f151e607",
+      "size": 263,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/91e9c4db6b418aa0aeb228f8a0a04de8f151e607"
+    },
+    {
+      "path": "Natives/PLLogOutputView.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09626b3566ac31b43c29eb8954e41c20b8285023",
+      "size": 8898,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/09626b3566ac31b43c29eb8954e41c20b8285023"
+    },
+    {
+      "path": "Natives/PLPickerView.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1179b8b2776b51ba27a1e525e8805d3517553bd0",
+      "size": 748,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1179b8b2776b51ba27a1e525e8805d3517553bd0"
+    },
+    {
+      "path": "Natives/PLPickerView.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db61d4d8331270b3b29fe0a95d20495aa690b1f1",
+      "size": 1001,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/db61d4d8331270b3b29fe0a95d20495aa690b1f1"
+    },
+    {
+      "path": "Natives/PLPrefTableViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2fa7eb2dfbe4f5a34b845755b16f73550a9c16c",
+      "size": 884,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e2fa7eb2dfbe4f5a34b845755b16f73550a9c16c"
+    },
+    {
+      "path": "Natives/PLPrefTableViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6190234ca17ff5c0cd26c5d4090c0a1e5bf32877",
+      "size": 19411,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6190234ca17ff5c0cd26c5d4090c0a1e5bf32877"
+    },
+    {
+      "path": "Natives/PLPreferences.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ef65b29144ba2965acb3fd47efde9821f4e99a5",
+      "size": 461,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4ef65b29144ba2965acb3fd47efde9821f4e99a5"
+    },
+    {
+      "path": "Natives/PLPreferences.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "007f24c74c2cb2ca1293810fbe11cd5062e9c1a0",
+      "size": 9157,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/007f24c74c2cb2ca1293810fbe11cd5062e9c1a0"
+    },
+    {
+      "path": "Natives/PLProfiles.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ece9468e73d3d6cac7de1f2900f4c6a2140b4d7",
+      "size": 727,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3ece9468e73d3d6cac7de1f2900f4c6a2140b4d7"
+    },
+    {
+      "path": "Natives/PLProfiles.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e4e63c7dbc73d108922076a7a5fe7a912ba651a6",
+      "size": 2242,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e4e63c7dbc73d108922076a7a5fe7a912ba651a6"
+    },
+    {
+      "path": "Natives/PickTextField.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f46d83e43506aefb1625246112fa9ad781770cf",
+      "size": 134,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1f46d83e43506aefb1625246112fa9ad781770cf"
+    },
+    {
+      "path": "Natives/PickTextField.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14dfb8d36c71eefc707bd8f848ad594b0f47444c",
+      "size": 4145,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/14dfb8d36c71eefc707bd8f848ad594b0f47444c"
+    },
+    {
+      "path": "Natives/SceneDelegate.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d3a8ba4094bd8db8a1dc5215fb4c7b0038eba63",
+      "size": 144,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9d3a8ba4094bd8db8a1dc5215fb4c7b0038eba63"
+    },
+    {
+      "path": "Natives/SceneDelegate.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "05cb3481b06032f960199cb2c201cdc568b1c524",
+      "size": 2086,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/05cb3481b06032f960199cb2c201cdc568b1c524"
+    },
+    {
+      "path": "Natives/SceneExternalDelegate.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15644d3362ec322987fd41e0e5c5e224d5ea4911",
+      "size": 150,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/15644d3362ec322987fd41e0e5c5e224d5ea4911"
+    },
+    {
+      "path": "Natives/SceneExternalDelegate.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9914ddb8bd572b913c0e839ae42a4290b02a6af",
+      "size": 2405,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f9914ddb8bd572b913c0e839ae42a4290b02a6af"
+    },
+    {
+      "path": "Natives/SurfaceViewController+ExternalDisplay.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d71c9cac0cf29b03339f41dc01c6fc6a72d03a5d",
+      "size": 1440,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d71c9cac0cf29b03339f41dc01c6fc6a72d03a5d"
+    },
+    {
+      "path": "Natives/SurfaceViewController+LogView.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7416b00df9a8c1580d0ebb1e31a8daa6c781d8ed",
+      "size": 450,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7416b00df9a8c1580d0ebb1e31a8daa6c781d8ed"
+    },
+    {
+      "path": "Natives/SurfaceViewController+Navigation.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "411173f893ef0d4704d95d16c08652cde3f2c65e",
+      "size": 9496,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/411173f893ef0d4704d95d16c08652cde3f2c65e"
+    },
+    {
+      "path": "Natives/SurfaceViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adfbc5c1ec41598021f651e01f0000c44e7d9f2e",
+      "size": 1507,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/adfbc5c1ec41598021f651e01f0000c44e7d9f2e"
+    },
+    {
+      "path": "Natives/SurfaceViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8dc31301930ddfd9968d5507c223ed61a4c2a02",
+      "size": 43503,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d8dc31301930ddfd9968d5507c223ed61a4c2a02"
+    },
+    {
+      "path": "Natives/TrackedTextField.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20aa35c2432de6793931edd23e029828990f34e5",
+      "size": 316,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/20aa35c2432de6793931edd23e029828990f34e5"
+    },
+    {
+      "path": "Natives/TrackedTextField.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b413cd666faef9c6a210150cad1b38a9c0ac926",
+      "size": 4861,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5b413cd666faef9c6a210150cad1b38a9c0ac926"
+    },
+    {
+      "path": "Natives/UIKit+hook.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "044a830b4c52f3452a7c6cf0fc77b60b7f86caef",
+      "size": 1854,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/044a830b4c52f3452a7c6cf0fc77b60b7f86caef"
+    },
+    {
+      "path": "Natives/UIKit+hook.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dad1bb06d2e4d501f44a2f8636b5dc5bcada3b65",
+      "size": 9077,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/dad1bb06d2e4d501f44a2f8636b5dc5bcada3b65"
+    },
+    {
+      "path": "Natives/authenticator",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8c145d0461cfea0973a55679046560f468564ce4",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/8c145d0461cfea0973a55679046560f468564ce4"
+    },
+    {
+      "path": "Natives/authenticator/BaseAuthenticator.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "130a75f6423f001716502841a5275970b2ef64e1",
+      "size": 649,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/130a75f6423f001716502841a5275970b2ef64e1"
+    },
+    {
+      "path": "Natives/authenticator/BaseAuthenticator.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bae80294ed0c38dff930821cb697783398b862d",
+      "size": 2371,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1bae80294ed0c38dff930821cb697783398b862d"
+    },
+    {
+      "path": "Natives/authenticator/LocalAuthenticator.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15e288f70baedb89a9fb05713af035175c2cfd01",
+      "size": 429,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/15e288f70baedb89a9fb05713af035175c2cfd01"
+    },
+    {
+      "path": "Natives/authenticator/MicrosoftAuthenticator.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47d39d6f180d575e7f7afe9e6b17fc88d2cff652",
+      "size": 13047,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/47d39d6f180d575e7f7afe9e6b17fc88d2cff652"
+    },
+    {
+      "path": "Natives/authenticator/MinecraftAccountJNI.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16c3947beada884063d0011f52d33936f8842b6d",
+      "size": 631,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/16c3947beada884063d0011f52d33936f8842b6d"
+    },
+    {
+      "path": "Natives/awt_xawt",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "94896f9c01cb7a11e243955f623b0a0243dde414",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/94896f9c01cb7a11e243955f623b0a0243dde414"
+    },
+    {
+      "path": "Natives/awt_xawt/empty.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Natives/awt_xawt/xawt_fake.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "794112fceada1d36c8f9fde2c29692bdf6e7d4f7",
+      "size": 4816,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/794112fceada1d36c8f9fde2c29692bdf6e7d4f7"
+    },
+    {
+      "path": "Natives/config.h.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7d87720ccb1077706e9364d3f92f7fd621965acb",
+      "size": 455,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7d87720ccb1077706e9364d3f92f7fd621965acb"
+    },
+    {
+      "path": "Natives/ctxbridges",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c196e18e11186bc8cad4879dee178512a99b6002",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c196e18e11186bc8cad4879dee178512a99b6002"
+    },
+    {
+      "path": "Natives/ctxbridges/bridge_tbl.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2514163ab7d79d576c4cf21f676bc57302d316c",
+      "size": 776,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e2514163ab7d79d576c4cf21f676bc57302d316c"
+    },
+    {
+      "path": "Natives/ctxbridges/gl_bridge.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46c5509b662da1b4f0274d7bfaf798e39eb0ad2c",
+      "size": 1174,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/46c5509b662da1b4f0274d7bfaf798e39eb0ad2c"
+    },
+    {
+      "path": "Natives/ctxbridges/gl_bridge.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "068c12084f708985e8b4c01c68236cd33e189492",
+      "size": 6099,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/068c12084f708985e8b4c01c68236cd33e189492"
+    },
+    {
+      "path": "Natives/ctxbridges/osm_bridge.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80a1a081f21d53e9997544163b8788ac8968118a",
+      "size": 887,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/80a1a081f21d53e9997544163b8788ac8968118a"
+    },
+    {
+      "path": "Natives/ctxbridges/osm_bridge.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "388f15c78860800c49c8a0acdb177b03e2b6656e",
+      "size": 4021,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/388f15c78860800c49c8a0acdb177b03e2b6656e"
+    },
+    {
+      "path": "Natives/ctxbridges/osmesa_internal.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ef8bea8a1454730bd266958152180d78abf8dd4",
+      "size": 12735,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9ef8bea8a1454730bd266958152180d78abf8dd4"
+    },
+    {
+      "path": "Natives/customcontrols",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "903a379d5662669ca0d0aaac78e2c6890804cc79",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/903a379d5662669ca0d0aaac78e2c6890804cc79"
+    },
+    {
+      "path": "Natives/customcontrols/ControlButton.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "027ecb95b3b2b85de7beee8579eab2ab8a3bd06e",
+      "size": 725,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/027ecb95b3b2b85de7beee8579eab2ab8a3bd06e"
+    },
+    {
+      "path": "Natives/customcontrols/ControlButton.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1703898c72109c03f4cee972e1025d36dc0255a8",
+      "size": 15626,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1703898c72109c03f4cee972e1025d36dc0255a8"
+    },
+    {
+      "path": "Natives/customcontrols/ControlDrawer.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00d0929ba5e6659431634ec4f88af903577e9a1e",
+      "size": 498,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/00d0929ba5e6659431634ec4f88af903577e9a1e"
+    },
+    {
+      "path": "Natives/customcontrols/ControlDrawer.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84f29ce690512f2e3384dbd14be5a5e6a5521b2a",
+      "size": 3814,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/84f29ce690512f2e3384dbd14be5a5e6a5521b2a"
+    },
+    {
+      "path": "Natives/customcontrols/ControlJoystick.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74d61a1c8c07d5c70f53a694afcdffddda10d21a",
+      "size": 75,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/74d61a1c8c07d5c70f53a694afcdffddda10d21a"
+    },
+    {
+      "path": "Natives/customcontrols/ControlJoystick.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b26e101e47dab41de3693e3c3a56b44cde798f9b",
+      "size": 9117,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b26e101e47dab41de3693e3c3a56b44cde798f9b"
+    },
+    {
+      "path": "Natives/customcontrols/ControlLayout.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd9500f7761913437202503bae565d01a5dd420d",
+      "size": 392,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/fd9500f7761913437202503bae565d01a5dd420d"
+    },
+    {
+      "path": "Natives/customcontrols/ControlLayout.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89350028062f40e21f293879a1522ad154c78931",
+      "size": 2910,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/89350028062f40e21f293879a1522ad154c78931"
+    },
+    {
+      "path": "Natives/customcontrols/ControlSubButton.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2550bf873afe9952e2f62c70f4fb1cdfc8acc760",
+      "size": 185,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2550bf873afe9952e2f62c70f4fb1cdfc8acc760"
+    },
+    {
+      "path": "Natives/customcontrols/ControlSubButton.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ba19981fc067ddf7e8de641b7ff7bbc164d0c89",
+      "size": 919,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2ba19981fc067ddf7e8de641b7ff7bbc164d0c89"
+    },
+    {
+      "path": "Natives/customcontrols/CustomControlsUtils.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a553e4fb05812408b8742d1306d99a83fcbc7d7b",
+      "size": 768,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a553e4fb05812408b8742d1306d99a83fcbc7d7b"
+    },
+    {
+      "path": "Natives/customcontrols/CustomControlsUtils.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2622f03f02e2cc17f2432b37298bd834705b7a74",
+      "size": 23232,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2622f03f02e2cc17f2432b37298bd834705b7a74"
+    },
+    {
+      "path": "Natives/customcontrols/NSPredicateUtilitiesExternal.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e368cb79c056bac157edb2ec955603fa44b20e0",
+      "size": 81,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6e368cb79c056bac157edb2ec955603fa44b20e0"
+    },
+    {
+      "path": "Natives/customcontrols/NSPredicateUtilitiesExternal.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b7f0b139bc58ccfb7f5b7a8a57ab1a6d117a803",
+      "size": 1629,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7b7f0b139bc58ccfb7f5b7a8a57ab1a6d117a803"
+    },
+    {
+      "path": "Natives/dyld_bypass_validation.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a670a4bef4640131e60fea12388afdf5878337a2",
+      "size": 11777,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a670a4bef4640131e60fea12388afdf5878337a2"
+    },
+    {
+      "path": "Natives/dyld_patch_platform.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77a8fa7abdb971c3f25f53ccb8baac91ce95b046",
+      "size": 2809,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/77a8fa7abdb971c3f25f53ccb8baac91ce95b046"
+    },
+    {
+      "path": "Natives/egl_bridge.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "962c043fcd02e0c4e4e2ad2966c573b624d13a97",
+      "size": 3685,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/962c043fcd02e0c4e4e2ad2966c573b624d13a97"
+    },
+    {
+      "path": "Natives/environ.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c944a2044b72cea3498423a0450fbd1c343de626",
+      "size": 2649,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c944a2044b72cea3498423a0450fbd1c343de626"
+    },
+    {
+      "path": "Natives/external",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0b71882a41c16270b7244c44211309c97f801fd2",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/0b71882a41c16270b7244c44211309c97f801fd2"
+    },
+    {
+      "path": "Natives/external/AFNetworking",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "d9f589cc2c1fe9d55eb5eea00558010afea7a41e"
+    },
+    {
+      "path": "Natives/external/AltKit",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4760f381497e002227d88660f0738a77a7dab8b4",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/4760f381497e002227d88660f0738a77a7dab8b4"
+    },
+    {
+      "path": "Natives/external/AltKit/ALTServerConnection.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8f13d2dd0cd9177bcfb1f77f032d73af5cb5fdc",
+      "size": 432,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a8f13d2dd0cd9177bcfb1f77f032d73af5cb5fdc"
+    },
+    {
+      "path": "Natives/external/Apple",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3bdb213013d081d135fc6484e1de0fc8a8261b73",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/3bdb213013d081d135fc6484e1de0fc8a8261b73"
+    },
+    {
+      "path": "Natives/external/Apple/WFWorkflowProgressView.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf22ab891923bc94e7a0e612b2ad3a9a0a699110",
+      "size": 539,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/cf22ab891923bc94e7a0e612b2ad3a9a0a699110"
+    },
+    {
+      "path": "Natives/external/Apple/codesign.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57df0324091c8673a74f80d4e900fa81361941d3",
+      "size": 2787,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/57df0324091c8673a74f80d4e900fa81361941d3"
+    },
+    {
+      "path": "Natives/external/DBNumberedSlider",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "4eddc68b5f92247f8afc0f6114d1b92b338749f4"
+    },
+    {
+      "path": "Natives/external/MobileGlues",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "f0fb4d32794a130f4021342605a751ef2d0f84d8"
+    },
+    {
+      "path": "Natives/external/NRFileManager",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1bf4b9901cf9ef8b61e454d0443eeeb19393d311",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/1bf4b9901cf9ef8b61e454d0443eeeb19393d311"
+    },
+    {
+      "path": "Natives/external/NRFileManager/NSFileManager+NRFileManager.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7a2dc87dfbe8d362b855d75950ffa0966f73170",
+      "size": 511,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d7a2dc87dfbe8d362b855d75950ffa0966f73170"
+    },
+    {
+      "path": "Natives/external/NRFileManager/NSFileManager+NRFileManager.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2888a6087e88e35522aa58b6644ed86d37a901c",
+      "size": 4049,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a2888a6087e88e35522aa58b6644ed86d37a901c"
+    },
+    {
+      "path": "Natives/external/UnzipKit",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d5c15593afc5b50f4243586e4e1a2f0f81db72ab",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/d5c15593afc5b50f4243586e4e1a2f0f81db72ab"
+    },
+    {
+      "path": "Natives/external/UnzipKit/UZKArchive.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce9953808cef634579bca088e23f682023b04705",
+      "size": 44321,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/ce9953808cef634579bca088e23f682023b04705"
+    },
+    {
+      "path": "Natives/external/UnzipKit/UZKFileInfo.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e14248e2e1bfae13be74d16117d91d10789e2e64",
+      "size": 1645,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e14248e2e1bfae13be74d16117d91d10789e2e64"
+    },
+    {
+      "path": "Natives/external/UnzipKit/UnzipKit.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d390a9d5f585410141e20c37fd6c6ec2149c3fc1",
+      "size": 412,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d390a9d5f585410141e20c37fd6c6ec2149c3fc1"
+    },
+    {
+      "path": "Natives/external/ballpa1n",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "149589c3cd8fee7c1b57ae40007e3fb600c8a91f",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/149589c3cd8fee7c1b57ae40007e3fb600c8a91f"
+    },
+    {
+      "path": "Natives/external/ballpa1n/HostManager.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b5ab24b6f284f5031d4763f3e5b54ef80752a33",
+      "size": 17984,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2b5ab24b6f284f5031d4763f3e5b54ef80752a33"
+    },
+    {
+      "path": "Natives/external/ballpa1n/HostManager.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36f32cb7a7d9afa1fbbb31c9638f6989554a77cf",
+      "size": 702,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/36f32cb7a7d9afa1fbbb31c9638f6989554a77cf"
+    },
+    {
+      "path": "Natives/external/ballpa1n/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c17f6fcf7fb3540dfdf2bf4eab15ce36eb321218",
+      "size": 93,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c17f6fcf7fb3540dfdf2bf4eab15ce36eb321218"
+    },
+    {
+      "path": "Natives/external/ballpa1n/include",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e0cde9d763b1ebd6f5e9bf89dfae617814d31b51",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/e0cde9d763b1ebd6f5e9bf89dfae617814d31b51"
+    },
+    {
+      "path": "Natives/external/ballpa1n/include/CoreFoundation.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6758abd51570bece79fb42d25f2db4b32f30a5a9",
+      "size": 279,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6758abd51570bece79fb42d25f2db4b32f30a5a9"
+    },
+    {
+      "path": "Natives/external/ballpa1n/include/IOKitLib.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ce43a27933a42b02556c1b634d0b0d8df3402b2",
+      "size": 595,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7ce43a27933a42b02556c1b634d0b0d8df3402b2"
+    },
+    {
+      "path": "Natives/external/ballpa1n/wrapped",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e3af507f22b8cae0a6ee5a2eb2e8d846a5ccc05b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/e3af507f22b8cae0a6ee5a2eb2e8d846a5ccc05b"
+    },
+    {
+      "path": "Natives/external/ballpa1n/wrapped/HostManagerBridge.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "712c59d1b95b5a58cc78165efeaf54b696a13432",
+      "size": 627,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/712c59d1b95b5a58cc78165efeaf54b696a13432"
+    },
+    {
+      "path": "Natives/external/ballpa1n/wrapped/HostManagerBridge.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d240f262227e5ebec1bfc6f971cfe7d5539c4c8",
+      "size": 5663,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4d240f262227e5ebec1bfc6f971cfe7d5539c4c8"
+    },
+    {
+      "path": "Natives/external/fishhook",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "ab23646149fd8594545668754a1b7ded56a1b9af"
+    },
+    {
+      "path": "Natives/external/gl4es",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "673bd83a7bb6538628af61c01a22573c57d2721b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/673bd83a7bb6538628af61c01a22573c57d2721b"
+    },
+    {
+      "path": "Natives/external/gl4es/string_utils.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9925739458b3adaee9bd62ef6c0c3517eb150e0f",
+      "size": 5434,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9925739458b3adaee9bd62ef6c0c3517eb150e0f"
+    },
+    {
+      "path": "Natives/external/gl4es/string_utils.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0431806a118794b19459ba9d2ebf374cb2e6a1a",
+      "size": 1432,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c0431806a118794b19459ba9d2ebf374cb2e6a1a"
+    },
+    {
+      "path": "Natives/external/gl4es/tinygl4angle.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f83f9e83f4f389c3c5204f254938c56c92f4869e",
+      "size": 11708,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f83f9e83f4f389c3c5204f254938c56c92f4869e"
+    },
+    {
+      "path": "Natives/external/lzma",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4ef4ba423914546f67797cad1a57a23390996aa",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/d4ef4ba423914546f67797cad1a57a23390996aa"
+    },
+    {
+      "path": "Natives/external/lzma/lzma.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f38513d35a456afdfeb6e99297a8a55597c115c2",
+      "size": 9951,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f38513d35a456afdfeb6e99297a8a55597c115c2"
+    },
+    {
+      "path": "Natives/external/lzma/lzma",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b927f39c3904cddeefcb9db7ff03167c84be445e",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b927f39c3904cddeefcb9db7ff03167c84be445e"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/base.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75cdd72acf20615db0b7923a6c52bce239378704",
+      "size": 28145,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/75cdd72acf20615db0b7923a6c52bce239378704"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/bcj.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c84e0cff9014d98d07e46d60fdc3bc5a5137ce7",
+      "size": 2790,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0c84e0cff9014d98d07e46d60fdc3bc5a5137ce7"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/block.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec5e77a69ae9c3116c46fe5cbd9d1b6d31852f12",
+      "size": 26028,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/ec5e77a69ae9c3116c46fe5cbd9d1b6d31852f12"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/check.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b37197d2c7f7373ae7dc2d51b5f4e5de1bda5ebe",
+      "size": 4904,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b37197d2c7f7373ae7dc2d51b5f4e5de1bda5ebe"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/container.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a891da98d24ae26a26b9d847dda8d2b6f4037fb",
+      "size": 42115,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5a891da98d24ae26a26b9d847dda8d2b6f4037fb"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/delta.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7a725bc40742d3c903e6c4d38acbbc49217030a2",
+      "size": 2251,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7a725bc40742d3c903e6c4d38acbbc49217030a2"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/filter.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98b46df87afdb6c9178ca7bde3e4bad59cc17794",
+      "size": 31818,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/98b46df87afdb6c9178ca7bde3e4bad59cc17794"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/hardware.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f34897d8740f110d23f5aba2dda1b209b56297b0",
+      "size": 2614,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f34897d8740f110d23f5aba2dda1b209b56297b0"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/index.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46455b12cd64d19d0f905d475e68c113a15cc81a",
+      "size": 31157,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/46455b12cd64d19d0f905d475e68c113a15cc81a"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/index_hash.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2d4c4845b7c617bd89f3e76a413cfb22932c336",
+      "size": 4735,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a2d4c4845b7c617bd89f3e76a413cfb22932c336"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/lzma12.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad4ce7b1d3bfc48fb021fed16e0cc4cb756b3ac3",
+      "size": 20881,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/ad4ce7b1d3bfc48fb021fed16e0cc4cb756b3ac3"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/stream_flags.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7622a62120e30a57c6b47578d3085baba80a088e",
+      "size": 9303,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7622a62120e30a57c6b47578d3085baba80a088e"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/version.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "294ec80cbb3208c7a8e1ef23b12734e7c9e69718",
+      "size": 3931,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/294ec80cbb3208c7a8e1ef23b12734e7c9e69718"
+    },
+    {
+      "path": "Natives/external/lzma/lzma/vli.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f9ad15500dfe2eb36ebe64e6aba3e4234c078d0b",
+      "size": 6699,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f9ad15500dfe2eb36ebe64e6aba3e4234c078d0b"
+    },
+    {
+      "path": "Natives/external/mach",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "35080acfc5daf780cd925998ad5e7fa78cb8c089",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/35080acfc5daf780cd925998ad5e7fa78cb8c089"
+    },
+    {
+      "path": "Natives/external/mach/mach_excServer.c",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1ae7bc882b54e629aaa1cf352fd4e69f0f38a7f",
+      "size": 19823,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f1ae7bc882b54e629aaa1cf352fd4e69f0f38a7f"
+    },
+    {
+      "path": "Natives/external/mach/mach_excServer.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6532baf6374ec8204500abeed0ea8a2ac5f36c68",
+      "size": 9269,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6532baf6374ec8204500abeed0ea8a2ac5f36c68"
+    },
+    {
+      "path": "Natives/external/mesa",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "67f6a1d8e8a9c89bc89a89812565192c07c2431f",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/67f6a1d8e8a9c89bc89a89812565192c07c2431f"
+    },
+    {
+      "path": "Natives/external/mesa/EGL",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "553e1d0a4a5ca293dbe448867934e42c4bbb0768",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/553e1d0a4a5ca293dbe448867934e42c4bbb0768"
+    },
+    {
+      "path": "Natives/external/mesa/EGL/egl.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a87290a446b4ab0120361c286462ea4c80d5539",
+      "size": 20340,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9a87290a446b4ab0120361c286462ea4c80d5539"
+    },
+    {
+      "path": "Natives/external/mesa/EGL/eglext.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c5951c88c04bdf6b24c9aa905d5337a993c95a0",
+      "size": 65908,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9c5951c88c04bdf6b24c9aa905d5337a993c95a0"
+    },
+    {
+      "path": "Natives/external/mesa/EGL/eglext_angle.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a53cf1f093b871d075fc7cc2b492de5614d10bfb",
+      "size": 12508,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a53cf1f093b871d075fc7cc2b492de5614d10bfb"
+    },
+    {
+      "path": "Natives/external/mesa/EGL/eglplatform.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fa415be19cc6a7ccdc2733dbc7d5aaa0137a1f2",
+      "size": 5916,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1fa415be19cc6a7ccdc2733dbc7d5aaa0137a1f2"
+    },
+    {
+      "path": "Natives/external/mesa/GL",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f2f9e759ad5e7909b10f56e49a74f32289d8ea0f",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/f2f9e759ad5e7909b10f56e49a74f32289d8ea0f"
+    },
+    {
+      "path": "Natives/external/mesa/GL/gl.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2518dfbb40deeb26bf1389c115fa293dc13e07fa",
+      "size": 80393,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2518dfbb40deeb26bf1389c115fa293dc13e07fa"
+    },
+    {
+      "path": "Natives/external/mesa/GL/glcorearb.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8515a1764443cc150d36cb6c38bd026e9db1ea7",
+      "size": 421419,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e8515a1764443cc150d36cb6c38bd026e9db1ea7"
+    },
+    {
+      "path": "Natives/external/mesa/GL/glext.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8694ae096656badbf18534ef892496dd6a88813",
+      "size": 848217,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e8694ae096656badbf18534ef892496dd6a88813"
+    },
+    {
+      "path": "Natives/external/mesa/GL/glx.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6963c70dd3fa9b272e0f75cdaff666a783ca68a8",
+      "size": 14578,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6963c70dd3fa9b272e0f75cdaff666a783ca68a8"
+    },
+    {
+      "path": "Natives/external/mesa/GL/glxext.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "662c26546bd64680988f3bffda18e534837d94fa",
+      "size": 48752,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/662c26546bd64680988f3bffda18e534837d94fa"
+    },
+    {
+      "path": "Natives/external/mesa/GL/internal",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a6ac4dd90fbd02cc9012a92196971acb622285c6",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/a6ac4dd90fbd02cc9012a92196971acb622285c6"
+    },
+    {
+      "path": "Natives/external/mesa/GL/internal/dri_interface.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39d5dd07533ad9a573357651f1d5b283795e31f2",
+      "size": 79933,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/39d5dd07533ad9a573357651f1d5b283795e31f2"
+    },
+    {
+      "path": "Natives/external/mesa/GL/mesa_glinterop.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45fda93ca2495608a8d0340643755604f1042bc1",
+      "size": 10611,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/45fda93ca2495608a8d0340643755604f1042bc1"
+    },
+    {
+      "path": "Natives/external/mesa/GL/osmesa.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12fa045b8f95cd268ca3cc96c527e9113f569973",
+      "size": 11799,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/12fa045b8f95cd268ca3cc96c527e9113f569973"
+    },
+    {
+      "path": "Natives/external/mesa/GL/wglext.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10c3ce111930d411751ff728a38da69274108f9c",
+      "size": 44164,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/10c3ce111930d411751ff728a38da69274108f9c"
+    },
+    {
+      "path": "Natives/external/mesa/KHR",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "89ceec119683f9b702d12fca100f0a5ca1952329",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/89ceec119683f9b702d12fca100f0a5ca1952329"
+    },
+    {
+      "path": "Natives/external/mesa/KHR/khrplatform.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a357c59dc5928a995ed0e5f4504c88bbabee74b",
+      "size": 10128,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/8a357c59dc5928a995ed0e5f4504c88bbabee74b"
+    },
+    {
+      "path": "Natives/external/mesa/MoltenVK",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1a6fa58af13d9eee742a455705c951e52427a054",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/1a6fa58af13d9eee742a455705c951e52427a054"
+    },
+    {
+      "path": "Natives/external/mesa/MoltenVK/mvk_datatypes.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ac2f4937e384a584a051dc2c61f9af2b545e002",
+      "size": 22275,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2ac2f4937e384a584a051dc2c61f9af2b545e002"
+    },
+    {
+      "path": "Natives/external/mesa/MoltenVK/mvk_vulkan.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20a8f2fea5d71e9e17152bb567a7a89b545e315d",
+      "size": 1608,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/20a8f2fea5d71e9e17152bb567a7a89b545e315d"
+    },
+    {
+      "path": "Natives/external/mesa/MoltenVK/vk_mvk_moltenvk.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c54915170dbc860b4aed7af02f5ca6a550a2d2ba",
+      "size": 68814,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c54915170dbc860b4aed7af02f5ca6a550a2d2ba"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "effbfaf37446981362f126c432577ab568dbb3af",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/effbfaf37446981362f126c432577ab568dbb3af"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/.editorconfig",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bdbea000b535faac083b2ca39ea9ec07cfa59683",
+      "size": 43,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/bdbea000b535faac083b2ca39ea9ec07cfa59683"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vk_android_native_buffer.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a777407ff31252fea31d1c5313ada8a7af2529c",
+      "size": 5663,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/8a777407ff31252fea31d1c5313ada8a7af2529c"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vk_icd.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fde5bf6214bdb3997dc94f6c6fd2e77c5296ef8b",
+      "size": 7543,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/fde5bf6214bdb3997dc94f6c6fd2e77c5296ef8b"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vk_layer.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0651870c70a4d63564ceb5d0c2e97f5ed82f97f8",
+      "size": 7878,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0651870c70a4d63564ceb5d0c2e97f5ed82f97f8"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vk_platform.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "048322d93b736ca2a55511c0c36d54429f6cdf66",
+      "size": 2763,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/048322d93b736ca2a55511c0c36d54429f6cdf66"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7716ec8eac045dc820caf96f260bb385ff611ed",
+      "size": 1385,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b7716ec8eac045dc820caf96f260bb385ff611ed"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_android.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50ef85f13e4760976a456db9953114dcfc6b4804",
+      "size": 4209,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/50ef85f13e4760976a456db9953114dcfc6b4804"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_beta.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b7f2b299360e7852b9a67a93525d2fe45bc82cf",
+      "size": 23939,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4b7f2b299360e7852b9a67a93525d2fe45bc82cf"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_core.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f77387a07f93cba3e35053d8d3a0bfe55a20272",
+      "size": 556428,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6f77387a07f93cba3e35053d8d3a0bfe55a20272"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_directfb.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f75bd3a4e1fdb8df0caee3eb6267ab69f4921094",
+      "size": 1789,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f75bd3a4e1fdb8df0caee3eb6267ab69f4921094"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_fuchsia.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03e27cb0afe6b049ed1e359327866cb636eb186c",
+      "size": 1393,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/03e27cb0afe6b049ed1e359327866cb636eb186c"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_ggp.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "273c88005b55ed5b90600c5aa8be6181fe407e65",
+      "size": 1734,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/273c88005b55ed5b90600c5aa8be6181fe407e65"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_intel.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ede61b53dca50196ee5d29b0355d0c2475edc0c",
+      "size": 2588,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/8ede61b53dca50196ee5d29b0355d0c2475edc0c"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_ios.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "446a2698d9199b19d26a7ac03857614c6f10137f",
+      "size": 1237,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/446a2698d9199b19d26a7ac03857614c6f10137f"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_macos.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35fcabe39b1a5856595ce16ad9c64d655c680135",
+      "size": 1267,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/35fcabe39b1a5856595ce16ad9c64d655c680135"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_metal.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99f097d954aedcb660e3582121947ee9c2780dfd",
+      "size": 1347,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/99f097d954aedcb660e3582121947ee9c2780dfd"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_vi.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e62d7d3a74f9393cdc8da626e4ad8d20ba82b4a",
+      "size": 1212,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2e62d7d3a74f9393cdc8da626e4ad8d20ba82b4a"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_wayland.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f7b307e519be8f97ccd76e7fd79cbb10d498229b",
+      "size": 1790,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f7b307e519be8f97ccd76e7fd79cbb10d498229b"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_win32.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b561ea10a5d75caad305f84ce11babfcb88e92c",
+      "size": 13481,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4b561ea10a5d75caad305f84ce11babfcb88e92c"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_xcb.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5441b239d0efebfc81cac43b628994048ad6daf",
+      "size": 1808,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c5441b239d0efebfc81cac43b628994048ad6daf"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_xlib.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c54628a7ec39a2648a733a420b78f75a51bf6bf4",
+      "size": 1788,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c54628a7ec39a2648a733a420b78f75a51bf6bf4"
+    },
+    {
+      "path": "Natives/external/mesa/vulkan/vulkan_xlib_xrandr.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "436432f842840e2ec625fef5c6745aceba5e8ae4",
+      "size": 1330,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/436432f842840e2ec625fef5c6745aceba5e8ae4"
+    },
+    {
+      "path": "Natives/glfw_keycodes.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e9b66950c48ee623750683ddb378fc6ff399c1b",
+      "size": 12948,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4e9b66950c48ee623750683ddb378fc6ff399c1b"
+    },
+    {
+      "path": "Natives/input",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e6a15c9199c76b7f2d7c8efdad97ce36af605679",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/e6a15c9199c76b7f2d7c8efdad97ce36af605679"
+    },
+    {
+      "path": "Natives/input/ControllerInput.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62d142b8049abb1495d34bb7b2607d438d778384",
+      "size": 282,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/62d142b8049abb1495d34bb7b2607d438d778384"
+    },
+    {
+      "path": "Natives/input/ControllerInput.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b24af9961d304f13e54e8ea92740437cd5b12897",
+      "size": 10121,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b24af9961d304f13e54e8ea92740437cd5b12897"
+    },
+    {
+      "path": "Natives/input/GyroInput.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a970493019bb1711054ebee446c430591e0bcb9f",
+      "size": 185,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a970493019bb1711054ebee446c430591e0bcb9f"
+    },
+    {
+      "path": "Natives/input/GyroInput.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd2a698207524623f8db04d9504587692f422d99",
+      "size": 2433,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/dd2a698207524623f8db04d9504587692f422d99"
+    },
+    {
+      "path": "Natives/input/KeyboardInput.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f957900b4375e1065a664a13fd087ddfabd9b1cb",
+      "size": 147,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f957900b4375e1065a664a13fd087ddfabd9b1cb"
+    },
+    {
+      "path": "Natives/input/KeyboardInput.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d1d7f001b452af5ba4b91511ad3f60810c854ad",
+      "size": 5305,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5d1d7f001b452af5ba4b91511ad3f60810c854ad"
+    },
+    {
+      "path": "Natives/input_bridge_v3.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c5c752df5c0b2a175ad0edd3cdfde50bc1b72bb",
+      "size": 22496,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7c5c752df5c0b2a175ad0edd3cdfde50bc1b72bb"
+    },
+    {
+      "path": "Natives/installer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5a7b85068b8def32424dcb42440347c48c13ea50",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/5a7b85068b8def32424dcb42440347c48c13ea50"
+    },
+    {
+      "path": "Natives/installer/FabricInstallViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3bb3df97a76a3548e5be2a066e86fedb105c5a83",
+      "size": 135,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3bb3df97a76a3548e5be2a066e86fedb105c5a83"
+    },
+    {
+      "path": "Natives/installer/FabricInstallViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a264497d5c34c6f2456250e02c37b283381d8ef",
+      "size": 9168,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5a264497d5c34c6f2456250e02c37b283381d8ef"
+    },
+    {
+      "path": "Natives/installer/FabricUtils.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "636985e4a2ddc923091a769e543d8861b1d5c61d",
+      "size": 105,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/636985e4a2ddc923091a769e543d8861b1d5c61d"
+    },
+    {
+      "path": "Natives/installer/FabricUtils.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba120cbc608f6124cc1ce70135790882958dfa80",
+      "size": 826,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/ba120cbc608f6124cc1ce70135790882958dfa80"
+    },
+    {
+      "path": "Natives/installer/ForgeInstallViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd3d3c960097882840d3dfda336b9f01478c6063",
+      "size": 92,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/bd3d3c960097882840d3dfda336b9f01478c6063"
+    },
+    {
+      "path": "Natives/installer/ForgeInstallViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd3f5407c8a05f95393c76b6a0325871a0a5b093",
+      "size": 44377,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/fd3f5407c8a05f95393c76b6a0325871a0a5b093"
+    },
+    {
+      "path": "Natives/installer/ModpackInstallViewController.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0744d12a2b97f909a370f3779ee22e649e56e7c3",
+      "size": 119,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0744d12a2b97f909a370f3779ee22e649e56e7c3"
+    },
+    {
+      "path": "Natives/installer/ModpackInstallViewController.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33f8dd9e725d967e68818dc9e8584588d44bc7c2",
+      "size": 7714,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/33f8dd9e725d967e68818dc9e8584588d44bc7c2"
+    },
+    {
+      "path": "Natives/installer/modpack",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4436a9bad36d9333763a495879de533055af5adb",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/4436a9bad36d9333763a495879de533055af5adb"
+    },
+    {
+      "path": "Natives/installer/modpack/CurseForgeAPI.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09c8eca7e6c9061c17317adf8c4d3314826d405f",
+      "size": 101,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/09c8eca7e6c9061c17317adf8c4d3314826d405f"
+    },
+    {
+      "path": "Natives/installer/modpack/CurseForgeAPI.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "154531684602e5d31919b51540b388c5cfb88a8a",
+      "size": 96,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/154531684602e5d31919b51540b388c5cfb88a8a"
+    },
+    {
+      "path": "Natives/installer/modpack/ModpackAPI.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5f83406b653bc54c8084fe98f8d2ca7c63b0a84",
+      "size": 812,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a5f83406b653bc54c8084fe98f8d2ca7c63b0a84"
+    },
+    {
+      "path": "Natives/installer/modpack/ModpackAPI.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00144ea37af7f05100d7d8de1ab33dfdd03cb8f3",
+      "size": 1916,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/00144ea37af7f05100d7d8de1ab33dfdd03cb8f3"
+    },
+    {
+      "path": "Natives/installer/modpack/ModpackUtils.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "554dbeca41192fdfcc9373b9b698671fdb6b9ff2",
+      "size": 284,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/554dbeca41192fdfcc9373b9b698671fdb6b9ff2"
+    },
+    {
+      "path": "Natives/installer/modpack/ModpackUtils.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33a3fece578a58bee05135a8a91905973ffefcc0",
+      "size": 2331,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/33a3fece578a58bee05135a8a91905973ffefcc0"
+    },
+    {
+      "path": "Natives/installer/modpack/ModrinthAPI.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3043c8552cb95749a1c3f4afc4bb639d025aef7",
+      "size": 99,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a3043c8552cb95749a1c3f4afc4bb639d025aef7"
+    },
+    {
+      "path": "Natives/installer/modpack/ModrinthAPI.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37a5729b8a3f7fc558604a900db28b3385f9f128",
+      "size": 6723,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/37a5729b8a3f7fc558604a900db28b3385f9f128"
+    },
+    {
+      "path": "Natives/ios_uikit_bridge.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9575df98791ca6a46110e4a74985782bc6cac47c",
+      "size": 476,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9575df98791ca6a46110e4a74985782bc6cac47c"
+    },
+    {
+      "path": "Natives/ios_uikit_bridge.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61d2d91d7d52e5716be92ece93aefb056c5701b1",
+      "size": 6682,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/61d2d91d7d52e5716be92ece93aefb056c5701b1"
+    },
+    {
+      "path": "Natives/jni.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11e43e3d8399f3704a8a0b8e763d14659465680f",
+      "size": 52271,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/11e43e3d8399f3704a8a0b8e763d14659465680f"
+    },
+    {
+      "path": "Natives/main.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bb3b09f5573606301daadf65a7d9d92f9a3674b",
+      "size": 12288,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4bb3b09f5573606301daadf65a7d9d92f9a3674b"
+    },
+    {
+      "path": "Natives/main_hook.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "871fc0f6390d7785c7e33640242fc9f87cd119c4",
+      "size": 7913,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/871fc0f6390d7785c7e33640242fc9f87cd119c4"
+    },
+    {
+      "path": "Natives/non_darwin_utils.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "706c6e23516ee05c6f35db9df20940875d0c0bd2",
+      "size": 402,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/706c6e23516ee05c6f35db9df20940875d0c0bd2"
+    },
+    {
+      "path": "Natives/resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1da7de684df7797478732135efd5b6bd1b5063dd",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/1da7de684df7797478732135efd5b6bd1b5063dd"
+    },
+    {
+      "path": "Natives/resources/AppIcon-Dark60x60@2x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "201ad8f125b2647dcef91d6639706d62f6165049",
+      "size": 14341,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/201ad8f125b2647dcef91d6639706d62f6165049"
+    },
+    {
+      "path": "Natives/resources/AppIcon-Dark76x76@2x~ipad.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43ff9a88815ab269ed0848371ce625b548ad01c7",
+      "size": 22597,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/43ff9a88815ab269ed0848371ce625b548ad01c7"
+    },
+    {
+      "path": "Natives/resources/AppIcon-Development60x60@2x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "196e31c5ab0a5a8307482ada0a38539e964dd7a9",
+      "size": 27868,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/196e31c5ab0a5a8307482ada0a38539e964dd7a9"
+    },
+    {
+      "path": "Natives/resources/AppIcon-Development76x76@2x~ipad.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8df3c3566db65545e46148d64f725fafc8a92f62",
+      "size": 48998,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/8df3c3566db65545e46148d64f725fafc8a92f62"
+    },
+    {
+      "path": "Natives/resources/AppIcon-Light60x60@2x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86bf1a2f7059bb24196a06ff9abd5e77937634d4",
+      "size": 19644,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/86bf1a2f7059bb24196a06ff9abd5e77937634d4"
+    },
+    {
+      "path": "Natives/resources/AppIcon-Light76x76@2x~ipad.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd634b457a540b43ecf7ea26f1a2d5ac2f4f6118",
+      "size": 29264,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/fd634b457a540b43ecf7ea26f1a2d5ac2f4f6118"
+    },
+    {
+      "path": "Natives/resources/AppIcon60x60@2x.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0260a341aede9e2efd395852abdfb55d4e1e635d",
+      "size": 8542,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0260a341aede9e2efd395852abdfb55d4e1e635d"
+    },
+    {
+      "path": "Natives/resources/AppIcon76x76@2x~ipad.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d38f16e9f319f9f78b691de82c35a7c009f88c42",
+      "size": 12392,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/d38f16e9f319f9f78b691de82c35a7c009f88c42"
+    },
+    {
+      "path": "Natives/resources/Assets.car",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d39860ba8a40f918bdb14d122d624cdd3fdfc4c",
+      "size": 3727848,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2d39860ba8a40f918bdb14d122d624cdd3fdfc4c"
+    },
+    {
+      "path": "Natives/resources/Frameworks",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "23b12faf1079299fe9567f7db44b719f14c15b51",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/23b12faf1079299fe9567f7db44b719f14c15b51"
+    },
+    {
+      "path": "Natives/resources/Frameworks/AltKit.framework",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "11dd6937c84d2d22321723b9d5f16de1396b96a0",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/11dd6937c84d2d22321723b9d5f16de1396b96a0"
+    },
+    {
+      "path": "Natives/resources/Frameworks/AltKit.framework/AltKit",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "ca4d0558978df2e12fe73ac9e472547e72ba5542",
+      "size": 610840,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/ca4d0558978df2e12fe73ac9e472547e72ba5542"
+    },
+    {
+      "path": "Natives/resources/Frameworks/AltKit.framework/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a74a49406ccca922d6104006611834725b7a7f5d",
+      "size": 757,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a74a49406ccca922d6104006611834725b7a7f5d"
+    },
+    {
+      "path": "Natives/resources/Frameworks/CAltKit.framework",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f11b4f0896328ae1ede26b9a6139079e278f5510",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/f11b4f0896328ae1ede26b9a6139079e278f5510"
+    },
+    {
+      "path": "Natives/resources/Frameworks/CAltKit.framework/CAltKit",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "7e9603c2f318df8c44dd8b18adc2acc051ea5e36",
+      "size": 54976,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7e9603c2f318df8c44dd8b18adc2acc051ea5e36"
+    },
+    {
+      "path": "Natives/resources/Frameworks/CAltKit.framework/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "843593a64a930e1d4a24de46309c7c94c777222a",
+      "size": 758,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/843593a64a930e1d4a24de46309c7c94c777222a"
+    },
+    {
+      "path": "Natives/resources/Frameworks/UnzipKit.framework",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "23e6d1573da84df857955c2821a732cacf7d45b3",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/23e6d1573da84df857955c2821a732cacf7d45b3"
+    },
+    {
+      "path": "Natives/resources/Frameworks/UnzipKit.framework/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87ef0a85a504fc5b4a1f2e7d76a91ee6c1351d60",
+      "size": 842,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/87ef0a85a504fc5b4a1f2e7d76a91ee6c1351d60"
+    },
+    {
+      "path": "Natives/resources/Frameworks/UnzipKit.framework/UnzipKit",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "aefed198e6403fe023ba8d3535349d6916bf4266",
+      "size": 778984,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/aefed198e6403fe023ba8d3535349d6916bf4266"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libEGL.framework",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e17c0cef9b6e0fd1f2890d9aadf67f63a89abb37",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/e17c0cef9b6e0fd1f2890d9aadf67f63a89abb37"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libEGL.framework/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fcf42ad64c59fcb40dedb13584db7e8280e61ce9",
+      "size": 694,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/fcf42ad64c59fcb40dedb13584db7e8280e61ce9"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libEGL.framework/libEGL",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5efa9cdfb9da5ec88b5a6635c166ae8d642fac96",
+      "size": 342632,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5efa9cdfb9da5ec88b5a6635c166ae8d642fac96"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libGLESv2.framework",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e5985ccdfba570a3817d40ad311a9a2dde0b553",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/7e5985ccdfba570a3817d40ad311a9a2dde0b553"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libGLESv2.framework/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e94b77ecf35c4def64d50896d4f942d3bfbfa486",
+      "size": 700,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e94b77ecf35c4def64d50896d4f942d3bfbfa486"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libGLESv2.framework/libGLESv2",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "cabdf27ea388daed2af652cef19f7ab9393f9942",
+      "size": 6146440,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/cabdf27ea388daed2af652cef19f7ab9393f9942"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libMoltenVK.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30477a5badd5114a2016e5fb27a27dc637c28b5d",
+      "size": 6663200,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/30477a5badd5114a2016e5fb27a27dc637c28b5d"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libOSMesa.8.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2f5bc3ec64c8ea11e15302e6f0b09731c71c2fe",
+      "size": 15847056,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e2f5bc3ec64c8ea11e15302e6f0b09731c71c2fe"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libfreetype.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bdeb0324e998156344e93316a7862bccdfc54ce5",
+      "size": 2203520,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/bdeb0324e998156344e93316a7862bccdfc54ce5"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libgl4es_114.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6cdcff50d640d4318a58aca0499863d1e87fab2",
+      "size": 5618408,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e6cdcff50d640d4318a58aca0499863d1e87fab2"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libglapi.0.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c7c50d8f357e92a47e60ebceabdd078568b7a82",
+      "size": 508616,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3c7c50d8f357e92a47e60ebceabdd078568b7a82"
+    },
+    {
+      "path": "Natives/resources/Frameworks/liblwjgl.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80ea3f92ba27fd23e49bb51f90f6b1d744c303a5",
+      "size": 302104,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/80ea3f92ba27fd23e49bb51f90f6b1d744c303a5"
+    },
+    {
+      "path": "Natives/resources/Frameworks/liblwjgl_nanovg.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32904b83518be536f3d38ecf5af79396d9d1ee18",
+      "size": 390600,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/32904b83518be536f3d38ecf5af79396d9d1ee18"
+    },
+    {
+      "path": "Natives/resources/Frameworks/liblwjgl_opengl.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2815a1204c6927258863982647fc8aa6dbcb6a7",
+      "size": 161048,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a2815a1204c6927258863982647fc8aa6dbcb6a7"
+    },
+    {
+      "path": "Natives/resources/Frameworks/liblwjgl_stb.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd3a0015dcfaacbb1a0bd95ede4b1ef206927ec3",
+      "size": 369400,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/cd3a0015dcfaacbb1a0bd95ede4b1ef206927ec3"
+    },
+    {
+      "path": "Natives/resources/Frameworks/liblwjgl_tinyfd.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f63c964a3ed273159e96c2fdfbc5070a5e892f7e",
+      "size": 134792,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f63c964a3ed273159e96c2fdfbc5070a5e892f7e"
+    },
+    {
+      "path": "Natives/resources/Frameworks/liblwjgl_vma.dylib",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "dc1f8832d28eda7e725578745d66fece82e47af2",
+      "size": 180992,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/dc1f8832d28eda7e725578745d66fece82e47af2"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libopenal.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5f799c18e7ce8940e2ff6cc424ffa7d0ce5c210",
+      "size": 4112728,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a5f799c18e7ce8940e2ff6cc424ffa7d0ce5c210"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libshaderc.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd57b8069bd5942b9a8e8d69e210f6bc5b66b6c3",
+      "size": 8522336,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/dd57b8069bd5942b9a8e8d69e210f6bc5b66b6c3"
+    },
+    {
+      "path": "Natives/resources/Frameworks/libvirgl_test_server.dylib",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f207db3594ee87afde2f53e0d12ab4499888f4a0",
+      "size": 2387512,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f207db3594ee87afde2f53e0d12ab4499888f4a0"
+    },
+    {
+      "path": "Natives/resources/UniversalJIT26.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e1da1f45ba946644d38dc5390549f7147c12444",
+      "size": 9719,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3e1da1f45ba946644d38dc5390549f7147c12444"
+    },
+    {
+      "path": "Natives/resources/UniversalJIT26Extension.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a6ee89f205a72d0eca24e23b18641487f99b54d",
+      "size": 812,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3a6ee89f205a72d0eca24e23b18641487f99b54d"
+    },
+    {
+      "path": "Natives/resources/af.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8761f46700a4dbf38376d6c7b3dc206dcfc195e4",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/8761f46700a4dbf38376d6c7b3dc206dcfc195e4"
+    },
+    {
+      "path": "Natives/resources/af.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cacb20a4fc07dfcbd8e968015d93ad6187c0701d",
+      "size": 28,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/cacb20a4fc07dfcbd8e968015d93ad6187c0701d"
+    },
+    {
+      "path": "Natives/resources/ar.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c9e8a9ef842a8f5245eae41240ae066a312092bc",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c9e8a9ef842a8f5245eae41240ae066a312092bc"
+    },
+    {
+      "path": "Natives/resources/ar.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48e1e405d37bbfe0ed011b8147997f082ebb8a6c",
+      "size": 23905,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/48e1e405d37bbfe0ed011b8147997f082ebb8a6c"
+    },
+    {
+      "path": "Natives/resources/az.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "68f01d306b2ddb6c09f7d3f09ebfb5387e28b0fb",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/68f01d306b2ddb6c09f7d3f09ebfb5387e28b0fb"
+    },
+    {
+      "path": "Natives/resources/az.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c33bdb9927868b4eed7b9adde6a804cfc70cd47",
+      "size": 67,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/2c33bdb9927868b4eed7b9adde6a804cfc70cd47"
+    },
+    {
+      "path": "Natives/resources/ba.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "581c3cd469fe2e5fcc965745094b221e5cff5d5d",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/581c3cd469fe2e5fcc965745094b221e5cff5d5d"
+    },
+    {
+      "path": "Natives/resources/ba.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "409ca822f1960b637d0ae310dcf3b1da0ae523bd",
+      "size": 742,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/409ca822f1960b637d0ae310dcf3b1da0ae523bd"
+    },
+    {
+      "path": "Natives/resources/bn-IN.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "63f16fa41b9a68899f4a1e2f6aa12eef49f7b9cf",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/63f16fa41b9a68899f4a1e2f6aa12eef49f7b9cf"
+    },
+    {
+      "path": "Natives/resources/bn-IN.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "Natives/resources/bn.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1e3f7fa381b77d91171ef0537fb50e30ceeab0e7",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/1e3f7fa381b77d91171ef0537fb50e30ceeab0e7"
+    },
+    {
+      "path": "Natives/resources/bn.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e446242bf2b23a001d54e47e0e96336ade952068",
+      "size": 247,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e446242bf2b23a001d54e47e0e96336ade952068"
+    },
+    {
+      "path": "Natives/resources/ca.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c496dfeba05522190ba696f160fdb7315378375b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c496dfeba05522190ba696f160fdb7315378375b"
+    },
+    {
+      "path": "Natives/resources/ca.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18d67dd91506b700837b9d749f0425dcb6359714",
+      "size": 826,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/18d67dd91506b700837b9d749f0425dcb6359714"
+    },
+    {
+      "path": "Natives/resources/cs.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d5d0db7c53a07a5615952394c0a9b3905f477f1e",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/d5d0db7c53a07a5615952394c0a9b3905f477f1e"
+    },
+    {
+      "path": "Natives/resources/cs.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ad049878f237e08da2e31168ca0751d933945c0",
+      "size": 19639,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0ad049878f237e08da2e31168ca0751d933945c0"
+    },
+    {
+      "path": "Natives/resources/da.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "148799ef96b63d0bb2f78330ba78eb408374a86c",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/148799ef96b63d0bb2f78330ba78eb408374a86c"
+    },
+    {
+      "path": "Natives/resources/da.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aea19b3bd8dd2eb6db5b31598f4907cbc67b4551",
+      "size": 186,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/aea19b3bd8dd2eb6db5b31598f4907cbc67b4551"
+    },
+    {
+      "path": "Natives/resources/de.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "34c10cbdb78736802223af8a138f7c096c061430",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/34c10cbdb78736802223af8a138f7c096c061430"
+    },
+    {
+      "path": "Natives/resources/de.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f6f44f88348228ff27a08dd924b010f2f37d829",
+      "size": 20280,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0f6f44f88348228ff27a08dd924b010f2f37d829"
+    },
+    {
+      "path": "Natives/resources/el.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c72cb86fd66dce44a52b7892308e0ae5b6bdc52b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c72cb86fd66dce44a52b7892308e0ae5b6bdc52b"
+    },
+    {
+      "path": "Natives/resources/el.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d8fdf1921ab2c4111ffc6a2b58b355c4294a51f",
+      "size": 2022,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/6d8fdf1921ab2c4111ffc6a2b58b355c4294a51f"
+    },
+    {
+      "path": "Natives/resources/en-GB.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b96f006c8c7bd52b175f060041b9661eb7769166",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b96f006c8c7bd52b175f060041b9661eb7769166"
+    },
+    {
+      "path": "Natives/resources/en-GB.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dafb89b1625df9656c439927d451600598f1dbcc",
+      "size": 1109,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/dafb89b1625df9656c439927d451600598f1dbcc"
+    },
+    {
+      "path": "Natives/resources/en-PT.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c51b5151996a5ec8a7e85bc8cf498d012adcd238",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/c51b5151996a5ec8a7e85bc8cf498d012adcd238"
+    },
+    {
+      "path": "Natives/resources/en-PT.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e7864d44fedd24e437ae0d76a5ff6b3b483a098",
+      "size": 613,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4e7864d44fedd24e437ae0d76a5ff6b3b483a098"
+    },
+    {
+      "path": "Natives/resources/en-UD.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "08ac560cbb7c27606caae8d36b5602a187da5fb9",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/08ac560cbb7c27606caae8d36b5602a187da5fb9"
+    },
+    {
+      "path": "Natives/resources/en-UD.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e24c1af9d72f6c59a969bdad9978fdb8273b418a",
+      "size": 17114,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e24c1af9d72f6c59a969bdad9978fdb8273b418a"
+    },
+    {
+      "path": "Natives/resources/en.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "be1e25e7ba91b0376188e6eb6b9931b58a9f3abf",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/be1e25e7ba91b0376188e6eb6b9931b58a9f3abf"
+    },
+    {
+      "path": "Natives/resources/en.lproj/InfoPlist.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54da1940ae22ea9ce5529fc9cd54c7df253d0fd9",
+      "size": 370,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/54da1940ae22ea9ce5529fc9cd54c7df253d0fd9"
+    },
+    {
+      "path": "Natives/resources/en.lproj/LaunchScreen.storyboardc",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d05cb843494fa2db59821d7b38aa4e76ea6127c",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/2d05cb843494fa2db59821d7b38aa4e76ea6127c"
+    },
+    {
+      "path": "Natives/resources/en.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "deaee0486da3cbebeb37cacc9e5ef04dc2650fa2",
+      "size": 1197,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/deaee0486da3cbebeb37cacc9e5ef04dc2650fa2"
+    },
+    {
+      "path": "Natives/resources/en.lproj/LaunchScreen.storyboardc/Info.plist",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "32288e88f6e282c375921d17f7790833b009448f",
+      "size": 258,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/32288e88f6e282c375921d17f7790833b009448f"
+    },
+    {
+      "path": "Natives/resources/en.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "1b57c9a2f5ec7e50203eb850648b3b545bf44938",
+      "size": 896,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1b57c9a2f5ec7e50203eb850648b3b545bf44938"
+    },
+    {
+      "path": "Natives/resources/en.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9541a1fab23403f5ec9b17174b9ffbddb633ed57",
+      "size": 21933,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9541a1fab23403f5ec9b17174b9ffbddb633ed57"
+    },
+    {
+      "path": "Natives/resources/es.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8b92da88c47ec36ca9e3aeb373ccb76e8f57d061",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/8b92da88c47ec36ca9e3aeb373ccb76e8f57d061"
+    },
+    {
+      "path": "Natives/resources/es.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "072b7ef917a7fe09a10f991edab450832bf92c9f",
+      "size": 10774,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/072b7ef917a7fe09a10f991edab450832bf92c9f"
+    },
+    {
+      "path": "Natives/resources/et.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3e2ed387ebe7a7b714f51c33fddd4e5e467459e3",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/3e2ed387ebe7a7b714f51c33fddd4e5e467459e3"
+    },
+    {
+      "path": "Natives/resources/et.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92c17be138a1659944799d060b845415a0660861",
+      "size": 3125,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/92c17be138a1659944799d060b845415a0660861"
+    },
+    {
+      "path": "Natives/resources/fa.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "53893f4f6679485bfddc6c32b76033f5810b6deb",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/53893f4f6679485bfddc6c32b76033f5810b6deb"
+    },
+    {
+      "path": "Natives/resources/fa.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4df28095389b8912ef1168d41b8af04e47e71dea",
+      "size": 15409,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/4df28095389b8912ef1168d41b8af04e47e71dea"
+    },
+    {
+      "path": "Natives/resources/fi.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d4cd817b3f7147a2ce306b0cf2eb9eb0e59ae751",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/d4cd817b3f7147a2ce306b0cf2eb9eb0e59ae751"
+    },
+    {
+      "path": "Natives/resources/fi.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "39bfa0ad4c513517342d1d3ac14cf2cbb9aab5b3",
+      "size": 207,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/39bfa0ad4c513517342d1d3ac14cf2cbb9aab5b3"
+    },
+    {
+      "path": "Natives/resources/fil.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9bc19b8d008c4197f56916304261e5463c1901b5",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/9bc19b8d008c4197f56916304261e5463c1901b5"
+    },
+    {
+      "path": "Natives/resources/fil.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3379f39ee3674c93cf1b4c2ef6fd442c32fe7db2",
+      "size": 11994,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3379f39ee3674c93cf1b4c2ef6fd442c32fe7db2"
+    },
+    {
+      "path": "Natives/resources/fr.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "73d74e7dd1061ce6f3db4951d785f0ee41d7425e",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/73d74e7dd1061ce6f3db4951d785f0ee41d7425e"
+    },
+    {
+      "path": "Natives/resources/fr.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01e4804fc42ebfb6dcaf11decf0e1b2fd83a583a",
+      "size": 13045,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/01e4804fc42ebfb6dcaf11decf0e1b2fd83a583a"
+    },
+    {
+      "path": "Natives/resources/glfw_keycodes.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df83bb19703fb251d9c3126b59240a61b7c3c467",
+      "size": 6869,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/df83bb19703fb251d9c3126b59240a61b7c3c467"
+    },
+    {
+      "path": "Natives/resources/he.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d0368ce36a6adaa3fe18707944678bc534657aa6",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/d0368ce36a6adaa3fe18707944678bc534657aa6"
+    },
+    {
+      "path": "Natives/resources/he.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54ad7bc25930fc1a80fe5dd7eab776d9ceeaeb3c",
+      "size": 1964,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/54ad7bc25930fc1a80fe5dd7eab776d9ceeaeb3c"
+    },
+    {
+      "path": "Natives/resources/hi.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "75c1ad52b336271b1efe27e1b51e56e43b03b824",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/75c1ad52b336271b1efe27e1b51e56e43b03b824"
+    },
+    {
+      "path": "Natives/resources/hi.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a89b6537665dca015fee145bfb2bf2c7ddf6e4c1",
+      "size": 201,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/a89b6537665dca015fee145bfb2bf2c7ddf6e4c1"
+    },
+    {
+      "path": "Natives/resources/hu.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8761f46700a4dbf38376d6c7b3dc206dcfc195e4",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/8761f46700a4dbf38376d6c7b3dc206dcfc195e4"
+    },
+    {
+      "path": "Natives/resources/hu.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cacb20a4fc07dfcbd8e968015d93ad6187c0701d",
+      "size": 28,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/cacb20a4fc07dfcbd8e968015d93ad6187c0701d"
+    },
+    {
+      "path": "Natives/resources/id.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9a3a74be2cb8bb656177a71353eaa96b43feb769",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/9a3a74be2cb8bb656177a71353eaa96b43feb769"
+    },
+    {
+      "path": "Natives/resources/id.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1d8a32e3a36cf83c0b042eeb3adaacc2b00178c4",
+      "size": 12933,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1d8a32e3a36cf83c0b042eeb3adaacc2b00178c4"
+    },
+    {
+      "path": "Natives/resources/it.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b9f3e5304c66cfe4e4af4b6d6112ebad83d01a5b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b9f3e5304c66cfe4e4af4b6d6112ebad83d01a5b"
+    },
+    {
+      "path": "Natives/resources/it.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e69b904ded8f9bd7d6b45a642b1c0aec35e73c0",
+      "size": 9777,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/5e69b904ded8f9bd7d6b45a642b1c0aec35e73c0"
+    },
+    {
+      "path": "Natives/resources/ja.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "646ece5b54834fa6c8abf9bcb6d90690a171e07d",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/646ece5b54834fa6c8abf9bcb6d90690a171e07d"
+    },
+    {
+      "path": "Natives/resources/ja.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7af52d52f2dd566602d4d706ce8709594bf2e1e5",
+      "size": 13501,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/7af52d52f2dd566602d4d706ce8709594bf2e1e5"
+    },
+    {
+      "path": "Natives/resources/kk.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "acdfd0390621a48a6b9c855a36f780d50aeb44d2",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/acdfd0390621a48a6b9c855a36f780d50aeb44d2"
+    },
+    {
+      "path": "Natives/resources/kk.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "454928883147210bc1ba824447b112cd567b9f94",
+      "size": 1274,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/454928883147210bc1ba824447b112cd567b9f94"
+    },
+    {
+      "path": "Natives/resources/ko.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5e4790a57d47c0fdd26dbda29768068db64ade9f",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/5e4790a57d47c0fdd26dbda29768068db64ade9f"
+    },
+    {
+      "path": "Natives/resources/ko.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1ae6efb8a876b36862b9093a554415d8b9720ee",
+      "size": 3215,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/c1ae6efb8a876b36862b9093a554415d8b9720ee"
+    },
+    {
+      "path": "Natives/resources/la.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dcfb081336f20e3528b513336d4fe2d6d559557d",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/dcfb081336f20e3528b513336d4fe2d6d559557d"
+    },
+    {
+      "path": "Natives/resources/la.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20f52130e78250358da29bb7946c53a70fae7748",
+      "size": 126,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/20f52130e78250358da29bb7946c53a70fae7748"
+    },
+    {
+      "path": "Natives/resources/log4j-rce-patch-1.12.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1cf0fd922f1c91f4c7d411a800c00f110c4692ba",
+      "size": 1081,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/1cf0fd922f1c91f4c7d411a800c00f110c4692ba"
+    },
+    {
+      "path": "Natives/resources/log4j-rce-patch-1.7.xml",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "784eca3d7003bcf1391b9c29febc8a835567e47c",
+      "size": 1154,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/784eca3d7003bcf1391b9c29febc8a835567e47c"
+    },
+    {
+      "path": "Natives/resources/lol.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "77e30c4beb140c56ad69d39080011d84fb7caf30",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/77e30c4beb140c56ad69d39080011d84fb7caf30"
+    },
+    {
+      "path": "Natives/resources/lol.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dae2f266bc8a984011d0bf1a8d29f53e469c9911",
+      "size": 1655,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/dae2f266bc8a984011d0bf1a8d29f53e469c9911"
+    },
+    {
+      "path": "Natives/resources/lt.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d1923f80ce7b5f86f5e3249ab11cc1274ff74066",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/d1923f80ce7b5f86f5e3249ab11cc1274ff74066"
+    },
+    {
+      "path": "Natives/resources/lt.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b502934bd2cdc12c07ef2f42fea87eea93cfc240",
+      "size": 1971,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/b502934bd2cdc12c07ef2f42fea87eea93cfc240"
+    },
+    {
+      "path": "Natives/resources/ms.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e6eb427e41af7c8c32462fb8e831868531bf181",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/2e6eb427e41af7c8c32462fb8e831868531bf181"
+    },
+    {
+      "path": "Natives/resources/ms.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "967c58bdfb4d794cca43600d78b3754e90f810fd",
+      "size": 2449,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/967c58bdfb4d794cca43600d78b3754e90f810fd"
+    },
+    {
+      "path": "Natives/resources/nl.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b5fe7db22048d9568d5a79d9dc2733fca7813510",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b5fe7db22048d9568d5a79d9dc2733fca7813510"
+    },
+    {
+      "path": "Natives/resources/nl.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "599aee8244e82d9569071a7710ea9e13e85082da",
+      "size": 1101,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/599aee8244e82d9569071a7710ea9e13e85082da"
+    },
+    {
+      "path": "Natives/resources/no.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d330332469d78be315102649f9f51050598e0e1",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/9d330332469d78be315102649f9f51050598e0e1"
+    },
+    {
+      "path": "Natives/resources/no.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bca75a2d206e200a249bd8fa8b25ad6c8de6c653",
+      "size": 1157,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/bca75a2d206e200a249bd8fa8b25ad6c8de6c653"
+    },
+    {
+      "path": "Natives/resources/pl.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "15c33473b3b5710d4ad49519aebd68351514fc72",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/15c33473b3b5710d4ad49519aebd68351514fc72"
+    },
+    {
+      "path": "Natives/resources/pl.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "840b0cf675019ca4b36a963964fbc263495eceea",
+      "size": 11217,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/840b0cf675019ca4b36a963964fbc263495eceea"
+    },
+    {
+      "path": "Natives/resources/pr.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "75e0d81488830654f0590b0f29839b20a164d663",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/75e0d81488830654f0590b0f29839b20a164d663"
+    },
+    {
+      "path": "Natives/resources/pr.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0edf9b7b1f5e6e97747c3e2105b32125ed4a4dfb",
+      "size": 2107,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0edf9b7b1f5e6e97747c3e2105b32125ed4a4dfb"
+    },
+    {
+      "path": "Natives/resources/pt-BR.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ec1141c963ad34eca08822d7d595811fe77da7a8",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/ec1141c963ad34eca08822d7d595811fe77da7a8"
+    },
+    {
+      "path": "Natives/resources/pt-BR.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0286961d5c1b9b885337efda1b30ea201cfdd654",
+      "size": 8982,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0286961d5c1b9b885337efda1b30ea201cfdd654"
+    },
+    {
+      "path": "Natives/resources/pt.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8306f3a2970dde7714b5be2823b6a476a12d622f",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/8306f3a2970dde7714b5be2823b6a476a12d622f"
+    },
+    {
+      "path": "Natives/resources/pt.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "061bb8b8ce2817b0a12eb13102366aaa8ff5c678",
+      "size": 1867,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/061bb8b8ce2817b0a12eb13102366aaa8ff5c678"
+    },
+    {
+      "path": "Natives/resources/ro.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ffbfd099133e28bf87753d9b3d80cd9878c2cd31",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/ffbfd099133e28bf87753d9b3d80cd9878c2cd31"
+    },
+    {
+      "path": "Natives/resources/ro.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ada9b87ad952319da0591293f6b25c46b1c6cf6e",
+      "size": 2591,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/ada9b87ad952319da0591293f6b25c46b1c6cf6e"
+    },
+    {
+      "path": "Natives/resources/ru.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eb140f6149bb07f719fa52da6916faa62f8eb338",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/eb140f6149bb07f719fa52da6916faa62f8eb338"
+    },
+    {
+      "path": "Natives/resources/ru.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3934e87ba79307e3033a23c7ba62955687da26b8",
+      "size": 23904,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3934e87ba79307e3033a23c7ba62955687da26b8"
+    },
+    {
+      "path": "Natives/resources/sk.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5990358198f7ed15d6dbbbadddef1dd5fff6b5dd",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/5990358198f7ed15d6dbbbadddef1dd5fff6b5dd"
+    },
+    {
+      "path": "Natives/resources/sk.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9934693247c71055219881fafeea393bbc596059",
+      "size": 1992,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/9934693247c71055219881fafeea393bbc596059"
+    },
+    {
+      "path": "Natives/resources/sr-Latn.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8761f46700a4dbf38376d6c7b3dc206dcfc195e4",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/8761f46700a4dbf38376d6c7b3dc206dcfc195e4"
+    },
+    {
+      "path": "Natives/resources/sr-Latn.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cacb20a4fc07dfcbd8e968015d93ad6187c0701d",
+      "size": 28,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/cacb20a4fc07dfcbd8e968015d93ad6187c0701d"
+    },
+    {
+      "path": "Natives/resources/sr.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e43a5aac73d5aa571cd7615a51982ccc9b2b9567",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/e43a5aac73d5aa571cd7615a51982ccc9b2b9567"
+    },
+    {
+      "path": "Natives/resources/sr.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b1298725ded3ad6aa20a759ead069d8ca5d92c7",
+      "size": 1837,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/3b1298725ded3ad6aa20a759ead069d8ca5d92c7"
+    },
+    {
+      "path": "Natives/resources/sv.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e381e79b00b83c7720831dbdd791a3fe54c9cca1",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/e381e79b00b83c7720831dbdd791a3fe54c9cca1"
+    },
+    {
+      "path": "Natives/resources/sv.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "804c989658e746ca24e4ed54e021ac16524ebc30",
+      "size": 694,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/804c989658e746ca24e4ed54e021ac16524ebc30"
+    },
+    {
+      "path": "Natives/resources/th.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f6265ac6944f042641cf023a37c5aeb1a81ea5d0",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/f6265ac6944f042641cf023a37c5aeb1a81ea5d0"
+    },
+    {
+      "path": "Natives/resources/th.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df7332abedcde719719969fbde490a3a1fbe9725",
+      "size": 2985,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/df7332abedcde719719969fbde490a3a1fbe9725"
+    },
+    {
+      "path": "Natives/resources/tr.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b03428b5d14de43e4c193662851b5a6628a574a9",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b03428b5d14de43e4c193662851b5a6628a574a9"
+    },
+    {
+      "path": "Natives/resources/tr.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf9f2b7cb81eef30f829eb41533a52a87c8bc5ef",
+      "size": 12370,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/bf9f2b7cb81eef30f829eb41533a52a87c8bc5ef"
+    },
+    {
+      "path": "Natives/resources/tt.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "07742205634a54bd55da16d96759da8e7e06783b",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/07742205634a54bd55da16d96759da8e7e06783b"
+    },
+    {
+      "path": "Natives/resources/tt.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "020c211ab8a74feddc2e1ae4e3e708533467e24b",
+      "size": 2862,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/020c211ab8a74feddc2e1ae4e3e708533467e24b"
+    },
+    {
+      "path": "Natives/resources/uk.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b591a7d11398f6d604453a6d451357e9378c81d9",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/b591a7d11398f6d604453a6d451357e9378c81d9"
+    },
+    {
+      "path": "Natives/resources/uk.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73ee2001fda46cc1b4fc84222df4af2c226c0763",
+      "size": 23129,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/73ee2001fda46cc1b4fc84222df4af2c226c0763"
+    },
+    {
+      "path": "Natives/resources/vi.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7b431e95e051cee75ab1bba9446ce61be1001cda",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/7b431e95e051cee75ab1bba9446ce61be1001cda"
+    },
+    {
+      "path": "Natives/resources/vi.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "657adecbb906a89f6c8a86278604247fb16bdbb9",
+      "size": 21672,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/657adecbb906a89f6c8a86278604247fb16bdbb9"
+    },
+    {
+      "path": "Natives/resources/zh-Hans.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5655c8e58a33b6aee87802c19205fe2e89ae5fc1",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/5655c8e58a33b6aee87802c19205fe2e89ae5fc1"
+    },
+    {
+      "path": "Natives/resources/zh-Hans.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "922c47c88cafb071686fdb9d93f147bce7bfe373",
+      "size": 18078,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/922c47c88cafb071686fdb9d93f147bce7bfe373"
+    },
+    {
+      "path": "Natives/resources/zh-Hant.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ca097ddf812c0a450b1652db01f2fa7bbe72994c",
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/trees/ca097ddf812c0a450b1652db01f2fa7bbe72994c"
+    },
+    {
+      "path": "Natives/resources/zh-Hant.lproj/Localizable.strings",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "875996d618aea9590cba52877b5b1d9157d11cb0",
+      "size": 11228,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/875996d618aea9590cba52877b5b1d9157d11cb0"
+    },
+    {
+      "path": "Natives/utils.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "431b61eb00c2ef7feaf85ffdbccafb78dfdc72fb",
+      "size": 4631,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/431b61eb00c2ef7feaf85ffdbccafb78dfdc72fb"
+    },
+    {
+      "path": "Natives/utils.m",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0350f9cc4ffb88be60aa9156f335e71cf2f5fa75",
+      "size": 10223,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/0350f9cc4ffb88be60aa9156f335e71cf2f5fa75"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29a5bd657f792c8732cf683fc75d109a9fa1d150",
+      "size": 8143,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/29a5bd657f792c8732cf683fc75d109a9fa1d150"
+    },
+    {
+      "path": "crowdin.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd3fb686816e64f36712fcadde40d1bdc5c0a0ac",
+      "size": 135,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/dd3fb686816e64f36712fcadde40d1bdc5c0a0ac"
+    },
+    {
+      "path": "entitlements.codesign.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f05f57fc8b4a60d9d9c7f4be14e15672bb349ed3",
+      "size": 802,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/f05f57fc8b4a60d9d9c7f4be14e15672bb349ed3"
+    },
+    {
+      "path": "entitlements.sideload.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e63bd6d7bc75848014649a00af33ed8b1b523afd",
+      "size": 827,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/e63bd6d7bc75848014649a00af33ed8b1b523afd"
+    },
+    {
+      "path": "entitlements.trollstore.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "733e0d051e881cd4cc6ee110ddf8b5693315c1f7",
+      "size": 1760,
+      "url": "https://api.github.com/repos/AngelAuraMC/Amethyst-iOS/git/blobs/733e0d051e881cd4cc6ee110ddf8b5693315c1f7"
+    }
+  ],
+  "truncated": false
+}
